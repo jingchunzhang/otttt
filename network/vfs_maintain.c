@@ -259,13 +259,8 @@ int do_voss_sync_file(char *domain, char *file, char *sip, char *fmd5)
 	t_task_sub *sub = (t_task_sub*)(&task->task.sub);
 	memset(base, 0, sizeof(t_task_base));
 	memset(sub, 0, sizeof(t_task_sub));
-	snprintf(base->src_domain, sizeof(base->src_domain), "%s", domain);
 	snprintf(base->filename, sizeof(base->filename), "%s", file);
-	if (fmd5)
-		snprintf(base->filemd5, sizeof(base->filemd5), "%s", fmd5);
-	base->starttime = time(NULL);
-	base->type = TASK_ADDFILE;
-	base->dstip = self_ipinfo.ip;
+	base->stime = time(NULL);
 	sub->oper_type = OPER_GET_REQ;
 	sub->need_sync = TASK_SYNC_VOSS_FILE;
 	if (sip)
@@ -288,7 +283,6 @@ int do_voss_del_file(char *domain, char *file)
 {
 	t_task_base base;
 	memset(&base, 0, sizeof(base));
-	snprintf(base.src_domain, sizeof(base.src_domain), "%s", domain);
 	snprintf(base.filename, sizeof(base.filename), "%s", file);
 	return delete_localfile(&base);
 }
@@ -305,11 +299,9 @@ int do_voss_sync_dir(char *domain, char *file, time_t starttime)
 	t_task_sub *sub = (t_task_sub*)(&task->task.sub);
 	memset(base, 0, sizeof(t_task_base));
 	memset(sub, 0, sizeof(t_task_sub));
-	snprintf(base->src_domain, sizeof(base->src_domain), "%s", domain);
 	snprintf(base->filename, sizeof(base->filename), "%s", file);
-	base->starttime = time(NULL);
+	base->stime = time(NULL);
 	sub->starttime = starttime;
-	base->type = TASK_SYNCDIR;
 	sub->need_sync = TASK_SYNC_VOSS_FILE;
 	task->task.user = NULL;
 	vfs_set_task(task, TASK_SYNC_VOSS);

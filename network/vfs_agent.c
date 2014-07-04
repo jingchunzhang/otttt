@@ -51,22 +51,20 @@ void get_data_from_task(t_vfs_tasklist *task)
 	char buf[1024] = {0x0};
 	t_task_base *base = &(task->task.base);
 	char ip[16] = {0x0};
-	ip2str(ip, base->dstip);
 	time_t cur = time(NULL);
-	if (cur - base->starttime > g_config.task_timeout)
+	if (cur - base->stime > g_config.task_timeout)
 		base->overstatus = OVER_TIMEOUT;
 
 	if (task->status == TASK_CLEAN)
 	{
 		t_task_sub *sub = &(task->task.sub);
-		size_t n = snprintf(buf, sizeof(buf), "%s:%s:%s:%c:%s:%s:%ld:%ld:%ld:%ld:%s:%d:%ld\n", base->src_domain, base->filename, ip, base->type, task_status[task->status%TASK_UNKNOWN], over_status[base->overstatus%OVER_LAST], sub->starttime, sub->endtime, base->fsize, base->ctime, base->filemd5, sub->need_sync, base->mtime);
+		size_t n = 0;
 		mybuff_setdata(&databuff, buf, n);
 		LOG(vfs_agent_log, LOG_DEBUG, "get task[%s]\n", buf);
 	}
 
 	if (task->status == TASK_CLEAN || base->overstatus == OVER_TIMEOUT)
 	{
-		LOG(vfs_agent_log, LOG_DEBUG, "move task [%s:%s:%s:%s] to home\n", base->src_domain, base->filename, over_status[base->overstatus%OVER_LAST], task_status[task->status%TASK_UNKNOWN]);
 		list_del_init(&(task->llist));
 		if (task->status != TASK_CLEAN && task->task.user &&(ROLE_CS == self_ipinfo.role || ROLE_TRACKER == self_ipinfo.role))
 		{

@@ -171,12 +171,7 @@ int init_task_info()
 static int get_vfs_task_hash(t_task_base *base, t_task_sub *sub)
 {
 	char buf[1024] = {0x0};
-	if (self_ipinfo.role == ROLE_CS)
-		snprintf(buf, sizeof(buf), "%s|%s|%d|", base->filename, base->src_domain, base->type);
-	else if (self_ipinfo.role == ROLE_FCS)
-		snprintf(buf, sizeof(buf), "%s|%s|%d|", base->filename, base->src_domain, base->type);
-	else if (self_ipinfo.role == ROLE_TRACKER)
-		snprintf(buf, sizeof(buf), "%s|%s|%d|%u|", base->filename, base->src_domain, base->type, sub->isp);
+	snprintf(buf, sizeof(buf), "%s", base->filename);
 	return r5hash(buf);
 }
 
@@ -232,10 +227,6 @@ int check_task_from_alltask(t_task_base * base, t_task_sub *sub)
 	{
 		if (strcmp(base->filename, task0->task.base.filename))
 			continue;
-		if (strcmp(base->src_domain, task0->task.base.src_domain))
-			continue;
-		if (base->type != task0->task.base.type)
-			continue;
 
 		if (self_ipinfo.role == ROLE_TRACKER)
 			if (sub->isp != task0->task.sub.isp)
@@ -274,10 +265,6 @@ int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base, t_task_sub *
 	list_for_each_entry_safe_l(task0, l, &alltask[index], hlist)
 	{
 		if (strcmp(base->filename, task0->task.base.filename))
-			continue;
-		if (strcmp(base->src_domain, task0->task.base.src_domain))
-			continue;
-		if (base->type != task0->task.base.type)
 			continue;
 
 		if (self_ipinfo.role == ROLE_TRACKER)
@@ -320,7 +307,7 @@ int get_timeout_task_from_alltask(int timeout, timeout_task cb)
 	{
 		list_for_each_entry_safe_l(task0, l, &alltask[index], hlist)
 		{
-			if (now - task0->task.base.starttime < timeout)
+			if (now - task0->task.base.stime < timeout)
 				continue;
 			list_del_init(&(task0->hlist));
 			cb(task0);
@@ -400,12 +387,11 @@ void check_task_timeout(t_vfs_tasklist *task)
 {
 	time_t cur = time(NULL);
 	t_task_base *base = &(task->task.base);
-	if (cur - base->starttime > g_config.task_timeout)
+	if (cur - base->stime > g_config.task_timeout)
 		base->overstatus = OVER_TIMEOUT;
 
 	if (task->status != TASK_CLEAN && base->overstatus == OVER_TIMEOUT)
 	{
-		LOG(glogfd, LOG_DEBUG, "move task [%s:%s:%s:%s] to home\n", base->src_domain, base->filename, over_status[base->overstatus%OVER_LAST], task_status[task->status%TASK_UNKNOWN]);
 		list_del_init(&(task->llist));
 		list_del_init(&(task->hlist));
 		list_del_init(&(task->userlist));

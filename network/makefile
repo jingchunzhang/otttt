@@ -23,13 +23,9 @@ OBJ= main.o	\
 	mybuff.o \
 	vfs_init.o \
 	vfs_task.o \
-	vfs_time_stamp.o \
-	vfs_tmp_status.o \
 	vfs_localfile.o \
 	vfs_agent.o \
 	vfs_timer.o \
-	vfs_del_file.o \
-	vfs_file_filter.o \
 	vfs_maintain.o \
 	parsepara.o
 

@@ -62,17 +62,7 @@ static int createdir(char *file)
 static int get_localdir(t_task_base *task, char *outdir)
 {
 	char *datadir = "/diska";
-	if (self_ipinfo.role == ROLE_CS)
-		datadir = myconfig_get_value("vfs_cs_datadir");
-	else if (self_ipinfo.role == ROLE_FCS)
-		datadir = myconfig_get_value("vfs_fcs_datadir");
-	int dir1, dir2;
-	if (get_dir1_dir2(task->filename, &dir1, &dir2))
-		return -1;
-	if (self_ipinfo.role == ROLE_CS)
-		sprintf(outdir, "%s/%d/%d/%s/flvdownload/", datadir, dir1, dir2, task->src_domain);
-	else if (self_ipinfo.role == ROLE_FCS)
-		sprintf(outdir, "%s/%d/%d/", datadir, dir1, dir2);
+	sprintf(outdir, "%s/", datadir);
 	return 0;
 }
 
@@ -132,21 +122,10 @@ int check_localfile_md5(t_task_base *task, int type)
 		snprintf(outdir, sizeof(outdir), "%s", task->tmpfile);
 		LOG(glogfd, LOG_DEBUG, "file [%s:%s]\n", outdir, task->tmpfile);
 	}
-	char md5[33] = {0x0};
-	if (getfilemd5view(outdir, (unsigned char *)md5))
-		return LOCALFILE_FILE_E;
-	if (strncmp(md5, task->filemd5, 31))
-	{
-		LOG(glogfd, LOG_ERROR, "file [%s], md5[%s:%s]\n", outdir, md5, task->filemd5);
-		return LOCALFILE_MD5_E;
-	}
 	struct utimbuf c_time;
-	c_time.actime = task->mtime;
 	c_time.modtime = c_time.actime;
 	utime(outdir, &c_time);
-	if ((task->fmode & 0644) != 0644)
-		task->fmode = 0664;
-	chmod(outdir, task->fmode);
+	chmod(outdir, 0644);
 	return LOCALFILE_OK;
 }
 
@@ -171,18 +150,6 @@ int open_localfile_4_read(t_task_base *task, int *fd)
 
 int open_tmp_localfile_4_write(t_task_base *task, int *fd)
 {
-	if ((task->fmode & 0644) != 0644)
-		task->fmode = 0664;
-	if (task->offsize > 0)
-	{
-		*fd = open(task->tmpfile, O_CREAT | O_RDWR | O_APPEND | O_LARGEFILE, task->fmode);
-		if (*fd < 0)
-		{
-			LOG(glogfd, LOG_ERROR, "open %s err %m\n", task->tmpfile);
-			return LOCALFILE_OPEN_E;
-		}
-		return LOCALFILE_OK;
-	}
 	char outdir[256] = {0x0};
 	if (get_localdir(task, outdir))
 		return LOCALFILE_DIR_E;
@@ -206,7 +173,7 @@ int open_tmp_localfile_4_write(t_task_base *task, int *fd)
 	get_tmpstr(tmpstr, sizeof(tmpstr));
 	strcat(outdir, tmpstr);
 	strcat(outdir, ".vfs");
-	*fd = open(outdir, O_CREAT | O_RDWR | O_LARGEFILE, task->fmode);
+	*fd = open(outdir, O_CREAT | O_RDWR | O_LARGEFILE, 0644);
 	if (*fd < 0)
 	{
 		LOG(glogfd, LOG_ERROR, "open %s err %m\n", outdir);
@@ -308,41 +275,6 @@ static void link_file(char *src, char *dst)
 
 void localfile_link_task(t_task_base *task)
 {
-	char outdir[256] = {0x0};
-	if (get_localdir(task, outdir))
-		return ;
-	char src[256] = {0x0};
-	snprintf(src, sizeof(src), "%s/%s", outdir, basename(task->filename));
-	char dst[256] = {0x0};
-	snprintf(dst, sizeof(dst), "%s/%s", outdir, basename(task->linkfile));
-	int err = 0;
-	struct stat srcstat;
-	struct stat dststat;
-	if (stat(src, &srcstat))
-		err += 1;
-	if (stat(dst, &dststat))
-		err += 2;
-
-	if (err == 3)
-	{
-		LOG(glogfd, LOG_ERROR, "file %s %s not exist!\n", src, dst);
-		return;
-	}
-	if (err == 0)
-	{
-		if (srcstat.st_ino == dststat.st_ino)
-			return;
-		LOG(glogfd, LOG_ERROR, "file %s %s not hard link!\n", src, dst);
-		if (task->okindex == 1)
-			return link_file(dst, src);
-		else
-			return link_file(src, dst);
-	}
-
-	if (err == 1)
-		return link_file(dst, src);
-	else
-		return link_file(src, dst);
 }
 
 int get_localfile_stat(t_task_base *task)
@@ -361,14 +293,7 @@ int get_localfile_stat(t_task_base *task)
 		LOG(glogfd, LOG_ERROR, "stat file %s err %m!\n", outdir);
 		return LOCALFILE_DIR_E;
 	}
-	task->mtime = filestat.st_mtime;
-	task->ctime = filestat.st_ctime;
-	task->fsize = filestat.st_size;
-	task->fmode = filestat.st_mode;
 	char md5[33] = {0x0};
-	if (getfilemd5view(outdir, (unsigned char *)md5))
-		return LOCALFILE_FILE_E;
-	strcpy(task->filemd5, md5);
 	return LOCALFILE_OK;
 }
 

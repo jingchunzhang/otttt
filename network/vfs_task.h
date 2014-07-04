@@ -22,7 +22,7 @@
 #define SYNCIP 256
 #define DOMAIN_PREFIX "fcs"
 
-enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};  /*任务类型 GET FCS-》CS， CS-》CS；PUT CS-》CS*/
+enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};
 
 enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; /*任务队列*/  /*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir */
 
@@ -39,22 +39,11 @@ extern const char *over_status[OVER_LAST];
 typedef struct {
 	char filename[256];
 	char tmpfile[256];
-	char linkfile[256];
-	char filemd5[33];
-	char src_domain[16];
-	off_t offsize;
-	uint32_t dstip;    /*本次任务目标ip，在GET或者PUT_FROM时，此ip是本机ip*/
-	time_t starttime;
-	time_t mtime;
-	time_t ctime;
 	off_t fsize;
-	char okindex;
-	char type;         /*文件变换类型，删除还是新增*/
+	time_t stime;
+	char srcip[16];
 	int8_t retry;     /*任务执行失败时，根据配置是否执行重新发起任务，已经重试次数，不能超过设定重试次数*/
 	uint8_t overstatus; /*结束状态*/
-	uint8_t isp;     /*voss sync 使用*/
-	mode_t fmode;   /*stupid 为了兼容旧版本，没法对齐了*/
-//	char bk[7];
 }t_task_base;
 
 typedef struct {
