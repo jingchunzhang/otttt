@@ -273,8 +273,6 @@ recvfileing:
 
 		if (peer->sock_stat == RECVFILEING)
 			goto recvfileing;
-		if (peer->sock_stat == SENDFILEING)
-			return RECV_ADD_EPOLLOUT;
 	}
 	return ret;
 }
@@ -293,29 +291,6 @@ int svc_send(int fd)
 	vfs_cs_peer *peer = (vfs_cs_peer *) curcon->user;
 	peer->hbtime = time(NULL);
 	list_move_tail(&(peer->alist), &activelist);
-	if (peer->sock_stat == SENDFILEING)
-	{
-		LOG(vfs_sig_log, LOG_DEBUG, "%s:%s:%d\n", ID, FUNC, LN);
-		t_vfs_tasklist *tasklist = peer->sendtask;
-		t_vfs_taskinfo *task = &(peer->sendtask->task);
-		if (curcon->send_len >= peer->headlen + task->sub.processlen)
-		{
-			LOG(vfs_sig_log, LOG_DEBUG, "fd[%d:%u] send file %s ok!\n", fd, peer->ip, task->base.filename);
-			peer->sock_stat = IDLE;
-			task->base.overstatus = OVER_OK;
-			vfs_set_task(tasklist, TASK_FIN);
-			peer->sendtask = NULL;
-		}
-		else
-		{
-			LOG(vfs_sig_log, LOG_ERROR, "fd[%d:%u] send file %s error [%d:%d:%d]!\n", fd, peer->ip, task->base.filename, curcon->send_len, peer->headlen, task->sub.processlen);
-			task->base.overstatus = OVER_SEND_LEN;
-			peer->sock_stat = IDLE;
-			vfs_set_task(tasklist, TASK_FIN);
-			peer->sendtask = NULL;
-			return SEND_CLOSE;
-		}
-	}
 	return SEND_ADD_EPOLLIN;
 }
 
@@ -366,10 +341,7 @@ void svc_finiconn(int fd)
 		tasklist = peer->recvtask;
 		LOG(vfs_sig_log, LOG_ERROR, "re execute %s!\n", tasklist->task.base.filename);
 		IncInt(VFS_RE_EXECUTE_INC, 1);
-		if (g_config.continue_flag)
-			tasklist->task.base.offsize += tasklist->task.sub.lastlen;
-		else
-			real_rm_file(tasklist->task.base.tmpfile);
+		real_rm_file(tasklist->task.base.tmpfile);
 		tasklist->task.base.retry++;
 		vfs_set_task(tasklist, TASK_WAIT);
 	}

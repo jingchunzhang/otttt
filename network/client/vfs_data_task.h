@@ -26,8 +26,6 @@ int do_error_file_sync(int fd, t_vfs_tasklist *task, int status_e);
 
 int do_ok_file_sync(int fd, t_vfs_tasklist *task);
 
-int init_data_task(t_vfs_tasklist ** tasklist, t_task_base *base, t_task_sub *sub);
-
 void do_send_task_head(uint8_t cmdid, uint8_t status, t_vfs_tasklist *task, vfs_cs_peer *peer);
 
 int do_addfile_task(int fd, t_vfs_sig_head *h, uint8_t *status, t_task_base *base);

@@ -13,22 +13,6 @@
 volatile extern int maintain ;		//1-维护配置 0 -可以使用
 extern t_vfs_up_proxy g_proxy;
 
-static int get_ip_connect_count(uint32_t ip)
-{
-	int count = 0;
-	list_head_t *hashlist = &(online_list[ALLMASK&ip]);
-	vfs_cs_peer *peer = NULL;
-	list_head_t *l;
-	list_for_each_entry_safe_l(peer, l, hashlist, hlist)
-	{
-		if (peer->ip == ip && peer->mode == CON_ACTIVE)
-		{
-			count++;
-		}
-	}
-	return count;
-}
-
 static inline int isDigit(const char *ptr) 
 {
 	return isdigit(*(unsigned char *)ptr);
@@ -184,17 +168,6 @@ void check_task()
 		vfs_set_task(task, TASK_WAIT);
 	}
 
-	while (1)
-	{
-		ret = vfs_get_task(&task, TASK_Q_SYNC_DIR_TMP);
-		if (ret != GET_TASK_OK)
-		{
-			LOG(vfs_sig_log, LOG_TRACE, "vfs_get_task get notihng %d\n", ret);
-			break;
-		}
-		vfs_set_task(task, TASK_Q_SYNC_DIR);
-	}
-
 	uint16_t once_run = 0;
 	while (1)
 	{
@@ -211,12 +184,9 @@ void check_task()
 			else
 				LOG(vfs_sig_log, LOG_DEBUG, "Process TASK_Q_SYNC_DIR!\n");
 		}
-		t_task_sub *sub = &(task->task.sub);
 		t_task_base *base = &(task->task.base);
-		LOG(vfs_sig_log, LOG_DEBUG, "%s:%s be get from wait queue!\n", base->filename, base->src_domain);
 		if (base->retry > g_config.retry)
 		{
-			LOG(vfs_sig_log, LOG_DEBUG, "%s:%s too many try!\n", base->filename, base->src_domain, base->retry, g_config.retry);
 			real_rm_file(base->tmpfile);
 			base->overstatus = OVER_TOO_MANY_TRY;
 			vfs_set_task(task, TASK_FIN);  
@@ -224,40 +194,19 @@ void check_task()
 		}
 		if (check_localfile_md5(base, VIDEOFILE) == LOCALFILE_OK)
 		{
-			LOG(vfs_sig_log, LOG_DEBUG, "%s:%s check md5 ok!\n", base->filename, base->src_domain);
 			base->overstatus = OVER_OK;
 			vfs_set_task(task, TASK_FIN);  
 			continue;
 		}
 		t_ip_info ipinfo0;
 		t_ip_info *ipinfo = &ipinfo0;
-		if(get_ip_info(&ipinfo, sub->peerip, 1))
-		{
-			LOG(vfs_sig_log, LOG_DEBUG, "%s:%s:%s be hung up because get_ip_info error!\n", base->filename, base->src_domain, sub->peerip);
-			base->overstatus = OVER_E_IP;
-			vfs_set_task(task, TASK_FIN);
-			continue;
-		}
 		vfs_cs_peer *peer = NULL;
-		find_ip_stat(str2ip(sub->peerip), &peer, CON_ACTIVE, IDLE);
-		if (sub->oper_type != OPER_GET_REQ)
-		{
-			LOG(vfs_sig_log, LOG_ERROR, "%s:%d ERROR oper_type %d %s!\n", ID, LN, sub->oper_type, base->filename);
-			base->overstatus = OVER_E_TYPE;
-			vfs_set_task(task, TASK_FIN);
-			continue;
-		}
-		LOG(vfs_sig_log, LOG_DEBUG, "%s:%s is prepare OPER_GET_REQ from %s\n", base->filename, base->src_domain, sub->peerip);
+		find_ip_stat(str2ip(base->srcip), &peer, CON_ACTIVE, IDLE);
 		if(check_disk_space(base) != DISK_OK)
 		{
 			LOG(vfs_sig_log, LOG_DEBUG, "%s:%d filename[%s] DISK NOT ENOUGH SPACE!\n", ID, LN, base->filename);
 			if (DISK_SPACE_TOO_SMALL == check_disk_space(base))
-			{
-				if (sub->need_sync == TASK_SYNC_ISDIR)
-					vfs_set_task(task, TASK_Q_SYNC_DIR_TMP);
-				else
-					vfs_set_task(task, TASK_WAIT_TMP);
-			}
+				vfs_set_task(task, TASK_WAIT_TMP);
 			else
 			{
 				base->overstatus = OVER_E_OPEN_DSTFILE;
@@ -268,57 +217,30 @@ void check_task()
 
 		if (peer == NULL)
 		{
-			int count = get_ip_connect_count(str2ip(sub->peerip));
-			if (ipinfo->role == ROLE_FCS && count > g_config.fcs_max_connects)
-			{
-				LOG(vfs_sig_log, LOG_DEBUG, "ip %s too many connect %d max %d\n", sub->peerip, count, g_config.fcs_max_connects);
-				if (sub->need_sync == TASK_SYNC_ISDIR)
-					vfs_set_task(task, TASK_Q_SYNC_DIR_TMP);
-				else
-					vfs_set_task(task, TASK_WAIT_TMP);
-				continue;
-			}
-			if (ipinfo->role == ROLE_CS && count > g_config.cs_max_connects)
-			{
-				LOG(vfs_sig_log, LOG_DEBUG, "ip %s too many connect %d max %d\n", sub->peerip, count, g_config.cs_max_connects);
-				if (sub->need_sync == TASK_SYNC_ISDIR)
-					vfs_set_task(task, TASK_Q_SYNC_DIR_TMP);
-				else
-					vfs_set_task(task, TASK_WAIT_TMP);
-				continue;
-			}
 			active_connect(ipinfo);
-			char *peerhost = sub->peerip;
-			if (g_proxyed)
-				peerhost = g_proxy.host;
+			char *peerhost = base->srcip;
 
 			if (find_ip_stat(str2ip(peerhost), &peer, CON_ACTIVE, IDLE) != 0)
 			{
-				LOG(vfs_sig_log, LOG_DEBUG, "%s:%s be hung up because find_ip_stat error!\n", base->filename, base->src_domain);
-				if (sub->need_sync == TASK_SYNC_ISDIR)
-					vfs_set_task(task, TASK_Q_SYNC_DIR_TMP);
-				else
-					vfs_set_task(task, TASK_WAIT_TMP);
+				vfs_set_task(task, TASK_WAIT_TMP);
 				continue;
 			}
 		}
 		if (g_config.vfs_test)
 		{
-			LOG(vfs_sig_log, LOG_NORMAL, "vfs run in test %s %s\n", base->filename, base->src_domain);
 			base->overstatus = OVER_OK;
 			vfs_set_task(task, TASK_FIN);
 			continue;
 		}
 		t_vfs_sig_head h;
 		t_vfs_sig_body b;
-		sub->lastlen = 0;
+		base->getlen = 0;
 		h.bodylen = sizeof(t_task_base);
 		memcpy(b.body, base, sizeof(t_task_base));
 		h.cmdid = CMD_GET_FILE_REQ;
 		h.status = FILE_SYNC_DST_2_SRC;
 		active_send(peer, &h, &b);
 		peer->sock_stat = PREPARE_RECVFILE;
-		LOG(vfs_sig_log, LOG_DEBUG, "fd[%d:%s] %s:%s send get a file sock_stat [%s]!\n", peer->fd, sub->peerip, base->filename, base->src_domain, sock_stat_cmd[peer->sock_stat]);
 		vfs_set_task(task, TASK_RECV);
 		peer->recvtask = task;
 	}
