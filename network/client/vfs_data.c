@@ -214,7 +214,7 @@ recvfileing:
 			return RECV_ADD_EPOLLIN;  /*no suffic data, need to get data more */
 		}
 		LOG(vfs_sig_log, LOG_TRACE, "fd[%d] get file %s:%d!\n", fd, task->base.filename, datalen);
-		int remainlen = task->sub.processlen - task->sub.lastlen;
+		int remainlen = task->base.fsize - task->base.getlen;
 		datalen = datalen <= remainlen ? datalen : remainlen ; 
 		int n = write(peer->local_in_fd, data, datalen);
 		if (n < 0)
@@ -225,10 +225,9 @@ recvfileing:
 			return RECV_CLOSE;  /* ERROR , close it */
 		}
 		consume_client_data(fd, n);
-		task->sub.lastlen += n;
-		if (task->sub.lastlen >= task->sub.processlen)
+		task->base.getlen += n;
+		if (task->base.getlen >= task->base.fsize)
 		{
-			task->sub.endtime = time(NULL);
 			if (close_tmp_check_mv(&(task->base), peer->local_in_fd) != LOCALFILE_OK)
 			{
 				LOG(vfs_sig_log, LOG_ERROR, "fd[%d] get file %s error!\n", fd, task->base.filename);
