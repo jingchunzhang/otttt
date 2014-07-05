@@ -168,7 +168,7 @@ int init_task_info()
 	return 0;
 }
 
-static int get_vfs_task_hash(t_task_base *base, t_task_sub *sub)
+static int get_vfs_task_hash(t_task_base *base)
 {
 	char buf[1024] = {0x0};
 	snprintf(buf, sizeof(buf), "%s", base->filename);
@@ -177,7 +177,7 @@ static int get_vfs_task_hash(t_task_base *base, t_task_sub *sub)
 
 int add_task_to_alltask(t_vfs_tasklist *task)
 {
-	int index = get_vfs_task_hash(&(task->task.base), &(task->task.sub))&TASK_MOD; 
+	int index = get_vfs_task_hash(&(task->task.base))&TASK_MOD; 
 	int ret = -1;
 	struct timespec to;
 	to.tv_sec = g_config.lock_timeout + time(NULL);
@@ -201,9 +201,9 @@ int add_task_to_alltask(t_vfs_tasklist *task)
 	return 0;
 }
 
-int check_task_from_alltask(t_task_base * base, t_task_sub *sub)
+int check_task_from_alltask(t_task_base * base)
 {
-	int index = get_vfs_task_hash(base, sub)&TASK_MOD;
+	int index = get_vfs_task_hash(base)&TASK_MOD;
 	t_vfs_tasklist *task0 = NULL;
 	list_head_t *l;
 
@@ -227,10 +227,6 @@ int check_task_from_alltask(t_task_base * base, t_task_sub *sub)
 	{
 		if (strcmp(base->filename, task0->task.base.filename))
 			continue;
-
-		if (self_ipinfo.role == ROLE_TRACKER)
-			if (sub->isp != task0->task.sub.isp)
-				continue;
 
 		ret = 0;
 		break;
@@ -240,9 +236,9 @@ int check_task_from_alltask(t_task_base * base, t_task_sub *sub)
 	return ret;
 }
 
-int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base, t_task_sub *sub)
+int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base)
 {
-	int index = get_vfs_task_hash(base, sub)&TASK_MOD;
+	int index = get_vfs_task_hash(base)&TASK_MOD;
 	t_vfs_tasklist *task0 = NULL;
 	list_head_t *l;
 
@@ -266,10 +262,6 @@ int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base, t_task_sub *
 	{
 		if (strcmp(base->filename, task0->task.base.filename))
 			continue;
-
-		if (self_ipinfo.role == ROLE_TRACKER)
-			if (sub->isp != task0->task.sub.isp)
-				continue;
 
 		ret = 0;
 		list_del_init(&(task0->hlist));

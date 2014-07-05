@@ -7,10 +7,6 @@
 #ifndef _VFS_TASK_H_
 #define _VFS_TASK_H_
 
-/*
- *任务设计：业务线程消费后的任务数据放入 CLEAN任务队列，Agent线程定时清理该队列数据，放入HOME供业务线程循环消费
- *超时任务：有业务线程自己处理，最终落入CLEAN队列，有AGENT线程回收
- */
 
 #include "list.h"
 #include "vfs_init.h"
@@ -40,6 +36,7 @@ typedef struct {
 	char filename[256];
 	char tmpfile[256];
 	off_t fsize;
+	off_t lastlen;
 	time_t stime;
 	char srcip[16];
 	int8_t retry;     /*任务执行失败时，根据配置是否执行重新发起任务，已经重试次数，不能超过设定重试次数*/
@@ -47,23 +44,7 @@ typedef struct {
 }t_task_base;
 
 typedef struct {
-	off_t processlen; /*需要获取或者发送的数据长度*/
-	off_t lastlen; /*上一个周期 处理的长度，初始化为0 */
-	time_t   lasttime; /*上个周期时间戳*/
-	time_t   starttime; /*开始时间戳*/
-	time_t	 endtime; /*结束时间戳*/
-	char peerip[16];  /*对端ip*/
-	uint8_t oper_type; /*是从FCS GET文件，还是向同组CS  GET文件 */
-	uint8_t need_sync; /*TASK_SOURCE：本次任务源头，TASK_DST：本次任务目的之一 */
-	uint8_t sync_dir;  /**/
-	uint8_t isp;      /**/
-	uint8_t archive_isp;      /**/
-	uint8_t bk[3];
-}t_task_sub;
-
-typedef struct {
 	t_task_base base;
-	t_task_sub  sub;
 	void *user;
 }t_vfs_taskinfo;
 
@@ -104,9 +85,9 @@ int init_task_info();
 
 int add_task_to_alltask(t_vfs_tasklist *task);
 
-int check_task_from_alltask(t_task_base *base, t_task_sub *sub);
+int check_task_from_alltask(t_task_base *base);
 
-int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base, t_task_sub *sub);
+int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base);
 
 int get_timeout_task_from_alltask(int timeout, timeout_task cb);
 

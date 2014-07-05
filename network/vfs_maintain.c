@@ -256,24 +256,9 @@ int do_voss_sync_file(char *domain, char *file, char *sip, char *fmd5)
 		return -1;
 	}
 	t_task_base *base = (t_task_base*)(&task->task.base);
-	t_task_sub *sub = (t_task_sub*)(&task->task.sub);
 	memset(base, 0, sizeof(t_task_base));
-	memset(sub, 0, sizeof(t_task_sub));
 	snprintf(base->filename, sizeof(base->filename), "%s", file);
 	base->stime = time(NULL);
-	sub->oper_type = OPER_GET_REQ;
-	sub->need_sync = TASK_SYNC_VOSS_FILE;
-	if (sip)
-		snprintf(sub->peerip, sizeof(sub->peerip), "%s", sip);
-	else
-	{
-		if (get_ip_by_domain(sub->peerip, domain))
-		{
-			LOG(vfs_agent_log, LOG_ERROR, "get_ip_by_domain err %s\n", domain);
-			vfs_set_task(task, TASK_HOME);
-			return -1;
-		}
-	}
 	task->task.user = NULL;
 	vfs_set_task(task, TASK_SYNC_VOSS);
 	return 0;
@@ -296,13 +281,9 @@ int do_voss_sync_dir(char *domain, char *file, time_t starttime)
 		return -1;
 	}
 	t_task_base *base = (t_task_base*)(&task->task.base);
-	t_task_sub *sub = (t_task_sub*)(&task->task.sub);
 	memset(base, 0, sizeof(t_task_base));
-	memset(sub, 0, sizeof(t_task_sub));
 	snprintf(base->filename, sizeof(base->filename), "%s", file);
 	base->stime = time(NULL);
-	sub->starttime = starttime;
-	sub->need_sync = TASK_SYNC_VOSS_FILE;
 	task->task.user = NULL;
 	vfs_set_task(task, TASK_SYNC_VOSS);
 	return 0;

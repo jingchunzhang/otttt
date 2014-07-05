@@ -151,6 +151,7 @@ int open_localfile_4_read(t_task_base *task, int *fd)
 int open_tmp_localfile_4_write(t_task_base *task, int *fd)
 {
 	char outdir[256] = {0x0};
+
 	if (get_localdir(task, outdir))
 		return LOCALFILE_DIR_E;
 	strcat(outdir, ".svn/");
@@ -259,20 +260,6 @@ int check_disk_space(t_task_base *base)
 	return DISK_OK;
 }
 
-static void link_file(char *src, char *dst)
-{
-	if (access(dst, F_OK) == 0)
-	{
-		if (unlink(dst))
-		{
-			LOG(glogfd, LOG_ERROR, "file %s unlink err %m!\n", dst);
-			return;
-		}
-	}
-	if (link(src, dst))
-		LOG(glogfd, LOG_ERROR, "file %s %s hard link err %m!\n", src, dst);
-}
-
 void localfile_link_task(t_task_base *task)
 {
 }
@@ -293,7 +280,6 @@ int get_localfile_stat(t_task_base *task)
 		LOG(glogfd, LOG_ERROR, "stat file %s err %m!\n", outdir);
 		return LOCALFILE_DIR_E;
 	}
-	char md5[33] = {0x0};
 	return LOCALFILE_OK;
 }
 

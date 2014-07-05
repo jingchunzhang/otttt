@@ -50,14 +50,12 @@ void get_data_from_task(t_vfs_tasklist *task)
 {
 	char buf[1024] = {0x0};
 	t_task_base *base = &(task->task.base);
-	char ip[16] = {0x0};
 	time_t cur = time(NULL);
 	if (cur - base->stime > g_config.task_timeout)
 		base->overstatus = OVER_TIMEOUT;
 
 	if (task->status == TASK_CLEAN)
 	{
-		t_task_sub *sub = &(task->task.sub);
 		size_t n = 0;
 		mybuff_setdata(&databuff, buf, n);
 		LOG(vfs_agent_log, LOG_DEBUG, "get task[%s]\n", buf);
