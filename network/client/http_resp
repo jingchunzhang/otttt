@@ -1,0 +1,9 @@
+HTTP/1.0 200 OK
+Content-Type: video/x-flv
+Accept-Ranges: bytes
+ETag: "4038287288"
+Last-Modified: Thu, 26 Jun 2014 02:15:55 GMT
+Content-Length: 1356869
+Connection: close
+Date: Sat, 05 Jul 2014 14:07:25 GMT
+Server: YOUKU.DG

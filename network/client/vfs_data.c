@@ -161,8 +161,6 @@ int svc_initconn(int fd)
 static int check_req(int fd)
 {
 	LOG(vfs_sig_log, LOG_DEBUG, "%s:%s:%d\n", ID, FUNC, LN);
-	t_vfs_sig_head h;
-	t_vfs_sig_body b;
 	char *data;
 	size_t datalen;
 	if (get_client_data(fd, &data, &datalen))
@@ -170,19 +168,43 @@ static int check_req(int fd)
 		LOG(vfs_sig_log, LOG_TRACE, "%s:%d fd[%d] no data!\n", FUNC, LN, fd);
 		return -1;  /*no suffic data, need to get data more */
 	}
-	int ret = parse_sig_msg(&h, &b, data, datalen);
-	if (ret > 0)
+	char *end = strstr(data, "\r\n\r\n");
+	if (end == NULL)
+		return -1;
+	end += 4;
+
+	char *pret = strstr(data, "HTTP/");
+	if (pret == NULL)
 	{
-		LOG(vfs_sig_log, LOG_TRACE, "fd[%d] no suffic data!\n", fd);
-		return -1;  /*no suffic data, need to get data more */
-	}
-	if (ret == E_PACKET_ERR_CLOSE)
-	{
-		LOG(vfs_sig_log, LOG_ERROR, "fd[%d] ERROR PACKET bodylen is [%d], must be close now!\n", fd, h.bodylen);
+		LOG(vfs_sig_log, LOG_ERROR, "%s:%d fd[%d] ERROR no HTTP/!\n", FUNC, LN, fd);
 		return RECV_CLOSE;
 	}
-	int clen = h.bodylen + SIG_HEADSIZE;
-	ret = do_req(fd, &h, &b);
+
+	pret = strchr(pret, ' ');
+	if (pret == NULL)
+	{
+		LOG(vfs_sig_log, LOG_ERROR, "%s:%d fd[%d] ERROR no http blank!\n", FUNC, LN, fd);
+		return RECV_CLOSE;
+	}
+
+	int retcode = atoi(pret + 1);
+	if (retcode != 200)
+	{
+		LOG(vfs_sig_log, LOG_ERROR, "%s:%d fd[%d] ERROR retcode = %d!\n", FUNC, LN, fd, retcode);
+		return RECV_CLOSE;
+	}
+
+	char *pleng = strstr(data, "Content-Length: ");
+	if (pleng == NULL)
+	{
+		LOG(vfs_sig_log, LOG_ERROR, "%s:%d fd[%d] ERROR Content-Length: !\n", FUNC, LN, fd);
+		return RECV_CLOSE;
+	}
+
+	off_t fsize = atol(pleng + strlen("Content-Length: "));
+
+	int clen = end - data;
+	int ret = do_req(fd, fsize);
 	consume_client_data(fd, clen);
 	return ret;
 }
