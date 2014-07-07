@@ -28,21 +28,20 @@ int do_prepare_recvfile(int fd, off_t fsize)
 	vfs_cs_peer *peer = (vfs_cs_peer *) curcon->user;
 	if (peer->sock_stat != PREPARE_RECVFILE)
 	{
-		LOG(vfs_sig_log, LOG_ERROR, "fd[%d] status not recv [%x] file [%s]\n", fd, peer->sock_stat, base->filename);
+		LOG(vfs_sig_log, LOG_ERROR, "fd[%d] status not recv [%x]\n", fd, peer->sock_stat);
 		return RECV_CLOSE;
 	}
 	t_vfs_tasklist *task0 = peer->recvtask;
-	t_task_base *base0 = &(task0->task.base);
+	t_task_base *base = &(task0->task.base);
 
-	memcpy(base0, base, sizeof(t_task_base));
 	if (peer->local_in_fd > 0)
 		close(peer->local_in_fd);
-	if (open_tmp_localfile_4_write(base0, &(peer->local_in_fd)) != LOCALFILE_OK) 
+	if (open_tmp_localfile_4_write(base, &(peer->local_in_fd)) != LOCALFILE_OK) 
 	{
 		LOG(vfs_sig_log, LOG_ERROR, "fd[%d] file [%s] open file err %m\n", fd, base->filename);
 		if (peer->recvtask)
 		{
-			base0->overstatus = OVER_E_OPEN_DSTFILE;
+			base->overstatus = OVER_E_OPEN_DSTFILE;
 			vfs_set_task(peer->recvtask, TASK_FIN);
 			peer->recvtask = NULL;
 		}
