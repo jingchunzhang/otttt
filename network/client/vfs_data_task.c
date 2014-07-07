@@ -22,7 +22,7 @@ void dump_task_info (char *from, int line, t_task_base *task)
 {
 }
 
-int do_recv_task(int fd, t_vfs_sig_head *h, t_task_base *base)
+int do_prepare_recvfile(int fd, off_t fsize)
 {
 	struct conn *curcon = &acon[fd];
 	vfs_cs_peer *peer = (vfs_cs_peer *) curcon->user;
@@ -33,15 +33,6 @@ int do_recv_task(int fd, t_vfs_sig_head *h, t_task_base *base)
 	}
 	t_vfs_tasklist *task0 = peer->recvtask;
 	t_task_base *base0 = &(task0->task.base);
-	if (h->status != FILE_SYNC_DST_2_SRC)
-	{
-		LOG(vfs_sig_log, LOG_ERROR, "fd[%d] status err file [%s][%x]\n", fd, base->filename, h->status);
-		peer->sock_stat = IDLE;
-		task0->task.base.overstatus = OVER_E_OPEN_SRCFILE;
-		vfs_set_task(task0, TASK_FIN);
-		peer->recvtask = NULL;
-		return RECV_CLOSE;
-	}
 
 	memcpy(base0, base, sizeof(t_task_base));
 	if (peer->local_in_fd > 0)

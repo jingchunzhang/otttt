@@ -36,4 +36,6 @@ void do_send_task(int fd, t_task_base *base, t_vfs_sig_head *h);
 
 int do_recv_task(int fd, t_vfs_sig_head *h, t_task_base *base);
 
+int do_prepare_recvfile(int fd, off_t fsize);
+
 #endif
