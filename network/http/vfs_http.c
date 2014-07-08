@@ -17,6 +17,11 @@
 #include "protocol.h"
 #include "util.h"
 #include "acl.h"
+#include "list.h"
+#include "global.h"
+#include "vfs_init.h"
+#include "vfs_task.h"
+#include "common.h"
 
 int vfs_http_log = -1;
 
@@ -102,13 +107,16 @@ static int handle_request(int cfd)
 		
 	}
 	else {
-		sprintf(httpheader, "HTTP/1.1 403 File Not Found\r\n\r\n");	
+		sprintf(httpheader, "HTTP/1.1 404 File Not Found\r\n\r\n");	
 	}
 	//c->close_imme = 1; //发送完回复包后主动关闭连接	
-	set_client_data(cfd, httpheader, strlen(httpheader));
 	if(fd > 0)
-		set_client_fd(cfd, fd, 0, (uint32_t)st.st_size); 	
-	return 0;
+	{
+		set_client_data(cfd, httpheader, strlen(httpheader));
+		set_client_fd(cfd, fd, 0, (uint32_t)st.st_size);
+		return 0;
+	}
+	return -1;
 }
 
 static int check_req(int fd)
@@ -131,9 +139,17 @@ static int check_req(int fd)
 		LOG(vfs_http_log, LOG_DEBUG, "fd[%d] data not suffic!\n", fd);
 		return RECV_ADD_EPOLLIN;
 	}
-	handle_request(fd);
+	int ret = handle_request(fd);
 	consume_client_data(fd, clen);
-	return RECV_SEND;
+	if (ret == 0)
+		return RECV_SEND;
+	else
+	{
+		struct conn *c = &acon[cfd];
+		if (check_dup_task(c->user))
+			if (get_file_from_src(c->user, data, clen))
+				return RECV_CLOSE;
+	}
 }
 
 int svc_recv(int fd) 
