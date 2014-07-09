@@ -51,6 +51,7 @@ struct conn {
 #define SEND_ADD_EPOLLIN 0x20 //do_send need to add fd EPOLLIN
 #define SEND_ADD_EPOLLOUT 0x40 //do_send need to add fd EPOLLOUT
 #define SEND_ADD_EPOLLALL 0x80 //do_send need to add fd EPOLLOUT and EPOLLIN
+#define SEND_SUSPEND 0x100 //
 
 #define RET_OK 300
 #define RET_SUCCESS 301

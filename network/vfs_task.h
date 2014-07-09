@@ -86,7 +86,7 @@ int init_task_info();
 
 int add_task_to_alltask(t_vfs_tasklist *task);
 
-int check_task_from_alltask(t_task_base *base);
+int check_task_from_alltask(char *fname);
 
 int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base);
 

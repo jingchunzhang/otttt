@@ -119,6 +119,42 @@ static int handle_request(int cfd)
 	return -1;
 }
 
+static int get_file_from_src(char *fname, char *data, int len)
+{
+	char *p = strstr(data, "srcip: ");
+	if (p == NULL)
+	{
+		LOG(vfs_http_log, LOG_ERROR, "fname[%s] no srcip!\n", fname);
+		return -1;
+	}
+	p += 6;
+	char *e = strchr(p, '\r');
+	if (e == NULL)
+	{
+		LOG(vfs_http_log, LOG_ERROR, "fname[%s] srcip error!\n", fname);
+		return -1;
+	}
+	*e = 0x0;
+
+	char srcip[16] = {0x0};
+	snprintf(srcip, sizeof(srcip), "%s", p);
+	*e = '\r';
+
+	t_vfs_tasklist *task0 = NULL;
+	if (vfs_get_task(&task0, TASK_HOME))
+	{
+		LOG(vfs_http_log, LOG_ERROR, "fname[%s:%s] do_newtask ERROR!\n", fname, srcip);
+		return -1;
+	}
+	t_vfs_taskinfo *task = &(task0->task);
+	memset(&(task->base), 0, sizeof(task->base));
+	snprintf(task->base.srcip, sizeof(task->base.srcip), "%s", srcip);
+	strncpy(task->base.data, data, len);
+	strcpy(task->base.filename, fname);
+	vfs_set_task(task0, TASK_WAIT);
+	return 0;
+}
+
 static int check_req(int fd)
 {
 	char *data;
@@ -145,10 +181,11 @@ static int check_req(int fd)
 		return RECV_SEND;
 	else
 	{
-		struct conn *c = &acon[cfd];
-		if (check_dup_task(c->user))
+		struct conn *c = &acon[fd];
+		if (check_task_from_alltask(c->user))
 			if (get_file_from_src(c->user, data, clen))
 				return RECV_CLOSE;
+		return SEND_SUSPEND;
 	}
 }
 
