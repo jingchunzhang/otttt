@@ -128,67 +128,24 @@ int main(int argc, char **argv) {
 	ICALL(init_thread);
 	ICALL(init_global);
 	ICALL(vfs_init);
-#if VFS_SERVER == 1
-	t_thread_arg arg;
-	memset(&arg, 0, sizeof(arg));
-	char *so = myconfig_get_value("http_so");
-	if (so == NULL)
-		so = "./cdc_http.so";
-	snprintf(arg.name, sizeof(arg.name), "%s", so);
-	LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg.name);
-	arg.port = myconfig_get_intval("http_port", 49716);
-	arg.threadcount = myconfig_get_intval("http_threadcount", 4);
-	arg.maxevent = myconfig_get_intval("vfs_sig_maxevent", 4096);
-	if (init_vfs_thread(&arg))
-		goto error;
-#else
 	ICALL(init_task_info);
-	if (get_self_info(&self_ipinfo))
-	{
-		LOG(glogfd, LOG_ERROR, "get_self_role ERR!\n");
-		goto error;
-	}
-	if (self_ipinfo.role <= UNKOWN || self_ipinfo.role >= SELF_IP)
-	{
-		LOG(glogfd, LOG_ERROR, "get_self_role ERR!\n");
-		fprintf(stderr, "get_self_role ERR!\n");
-		char buf[128] = {0x0};
-		snprintf(buf, sizeof(buf), "VFS Start ERROR, get_self_role ERR!");
-		SetStr(VFS_START_ERR, buf);
-		goto error;
-	}
-	ICALL(init_load_tmp_status);
-	if (self_ipinfo.role != ROLE_VOSS_MASTER)
-		ICALL(init_vfs_agent);
-	char *srole = iprole[self_ipinfo.role];
-	LOG(glogfd, LOG_NORMAL, "MY ROLE is %s\n", srole);
 
 	t_thread_arg arg;
 	memset(&arg, 0, sizeof(arg));
-	snprintf(arg.name, sizeof(arg.name), "./vfs_%s_sig.so", srole);
 	LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg.name);
-	arg.port = g_config.sig_port;
+	snprintf(arg.name, sizeof(arg.name), "./ott_server.so");
+	arg.port = 80;
 	arg.maxevent = myconfig_get_intval("vfs_sig_maxevent", 4096);
 	if (init_vfs_thread(&arg))
 		goto error;
-	if (self_ipinfo.role > UNKOWN && self_ipinfo.role < ROLE_TRACKER)
-	{
-		t_thread_arg arg1;
-		memset(&arg1, 0, sizeof(arg1));
-		snprintf(arg1.name, sizeof(arg1.name), "./vfs_data.so");
-		LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg1.name);
-		arg1.port = g_config.data_port;
-		arg1.flag = 1;
-		arg1.maxevent = myconfig_get_intval("vfs_data_maxevent", 4096);
-		if (init_vfs_thread(&arg1))
-			goto error;
-	}
-	if (self_ipinfo.role == ROLE_FCS)
-		ICALL(init_fcs_time_stamp);
-	if (self_ipinfo.role == ROLE_CS)
-		ICALL(init_cs_time_stamp);
+	t_thread_arg arg1;
+	memset(&arg1, 0, sizeof(arg1));
+	snprintf(arg1.name, sizeof(arg1.name), "./ott_client.so");
+	LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg1.name);
+	arg1.maxevent = myconfig_get_intval("vfs_data_maxevent", 4096);
+	if (init_vfs_thread(&arg1))
+		goto error;
 	thread_jumbo_title();
-#endif
 	struct threadstat *thst = get_threadstat();
 	if(start_threads() < 0)
 		goto out;
@@ -203,7 +160,6 @@ out:
 	stop_threads();
 	myconfig_cleanup();
 	fini_fdinfo();
-	close_all_time_stamp();
 	printf("Server Stopped.\n");
 	return restart;
 error:

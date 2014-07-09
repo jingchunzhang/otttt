@@ -102,137 +102,17 @@ int get_info(char *buf,  int len)
 
 int set_dirtime(StringPairList *pairlist, char *buf, int len)
 {
-	if (self_ipinfo.role != ROLE_CS && ROLE_FCS != self_ipinfo.role)
-	{
-		LOG(vfs_agent_log, LOG_ERROR, "role [%s] need not %s\n", iprole[self_ipinfo.role], FUNC);
-		return snprintf(buf, len, "role [%s] need not %s\n", iprole[self_ipinfo.role], FUNC);
-	}
-	char *p;
-	int i = 0;
-	int n = 0;
-	int ol = 0;
-    for (i = 0; i < pairlist->iLast; i++ )
-	{
-		char *key = pairlist->pStrPairList[i].sFirst;
-		char *val = pairlist->pStrPairList[i].sSecond;
-		if(strcasecmp(key, "vfs_cmd") == 0)
-			continue;
-		p = pairlist->pStrPairList[i].sSecond;
-		n = strlen(pairlist->pStrPairList[i].sSecond);
-		while(--n)
-		{
-			if(*p == '\r' || *p == '\n')
-			{
-				*p = 0;
-				break;
-			}
-			p++;
-		}
-		int d1 = atoi(key);
-		p = strchr(key, ',');
-		if (p == NULL)
-		{
-			LOG(vfs_agent_log, LOG_ERROR, "err data format %s=%s\n", key, val);
-			continue;
-		}
-		p++;
-		int d2 = atoi(p);
-		time_t tval = get_time_t (val);
-		time_t oval = 0;
-		if (self_ipinfo.role == ROLE_CS)
-		{
-			p = strchr(p, ',');
-			if (p == NULL)
-			{
-				LOG(vfs_agent_log, LOG_ERROR, "err data format %s=%s\n", key, val);
-				continue;
-			}
-			p++;
-			int domain = atoi(p);
-			oval = get_cs_time_stamp_by_int(d1, d2, domain);
-			set_cs_time_stamp_by_int(d1, d2, domain, tval);
-			char stime[16] = {0x0};
-			get_strtime_by_t(stime, oval);
-			LOG(vfs_agent_log, LOG_NORMAL, "set cs %s = %s(%ld), old %s(%ld)\n", key, val, tval, stime, oval);
-			if (ol < len)
-				ol += snprintf(buf+ol, len-ol, "set cs %s=%s(%ld),old %s(%ld)", key, val, tval, stime, oval);
-			continue;
-		}
-		if (self_ipinfo.role == ROLE_FCS)
-		{
-			oval = get_fcs_time_stamp_by_int(d1, d2);
-			set_fcs_time_stamp_by_int(d1, d2, tval);
-			char stime[16] = {0x0};
-			get_strtime_by_t(stime, oval);
-			LOG(vfs_agent_log, LOG_NORMAL, "set fcs %s = %s(%ld), old %s(%ld)\n", key, val, tval, stime, oval);
-			if (ol < len)
-				ol += snprintf(buf+ol, len-ol, "set fcs %s=%s(%ld),old %s(%ld) ", key, val, tval, stime, oval);
-			continue;
-		}
-	}
-	ol += snprintf(buf+ol, len-ol, "\n");
-	return ol;
+	return 0;
 }
 
 int get_cs_dirtime(char *buf, int len)
 {
-	int i = 0;
-	int ol = 0;
-	for (i = 0; i < MAXDIR_FOR_CS; i++)
-	{
-		LOG(vfs_agent_log, LOG_DEBUG, "%d process dir %s\n", i, self_ipinfo.dirs[i]);
-		if (strlen(self_ipinfo.dirs[i]) == 0)
-			return ol;
-		char *p = self_ipinfo.dirs[i];
-		int d1 = atoi(p);
-		p = strchr(p, '/');
-		if (p == NULL)
-		{
-			LOG(vfs_agent_log, LOG_ERROR, "dir [%s] err %s\n", self_ipinfo.dirs[i], FUNC);
-			continue;
-		}
-		int d2 = atoi(p+1);
-		int fcs = 0;
-		while (1)
-		{
-			fcs = get_next_fcs(fcs, ISP_FCS);
-			if (fcs == -1)
-				break;
-			time_t oval = get_cs_time_stamp_by_int(d1, d2, fcs);
-			if (oval <= 0)
-				continue;
-			char stime[16] = {0x0};
-			get_strtime_by_t(stime, oval);
-			if (ol < len)
-				ol += snprintf(buf + ol, len - ol, "%d,%d,fcs%d.56.com = %s(%ld) ", d1, d2, fcs, stime, oval);
-			else
-				return ol;
-		}
-	}
-	return ol;
+	return 0;
 }
 
 int get_fcs_dirtime(char *buf, int len)
 {
-	int i = 0;
-	int j = 0;
-	int ol = 0;
-	for (i = 0; i < DIR1; i++)
-	{
-		for (j = 0; j < DIR2; j++)
-		{
-			time_t oval = get_fcs_time_stamp_by_int(i, j);
-			if (oval <= 0)
-				continue;
-			char stime[16] = {0x0};
-			get_strtime_by_t(stime, oval);
-			if (ol < len)
-				ol += snprintf(buf + ol, len - ol, "%d,%d = %s(%ld) ", i, j, stime, oval);
-			else
-				return ol;
-		}
-	}
-	return ol;
+	return 0;
 }
 
 int get_dirtime(char *buf, int len)

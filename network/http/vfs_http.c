@@ -151,6 +151,7 @@ static int get_file_from_src(char *fname, char *data, int len)
 	snprintf(task->base.srcip, sizeof(task->base.srcip), "%s", srcip);
 	strncpy(task->base.data, data, len);
 	strcpy(task->base.filename, fname);
+	add_task_to_alltask(task0);
 	vfs_set_task(task0, TASK_WAIT);
 	return 0;
 }

@@ -3,7 +3,7 @@ CXX=g++
 INC+= -I../ -I../../lib  -I../../3rdlib 
 LIB+=-lpthread  -L../../lib -lvfs   
 CFLAGS+= -g -O2 -pipe -Wall -fno-strict-aliasing -D_GNU_SOURCE -D_REENTRANT -D_FILE_OFFSET_BITS=64 -fPIC -shared #-z defs
-TARGET=vfs_http.so
+TARGET=ott_server.so
 ALL:$(TARGET)
 
 OBJ=vfs_http.o 

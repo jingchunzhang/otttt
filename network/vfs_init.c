@@ -977,7 +977,7 @@ int vfs_init()
 		LOG(glogfd, LOG_ERROR, "reload_cfg error %m\n");
 		return -1;
 	}
-	return init_file_filter();
+	return 0;
 }
 
 int add_ip_info(t_ip_info *ipinfo)

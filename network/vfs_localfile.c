@@ -94,7 +94,6 @@ int delete_localfile(t_task_base *task)
 		LOG(glogfd, LOG_ERROR, "file [%s] rename [%s]err %m\n", outdir, rmfile);
 		return LOCALFILE_RENAME_E;
 	}
-	add_2_del_file (task);
 	t_vfs_timer vfs_timer;
 	memset(&vfs_timer, 0, sizeof(vfs_timer));
 	snprintf(vfs_timer.args, sizeof(vfs_timer.args), "%s", rmfile);
@@ -220,8 +219,6 @@ int close_tmp_check_mv(t_task_base *task, int fd)
 		LOG(glogfd, LOG_ERROR, "rename %s to %s err %m\n", task->tmpfile, dstfile);
 		return LOCALFILE_RENAME_E;
 	}
-	if (self_ipinfo.role == ROLE_CS)
-		set_cs_time_stamp(task);
 	if (chown(dstfile, g_config.dir_uid, g_config.dir_gid))
 		LOG(glogfd, LOG_ERROR, "chown [%s] %d %d [%m][%d]!\n", dstfile, g_config.dir_uid, g_config.dir_gid, errno);
 	return LOCALFILE_OK;
@@ -281,57 +278,5 @@ int get_localfile_stat(t_task_base *task)
 		return LOCALFILE_DIR_E;
 	}
 	return LOCALFILE_OK;
-}
-
-static time_t get_dir_lasttime(char *path)
-{
-	time_t now = time(NULL) - g_config.reload_time;
-	DIR *dp;
-	struct dirent *dirp;
-	if ((dp = opendir(path)) == NULL) 
-	{
-		LOG(glogfd, LOG_ERROR, "opendir %s err  %m\n", path);
-		return now;
-	}
-	LOG(glogfd, LOG_TRACE, "opendir %s ok \n", path);
-	time_t maxtime = 0;
-	while((dirp = readdir(dp)) != NULL) 
-	{
-		if (dirp->d_name[0] == '.')
-			continue;
-		char file[256] = {0x0};
-		snprintf(file, sizeof(file), "%s/%s", path, dirp->d_name);
-		if (check_file_filter(dirp->d_name))
-			continue;
-
-		struct stat filestat;
-		if(stat(file, &filestat) < 0) 
-		{
-			LOG(glogfd, LOG_ERROR, "stat error,filename:%s\n", file);
-			continue;
-		}
-		if (filestat.st_ctime >= maxtime)
-			maxtime = filestat.st_ctime;
-	}
-	closedir(dp);
-	if (maxtime)
-		return maxtime;
-	return now;
-}
-
-time_t get_fcs_dir_lasttime(int d1, int d2)
-{
-	char outdir[256] = {0x0};
-	char *datadir = myconfig_get_value("vfs_fcs_datadir");
-	sprintf(outdir, "%s/%d/%d/", datadir, d1, d2);
-	return get_dir_lasttime(outdir);
-}
-
-time_t get_cs_dir_lasttime(int d1, int d2, int domain)
-{
-	char outdir[256] = {0x0};
-	char *datadir = myconfig_get_value("vfs_cs_datadir");
-	sprintf(outdir, "%s/%d/%d/fcs%d.56.com/flvdownload/", datadir, d1, d2, domain);
-	return get_dir_lasttime(outdir);
 }
 

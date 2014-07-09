@@ -390,7 +390,6 @@ void check_task_timeout(t_vfs_tasklist *task)
 		if (task->status != TASK_CLEAN && task->task.user &&(ROLE_CS == self_ipinfo.role || ROLE_TRACKER == self_ipinfo.role))
 		{
 			t_tmp_status *tmp = task->task.user;
-			set_tmp_blank(tmp->pos, tmp);
 			task->task.user = NULL;
 		}
 		atomic_dec(&(taskcount[task->status]));
