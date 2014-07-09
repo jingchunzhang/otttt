@@ -189,32 +189,6 @@ int init_global()
 			g_config.mindiskfree = i * unit_size;
 	}
 
-	char *v = myconfig_get_value("vfs_path");
-	if (v == NULL)
-		v = "/home/vfs/path";
-
-	char path[256] = {0x0};
-	for( i = 0; i < PATH_MAXDIR; i++)
-	{
-		memset(path, 0, sizeof(path));
-		snprintf(path, sizeof(path), "%s/%s", v, path_dirs[i]);
-		if (access(path, R_OK|W_OK|X_OK) == 0)
-			continue;
-		if (mkdir(path, 0755))
-		{
-			LOG(glogfd, LOG_ERROR, "err mkdir %s %m\n", path);
-			return -1;
-		}
-	}
-	snprintf(g_config.path, sizeof(g_config.path), "%s", v);
-	v = myconfig_get_value("vfs_sync_starttime");
-	if (v == NULL)
-		v = "01:00:00";
-	snprintf(g_config.sync_stime, sizeof(g_config.sync_stime), "%s", v);
-	v = myconfig_get_value("vfs_sync_endtime");
-	if (v == NULL)
-		v = "09:00:00";
-	snprintf(g_config.sync_etime, sizeof(g_config.sync_etime), "%s", v);
 	return 0;
 }
 
@@ -857,33 +831,11 @@ int reload_cfg()
 			list_add_head(&(server->hlist), &iphome);
 		}
 	}
-	init_cs_isp();
-	if (init_csinfo())
-	{
-		LOG(glogfd, LOG_ERROR, "init_csinfo error %m\n");
-		return -1;
-	}
-	if (init_tracker())
-	{
-		LOG(glogfd, LOG_ERROR, "init_tracker error %m\n");
-		return -1;
-	}
-	if (init_fcs(ISP_FCS))
-	{
-		LOG(glogfd, LOG_ERROR, "init_fcs error %m\n");
-		return -1;
-	}
-	if (init_voss())
-	{
-		LOG(glogfd, LOG_ERROR, "init_voss error %m\n");
-		return -1;
-	}
 	if (pthread_rwlock_unlock(&init_rwmutex))
 	{
 		LOG(glogfd, LOG_ERROR, "ERR %s:%d pthread_rwlock_unlock error %m\n", FUNC, LN);
 		report_err_2_nm(ID, FUNC, LN, ret);
 	}
-	refresh_offline();
 	return 0;
 }
 
