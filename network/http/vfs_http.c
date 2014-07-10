@@ -27,17 +27,17 @@ int vfs_http_log = -1;
 
 int svc_init() 
 {
-	char *logname = myconfig_get_value("log_data_logname");
+	char *logname = myconfig_get_value("log_server_logname");
 	if (!logname)
 		logname = "../log/http_log.log";
 
-	char *cloglevel = myconfig_get_value("log_data_loglevel");
-	int loglevel = LOG_NORMAL;
+	char *cloglevel = myconfig_get_value("log_server_loglevel");
+	int loglevel = LOG_DEBUG;
 	if (cloglevel)
 		loglevel = getloglevel(cloglevel);
-	int logsize = myconfig_get_intval("log_data_logsize", 100);
-	int logintval = myconfig_get_intval("log_data_logtime", 3600);
-	int lognum = myconfig_get_intval("log_data_lognum", 10);
+	int logsize = myconfig_get_intval("log_server_logsize", 100);
+	int logintval = myconfig_get_intval("log_server_logtime", 3600);
+	int lognum = myconfig_get_intval("log_server_lognum", 10);
 	vfs_http_log = registerlog(logname, loglevel, logsize, logintval, lognum);
 	if (vfs_http_log < 0)
 		return -1;
