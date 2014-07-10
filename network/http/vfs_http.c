@@ -29,7 +29,7 @@ int svc_init()
 {
 	char *logname = myconfig_get_value("log_data_logname");
 	if (!logname)
-		logname = "./http_log.log";
+		logname = "../log/http_log.log";
 
 	char *cloglevel = myconfig_get_value("log_data_loglevel");
 	int loglevel = LOG_NORMAL;
@@ -153,6 +153,7 @@ static int get_file_from_src(char *fname, char *data, int len)
 	strcpy(task->base.filename, fname);
 	add_task_to_alltask(task0);
 	vfs_set_task(task0, TASK_WAIT);
+	LOG(vfs_http_log, LOG_NORMAL, "fname[%s:%s] do_newtask ok!\n", fname, srcip);
 	return 0;
 }
 

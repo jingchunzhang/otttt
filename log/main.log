@@ -44,3 +44,28 @@
 [35m[1m[DEBUG]:[7413][2014-07-09 22:52:07]vfs_so.c:vfs_signalling_thread:404
 [35m[1m[DEBUG]:[7412][2014-07-09 22:52:07]vfs_so.c:vfs_signalling_thread:404
 [32m[1m[NORMAL]:[7407][2014-07-09 22:53:09]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=0|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  0
+[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]vfs run in no continue_flag mode !
+[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]vfs run in normal mode !
+[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]task_timeout = 86400
+[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]args [] add into delay [60] [1404989109] [1404989049]
+[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]init_task_info ok!
+[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]prepare start 
+[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]vfs_init.c:init_vfs_thread:1051
+[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]prepare start ./ott_client.so
+[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]vfs_init.c:init_vfs_thread:1051
+[35m[1m[DEBUG]:[32169][2014-07-10 18:44:09]./ott_server.so listen on 80
+[35m[1m[DEBUG]:[32169][2014-07-10 18:44:09]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[32170][2014-07-10 18:44:09]vfs_so.c:vfs_signalling_thread:404
+[32m[1m[NORMAL]:[32164][2014-07-10 18:45:11]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=0|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  0
+[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]vfs run in no continue_flag mode !
+[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]vfs run in normal mode !
+[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]task_timeout = 86400
+[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]args [] add into delay [60] [1404989231] [1404989171]
+[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]init_task_info ok!
+[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]prepare start 
+[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]vfs_init.c:init_vfs_thread:1051
+[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]prepare start ./ott_client.so
+[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]vfs_init.c:init_vfs_thread:1051
+[35m[1m[DEBUG]:[32312][2014-07-10 18:46:11]./ott_server.so listen on 80
+[35m[1m[DEBUG]:[32312][2014-07-10 18:46:11]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[32313][2014-07-10 18:46:11]vfs_so.c:vfs_signalling_thread:404
