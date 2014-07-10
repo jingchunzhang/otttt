@@ -192,28 +192,10 @@ void check_task()
 			vfs_set_task(task, TASK_FIN);  
 			continue;
 		}
-		if (check_localfile_md5(base, VIDEOFILE) == LOCALFILE_OK)
-		{
-			base->overstatus = OVER_OK;
-			vfs_set_task(task, TASK_FIN);  
-			continue;
-		}
 		t_ip_info ipinfo0;
 		t_ip_info *ipinfo = &ipinfo0;
 		vfs_cs_peer *peer = NULL;
 		find_ip_stat(str2ip(base->srcip), &peer, CON_ACTIVE, IDLE);
-		if(check_disk_space(base) != DISK_OK)
-		{
-			LOG(vfs_sig_log, LOG_DEBUG, "%s:%d filename[%s] DISK NOT ENOUGH SPACE!\n", ID, LN, base->filename);
-			if (DISK_SPACE_TOO_SMALL == check_disk_space(base))
-				vfs_set_task(task, TASK_WAIT_TMP);
-			else
-			{
-				base->overstatus = OVER_E_OPEN_DSTFILE;
-				vfs_set_task(task, TASK_FIN);
-			}
-			continue;
-		}
 
 		if (peer == NULL)
 		{
