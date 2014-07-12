@@ -104,6 +104,21 @@ static int check_request(int fd, char* data, int len)
 		return -1;
 }
 
+static int getsize(char *fname)
+{
+	FILE *fp = fopen(fname, "r");
+	if (fp == NULL)
+	{
+		LOG(vfs_http_log, LOG_ERROR, "open %s err %m\n", fname);
+		return -1;
+	}
+
+	char buf[64] = {0x0};
+	fgets(buf, sizeof(buf), fp);
+	fclose(fp);
+	return atol(buf);
+}
+
 static int handle_request(int cfd) 
 {
 	
@@ -114,19 +129,21 @@ static int handle_request(int cfd)
 	
 	struct conn *c = &acon[cfd];
 	http_peer *peer = (http_peer *) c->user;
-	sprintf(filename, "./%s", peer->fname);
+	sprintf(filename, "%s/%s", g_config.docroot, peer->fname);
 	LOG(vfs_http_log, LOG_NORMAL, "file = %s\n", filename);
 	
 	fd = open(filename, O_RDONLY);
 	if(fd > 0) {
-		fstat(fd, &st);
+		strcat(filename, ".size");
+		st.st_size = getsize(filename);
+		if (st.st_size <= 0)
+			fstat(fd, &st);
 		sprintf(httpheader, "HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: %u\r\n\r\n", (unsigned)st.st_size);
 		
 	}
 	else {
 		sprintf(httpheader, "HTTP/1.1 404 File Not Found\r\n\r\n");	
 	}
-	//c->close_imme = 1; //发送完回复包后主动关闭连接	
 	if(fd > 0)
 	{
 		set_client_data(cfd, httpheader, strlen(httpheader));

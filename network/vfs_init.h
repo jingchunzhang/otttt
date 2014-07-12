@@ -82,6 +82,7 @@ typedef struct {
 	time_t task_timeout;
 	time_t real_rm_time;
 	uint64_t mindiskfree;
+	char docroot[128];
 	char path[256];
 	char sync_stime[12];
 	char sync_etime[12];

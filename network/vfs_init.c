@@ -154,6 +154,10 @@ int init_global()
 	}
 	g_config.dir_uid = atoi(buf);
 	g_config.dir_gid = atoi(t+1);
+	char *docroot = myconfig_get_value("docroot");
+	if (docroot == NULL)
+		snprintf(g_config.docroot, sizeof(g_config.docroot), "/ott/docroot");
+	snprintf(g_config.docroot, sizeof(g_config.docroot), "%s", docroot);
 
 	reload_config();
 	char *v_domain = myconfig_get_value("domain_prefix");
