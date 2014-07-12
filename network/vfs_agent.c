@@ -3,7 +3,6 @@
 * 
 * 56VFS may be copied only under the terms of the GNU General Public License V3
 */
-
 #include "common.h"
 #include "thread.h"
 #include "vfs_agent.h"
@@ -66,7 +65,6 @@ void get_data_from_task(t_vfs_tasklist *task)
 		list_del_init(&(task->llist));
 		if (task->status != TASK_CLEAN && task->task.user &&(ROLE_CS == self_ipinfo.role || ROLE_TRACKER == self_ipinfo.role))
 		{
-			t_tmp_status *tmp = task->task.user;
 			task->task.user = NULL;
 		}
 		atomic_dec(&(taskcount[task->status]));
