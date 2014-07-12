@@ -23,7 +23,16 @@
 #include "vfs_task.h"
 #include "common.h"
 
+typedef struct {
+	list_head_t alist;
+	char fname[256];
+	int fd;
+	uint32_t hbtime;
+	int nostandby; // 1: delay process 
+} http_peer;
+
 int vfs_http_log = -1;
+static list_head_t activelist;  //”√¿¥ºÏ≤‚≥¨ ±
 
 int svc_init() 
 {
@@ -41,6 +50,7 @@ int svc_init()
 	vfs_http_log = registerlog(logname, loglevel, logsize, logintval, lognum);
 	if (vfs_http_log < 0)
 		return -1;
+	INIT_LIST_HEAD(&activelist);
 	LOG(vfs_http_log, LOG_DEBUG, "svc_init init log ok!\n");
 	return 0;
 }
@@ -50,12 +60,18 @@ int svc_initconn(int fd)
 	LOG(vfs_http_log, LOG_DEBUG, "%s:%s:%d\n", ID, FUNC, LN);
 	struct conn *curcon = &acon[fd];
 	if (curcon->user == NULL)
-		curcon->user = malloc(1024);
+		curcon->user = malloc(sizeof(http_peer));
 	if (curcon->user == NULL)
 	{
 		LOG(vfs_http_log, LOG_ERROR, "malloc err %m\n");
 		return RET_CLOSE_MALLOC;
 	}
+	memset(curcon->user, 0, sizeof(http_peer));
+	http_peer * peer = (http_peer *)curcon->user;
+	peer->hbtime = time(NULL);
+	peer->fd = fd;
+	INIT_LIST_HEAD(&(peer->alist));
+	list_move_tail(&(peer->alist), &activelist);
 	LOG(vfs_http_log, LOG_DEBUG, "a new fd[%d] init ok!\n", fd);
 	return 0;
 }
@@ -187,6 +203,11 @@ static int check_req(int fd)
 		if (check_task_from_alltask(c->user))
 			if (get_file_from_src(c->user, data, clen))
 				return RECV_CLOSE;
+		struct conn *curcon = &acon[fd];
+		http_peer *peer = (http_peer *) curcon->user;
+		peer->nostandby = 1;
+		peer->hbtime = time(NULL);
+		snprintf(peer->fname, sizeof(peer->fname), "%s", 
 		return SEND_SUSPEND;
 	}
 }
