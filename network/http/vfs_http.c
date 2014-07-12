@@ -80,8 +80,9 @@ static int check_request(int fd, char* data, int len)
 {
 	if(len < 14)
 		return 0;
-		
+
 	struct conn *c = &acon[fd];
+	http_peer *peer = (http_peer *) c->user;
 	if(!strncmp(data, "GET /", 5)) {
 		char* p;
 		if((p = strstr(data + 5, "\r\n\r\n")) != NULL) {
@@ -90,8 +91,7 @@ static int check_request(int fd, char* data, int len)
 			if((q = strstr(data + 5, " HTTP/")) != NULL) {
 				len = q - data - 5;
 				if(len < 1023) {
-					strncpy(c->user, data + 5, len);	
-					((char*)c->user)[len] = '\0';
+					strncpy(peer->fname, data + 5, len);	
 					return p - data + 4;
 				}
 			}
@@ -113,7 +113,8 @@ static int handle_request(int cfd)
 	struct stat st;
 	
 	struct conn *c = &acon[cfd];
-	sprintf(filename, "./%s", (char*)c->user);
+	http_peer *peer = (http_peer *) c->user;
+	sprintf(filename, "./%s", peer->fname);
 	LOG(vfs_http_log, LOG_NORMAL, "file = %s\n", filename);
 	
 	fd = open(filename, O_RDONLY);
@@ -207,7 +208,6 @@ static int check_req(int fd)
 		http_peer *peer = (http_peer *) curcon->user;
 		peer->nostandby = 1;
 		peer->hbtime = time(NULL);
-		snprintf(peer->fname, sizeof(peer->fname), "%s", 
 		return SEND_SUSPEND;
 	}
 }
