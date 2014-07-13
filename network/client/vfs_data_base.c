@@ -192,13 +192,6 @@ void check_task()
 			vfs_set_task(task, TASK_FIN);  
 			continue;
 		}
-		t_ip_info ipinfo0;
-		t_ip_info *ipinfo = &ipinfo0;
-		vfs_cs_peer *peer = NULL;
-		find_ip_stat(str2ip(base->srcip), &peer, CON_ACTIVE, IDLE);
-
-		if (peer == NULL)
-		{
 			active_connect(ipinfo);
 			char *peerhost = base->srcip;
 

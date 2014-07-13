@@ -1,71 +1,13 @@
-[32m[1m[NORMAL]:[7157][2014-07-09 22:48:52]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7157][2014-07-09 22:48:52]vfs run in normal mode !
-[32m[1m[NORMAL]:[7157][2014-07-09 22:48:52]task_timeout = 86400
-[31m[1m[ERROR]:[7157][2014-07-09 22:48:52]err mkdir /home/vfs/path/indir No such file or directory
-[32m[1m[NORMAL]:[7283][2014-07-09 22:50:09]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7283][2014-07-09 22:50:09]vfs run in normal mode !
-[32m[1m[NORMAL]:[7283][2014-07-09 22:50:09]task_timeout = 86400
-[31m[1m[ERROR]:[7283][2014-07-09 22:50:09]open /home/syncfile/fcs_list_archive1.txt err No such file or directory
-[31m[1m[ERROR]:[7283][2014-07-09 22:50:09]opendir /home/syncfile err  No such file or directory
-[31m[1m[ERROR]:[7283][2014-07-09 22:50:09]init_csinfo error No such file or directory
-[31m[1m[ERROR]:[7283][2014-07-09 22:50:09]reload_cfg error No such file or directory
-[32m[1m[NORMAL]:[7346][2014-07-09 22:51:19]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7346][2014-07-09 22:51:19]vfs run in normal mode !
-[32m[1m[NORMAL]:[7346][2014-07-09 22:51:19]task_timeout = 86400
-[35m[1m[DEBUG]:[7346][2014-07-09 22:51:19]args [] add into delay [60] [1404917539] [1404917479]
-[35m[1m[DEBUG]:[7346][2014-07-09 22:51:19]init_task_info ok!
-[32m[1m[NORMAL]:[7346][2014-07-09 22:51:19]prepare start 
-[35m[1m[DEBUG]:[7346][2014-07-09 22:51:19]vfs_init.c:init_vfs_thread:1051
-[32m[1m[NORMAL]:[7346][2014-07-09 22:51:19]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[7346][2014-07-09 22:51:19]vfs_init.c:init_vfs_thread:1051
-[35m[1m[DEBUG]:[7352][2014-07-09 22:51:19]vfs_so.c:vfs_signalling_thread:404
-[31m[1m[ERROR]:[7351][2014-07-09 22:51:19]get_listen_sock err 80
-[32m[1m[NORMAL]:[7373][2014-07-09 22:51:43]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7373][2014-07-09 22:51:43]vfs run in normal mode !
-[32m[1m[NORMAL]:[7373][2014-07-09 22:51:43]task_timeout = 86400
-[35m[1m[DEBUG]:[7373][2014-07-09 22:51:43]args [] add into delay [60] [1404917563] [1404917503]
-[35m[1m[DEBUG]:[7373][2014-07-09 22:51:43]init_task_info ok!
-[32m[1m[NORMAL]:[7373][2014-07-09 22:51:43]prepare start 
-[35m[1m[DEBUG]:[7373][2014-07-09 22:51:43]vfs_init.c:init_vfs_thread:1051
-[32m[1m[NORMAL]:[7373][2014-07-09 22:51:43]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[7373][2014-07-09 22:51:43]vfs_init.c:init_vfs_thread:1051
-[35m[1m[DEBUG]:[7379][2014-07-09 22:51:43]vfs_so.c:vfs_signalling_thread:404
-[31m[1m[ERROR]:[7378][2014-07-09 22:51:43]get_listen_sock err 80
-[32m[1m[NORMAL]:[7407][2014-07-09 22:52:07]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7407][2014-07-09 22:52:07]vfs run in normal mode !
-[32m[1m[NORMAL]:[7407][2014-07-09 22:52:07]task_timeout = 86400
-[35m[1m[DEBUG]:[7407][2014-07-09 22:52:07]args [] add into delay [60] [1404917587] [1404917527]
-[35m[1m[DEBUG]:[7407][2014-07-09 22:52:07]init_task_info ok!
-[32m[1m[NORMAL]:[7407][2014-07-09 22:52:07]prepare start 
-[35m[1m[DEBUG]:[7407][2014-07-09 22:52:07]vfs_init.c:init_vfs_thread:1051
-[32m[1m[NORMAL]:[7407][2014-07-09 22:52:07]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[7407][2014-07-09 22:52:07]vfs_init.c:init_vfs_thread:1051
-[35m[1m[DEBUG]:[7412][2014-07-09 22:52:07]./ott_server.so listen on 80
-[35m[1m[DEBUG]:[7413][2014-07-09 22:52:07]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[7412][2014-07-09 22:52:07]vfs_so.c:vfs_signalling_thread:404
-[32m[1m[NORMAL]:[7407][2014-07-09 22:53:09]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=0|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  0
-[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]vfs run in normal mode !
-[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]task_timeout = 86400
-[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]args [] add into delay [60] [1404989109] [1404989049]
-[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]init_task_info ok!
-[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]prepare start 
-[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]vfs_init.c:init_vfs_thread:1051
-[32m[1m[NORMAL]:[32164][2014-07-10 18:44:09]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[32164][2014-07-10 18:44:09]vfs_init.c:init_vfs_thread:1051
-[35m[1m[DEBUG]:[32169][2014-07-10 18:44:09]./ott_server.so listen on 80
-[35m[1m[DEBUG]:[32169][2014-07-10 18:44:09]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[32170][2014-07-10 18:44:09]vfs_so.c:vfs_signalling_thread:404
-[32m[1m[NORMAL]:[32164][2014-07-10 18:45:11]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=0|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  0
-[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]vfs run in normal mode !
-[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]task_timeout = 86400
-[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]args [] add into delay [60] [1404989231] [1404989171]
-[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]init_task_info ok!
-[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]prepare start 
-[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]vfs_init.c:init_vfs_thread:1051
-[32m[1m[NORMAL]:[32307][2014-07-10 18:46:11]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[32307][2014-07-10 18:46:11]vfs_init.c:init_vfs_thread:1051
-[35m[1m[DEBUG]:[32312][2014-07-10 18:46:11]./ott_server.so listen on 80
-[35m[1m[DEBUG]:[32312][2014-07-10 18:46:11]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[32313][2014-07-10 18:46:11]vfs_so.c:vfs_signalling_thread:404
+[32m[1m[NORMAL]:[11074][2014-07-12 22:24:13]vfs run in no continue_flag mode !
+[32m[1m[NORMAL]:[11074][2014-07-12 22:24:13]vfs run in normal mode !
+[32m[1m[NORMAL]:[11074][2014-07-12 22:24:13]task_timeout = 86400
+[35m[1m[DEBUG]:[11074][2014-07-12 22:24:13]args [] add into delay [60] [1405175113] [1405175053]
+[35m[1m[DEBUG]:[11074][2014-07-12 22:24:13]init_task_info ok!
+[32m[1m[NORMAL]:[11074][2014-07-12 22:24:13]prepare start 
+[35m[1m[DEBUG]:[11074][2014-07-12 22:24:13]vfs_init.c:init_vfs_thread:525
+[32m[1m[NORMAL]:[11074][2014-07-12 22:24:13]prepare start ./ott_client.so
+[35m[1m[DEBUG]:[11074][2014-07-12 22:24:13]vfs_init.c:init_vfs_thread:525
+[35m[1m[DEBUG]:[11080][2014-07-12 22:24:13]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[11079][2014-07-12 22:24:13]./ott_server.so listen on 80
+[35m[1m[DEBUG]:[11079][2014-07-12 22:24:13]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[11079][2014-07-12 22:24:18]fd [10] [127.0.0.1]set ok 10

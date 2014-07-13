@@ -39,5 +39,5 @@ $(TARGET):$(OBJ)
 %.o: %.c
 	$(CC)  $(CFLAGS) $(INC) -c -o $@ $< 	 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) *.so
 	rm -f $(TARGET) 	

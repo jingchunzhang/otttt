@@ -1,15 +1,11 @@
-[32m[1m[NORMAL]:[7352][2014-07-09 22:51:19]svc_init init log ok!
-[32m[1m[NORMAL]:[7352][2014-07-09 22:51:19]not proxy mode!
-[35m[1m[DEBUG]:[7351][2014-07-09 22:51:19]svc_init init log ok!
-[35m[1m[DEBUG]:[7378][2014-07-09 22:51:43]svc_init init log ok!
-[32m[1m[NORMAL]:[7379][2014-07-09 22:51:43]svc_init init log ok!
-[32m[1m[NORMAL]:[7379][2014-07-09 22:51:43]not proxy mode!
-[35m[1m[DEBUG]:[7412][2014-07-09 22:52:07]svc_init init log ok!
-[32m[1m[NORMAL]:[7413][2014-07-09 22:52:07]svc_init init log ok!
-[32m[1m[NORMAL]:[7413][2014-07-09 22:52:07]not proxy mode!
-[35m[1m[DEBUG]:[32169][2014-07-10 18:44:09]svc_init init log ok!
-[32m[1m[NORMAL]:[32170][2014-07-10 18:44:09]svc_init init log ok!
-[32m[1m[NORMAL]:[32170][2014-07-10 18:44:09]not proxy mode!
-[35m[1m[DEBUG]:[32312][2014-07-10 18:46:11]svc_init init log ok!
-[32m[1m[NORMAL]:[32313][2014-07-10 18:46:11]svc_init init log ok!
-[32m[1m[NORMAL]:[32313][2014-07-10 18:46:11]not proxy mode!
+[32m[1m[NORMAL]:[11080][2014-07-12 22:24:13]svc_init init log ok!
+[32m[1m[NORMAL]:[11080][2014-07-12 22:24:13]not proxy mode!
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:19]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:21]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:23]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:25]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:27]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:29]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:31]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:33]connect :49716 err Connection refused
+[31m[1m[ERROR]:[11080][2014-07-12 22:24:35]connect :49716 err Connection refused
