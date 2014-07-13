@@ -37,6 +37,7 @@ typedef struct {
 	char tmpfile[256];
 	char data[1024];
 	char srcip[16];
+	int  srcport;
 	off_t fsize;
 	off_t getlen;
 	time_t stime;

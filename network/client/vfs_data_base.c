@@ -18,119 +18,23 @@ static inline int isDigit(const char *ptr)
 	return isdigit(*(unsigned char *)ptr);
 }
 
-static int establish_proxy_connection(int fd, char *host, int port, char *proxy_user, char *proxy_pass)
+static int active_connect(char *ip, int port)
 {
-	char *cp, buffer[1024] = {0x0};
-	char *authhdr, authbuf[1024] = {0x0};
-	int len;
-
-	if (strlen(proxy_user) && strlen(proxy_pass)) {
-		LOG(vfs_sig_log, LOG_NORMAL, "authentication information \n");
-		snprintf(buffer, sizeof(buffer), "%s:%s", proxy_user, proxy_pass);
-		len = strlen(buffer);
-
-		if ((len*8 + 5) / 6 >= (int)sizeof authbuf - 3) {
-			LOG(vfs_sig_log, LOG_ERROR, "authentication information is too long\n");
-			return -1;
-		}
-
-		base64_encode(buffer, len, authbuf, 1);
-		authhdr = "\r\nProxy-Authorization: Basic ";
-	} else {
-		*authbuf = '\0';
-		authhdr = "";
-	}
-
-	snprintf(buffer, sizeof buffer, "CONNECT %s:%d HTTP/1.1%s%s\r\n\r\n",
-		 host, port, authhdr, authbuf);
-	len = strlen(buffer);
-	if (write(fd, buffer, len) != len) {
-		LOG(vfs_sig_log, LOG_ERROR, "failed to write to proxy");
-		return -1;
-	}
-
-	for (cp = buffer; cp < &buffer[sizeof buffer - 1]; cp++) {
-		if (read(fd, cp, 1) != 1) {
-			LOG(vfs_sig_log, LOG_ERROR, "failed to read from proxy");
-			return -1;
-		}
-		if (*cp == '\n')
-			break;
-	}
-
-	if (*cp != '\n')
-		cp++;
-	*cp-- = '\0';
-	if (*cp == '\r')
-		*cp = '\0';
-	if (strncmp(buffer, "HTTP/", 5) != 0) {
-		LOG(vfs_sig_log, LOG_ERROR, "bad response from proxy -- %s\n", buffer);
-		return -1;
-	}
-	for (cp = &buffer[5]; isDigit(cp) || *cp == '.'; cp++) {}
-	while (*cp == ' ')
-		cp++;
-	if (*cp != '2') {
-		LOG(vfs_sig_log, LOG_ERROR, "bad response from proxy -- %s\n", buffer);
-		return -1;
-	}
-	/* throw away the rest of the HTTP header */
-	while (1) {
-		for (cp = buffer; cp < &buffer[sizeof buffer - 1]; cp++) {
-			if (read(fd, cp, 1) != 1) {
-				LOG(vfs_sig_log, LOG_ERROR, "failed to read from proxy %m");
-				return -1;
-			}
-			if (*cp == '\n')
-				break;
-		}
-		if (cp > buffer && *cp == '\n')
-			cp--;
-		if (cp == buffer && (*cp == '\n' || *cp == '\r'))
-			break;
-	}
-	return 0;
-}
-
-static void active_connect(t_ip_info *ipinfo)
-{
-	char *t = ipinfo->s_ip;
-	int port = g_config.data_port;
-	if (g_proxyed)
-	{
-		t = g_proxy.host;
-		port = g_proxy.port;
-	}
-	int fd = createsocket(t, port);
+	int fd = createsocket(ip, port);
 	if (fd < 0)
 	{
-		char val[256] = {0x0};
-		snprintf(val, sizeof(val), "%s connect %s:%d err %m\n", self_ipinfo.sip, t, port);
-		SetStr(VFS_STR_CONNECT_E, val);
-		LOG(vfs_sig_log, LOG_ERROR, "connect %s:%d err %m\n", t, port);
-		return;
-	}
-	if (g_proxyed)
-	{
-		if (establish_proxy_connection(fd, ipinfo->s_ip, g_config.data_port, g_proxy.username, g_proxy.password))
-		{
-			LOG(vfs_sig_log, LOG_ERROR, "establish_proxy_connection err %m!\n");
-			close(fd);
-			return;
-		}
+		LOG(vfs_sig_log, LOG_ERROR, "connect %s:%d err %m\n", ip, port);
+		return -1;
 	}
 	if (svc_initconn(fd))
 	{
 		LOG(vfs_sig_log, LOG_ERROR, "svc_initconn err %m\n");
 		close(fd);
-		return;
+		return -1;
 	}
 	add_fd_2_efd(fd);
-	LOG(vfs_sig_log, LOG_NORMAL, "connect %s:%d\n", t, port);
-	struct conn *curcon = &acon[fd];
-	vfs_cs_peer *peer = (vfs_cs_peer *) curcon->user;
-	peer->sock_stat = IDLE;
-	peer->mode = CON_ACTIVE;
+	LOG(vfs_sig_log, LOG_NORMAL, "connect %s:%d\n", ip, port);
+	return fd;
 }
 
 /*find 活动链接信息 */
@@ -192,32 +96,14 @@ void check_task()
 			vfs_set_task(task, TASK_FIN);  
 			continue;
 		}
-			active_connect(ipinfo);
-			char *peerhost = base->srcip;
-
-			if (find_ip_stat(str2ip(peerhost), &peer, CON_ACTIVE, IDLE) != 0)
-			{
-				vfs_set_task(task, TASK_WAIT_TMP);
-				continue;
-			}
-		}
 		if (g_config.vfs_test)
 		{
 			base->overstatus = OVER_OK;
 			vfs_set_task(task, TASK_FIN);
 			continue;
 		}
-		t_vfs_sig_head h;
-		t_vfs_sig_body b;
-		base->getlen = 0;
-		h.bodylen = sizeof(t_task_base);
-		memcpy(b.body, base, sizeof(t_task_base));
-		h.cmdid = CMD_GET_FILE_REQ;
-		h.status = FILE_SYNC_DST_2_SRC;
-		active_send(peer, &h, &b);
-		peer->sock_stat = PREPARE_RECVFILE;
-		vfs_set_task(task, TASK_RECV);
-		peer->recvtask = task;
+		int fd = active_connect(base->srcip, base->srcport);
+		active_send(fd, base->data);
 	}
 }
 
