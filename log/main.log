@@ -1,33 +1,26 @@
-[32m[1m[NORMAL]:[7231][2014-07-16 14:32:19]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7231][2014-07-16 14:32:19]vfs run in normal mode !
-[32m[1m[NORMAL]:[7231][2014-07-16 14:32:19]task_timeout = 86400
-[35m[1m[DEBUG]:[7231][2014-07-16 14:32:19]args [] add into delay [60] [1405492399] [1405492339]
-[35m[1m[DEBUG]:[7231][2014-07-16 14:32:19]init_task_info ok!
-[32m[1m[NORMAL]:[7231][2014-07-16 14:32:19]prepare start 
-[35m[1m[DEBUG]:[7231][2014-07-16 14:32:19]vfs_init.c:init_vfs_thread:525
-[32m[1m[NORMAL]:[7231][2014-07-16 14:32:19]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[7231][2014-07-16 14:32:19]vfs_init.c:init_vfs_thread:525
-[35m[1m[DEBUG]:[7237][2014-07-16 14:32:19]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[7236][2014-07-16 14:32:19]./ott_server.so listen on 80
-[35m[1m[DEBUG]:[7236][2014-07-16 14:32:19]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[7236][2014-07-16 14:32:38]fd [9] [127.0.0.1]set ok 9
-[35m[1m[DEBUG]:[7237][2014-07-16 14:32:59]fd [10] [119.167.152.46]set ok 10
-[32m[1m[NORMAL]:[7237][2014-07-16 14:32:59]fd[10] send len 325, datalen 325
-[31m[1m[ERROR]:[7237][2014-07-16 14:32:59]chown [/ott/docroot/youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv] 99 99 [No such file or directory][2]!
-[32m[1m[NORMAL]:[7292][2014-07-16 14:36:24]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[7292][2014-07-16 14:36:24]vfs run in normal mode !
-[32m[1m[NORMAL]:[7292][2014-07-16 14:36:24]task_timeout = 86400
-[35m[1m[DEBUG]:[7292][2014-07-16 14:36:24]args [] add into delay [60] [1405492644] [1405492584]
-[35m[1m[DEBUG]:[7292][2014-07-16 14:36:24]init_task_info ok!
-[32m[1m[NORMAL]:[7292][2014-07-16 14:36:24]prepare start 
-[35m[1m[DEBUG]:[7292][2014-07-16 14:36:24]vfs_init.c:init_vfs_thread:525
-[32m[1m[NORMAL]:[7292][2014-07-16 14:36:24]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[7292][2014-07-16 14:36:24]vfs_init.c:init_vfs_thread:525
-[35m[1m[DEBUG]:[7298][2014-07-16 14:36:24]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[7297][2014-07-16 14:36:24]./ott_server.so listen on 80
-[35m[1m[DEBUG]:[7297][2014-07-16 14:36:24]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[7297][2014-07-16 14:36:30]fd [9] [127.0.0.1]set ok 9
-[32m[1m[NORMAL]:[7297][2014-07-16 14:36:30]fd[9] send len 85, datalen 85
-[31m[1m[ERROR]:[7297][2014-07-16 14:36:36]fd[9] close vfs_so.c:279!
-[35m[1m[DEBUG]:[7297][2014-07-16 14:36:36]vfs_so.c:do_close:147 close fd 9
-[35m[1m[DEBUG]:[7297][2014-07-16 14:36:36]fd 9 already be closed do_send
+[32m[1m[NORMAL]:[7498][2014-07-16 14:40:22]vfs run in no continue_flag mode !
+[32m[1m[NORMAL]:[7498][2014-07-16 14:40:22]vfs run in normal mode !
+[32m[1m[NORMAL]:[7498][2014-07-16 14:40:22]task_timeout = 86400
+[35m[1m[DEBUG]:[7498][2014-07-16 14:40:22]args [] add into delay [60] [1405492882] [1405492822]
+[35m[1m[DEBUG]:[7498][2014-07-16 14:40:22]init_task_info ok!
+[32m[1m[NORMAL]:[7498][2014-07-16 14:40:22]prepare start 
+[35m[1m[DEBUG]:[7498][2014-07-16 14:40:22]vfs_init.c:init_vfs_thread:525
+[32m[1m[NORMAL]:[7498][2014-07-16 14:40:22]prepare start ./ott_client.so
+[35m[1m[DEBUG]:[7498][2014-07-16 14:40:22]vfs_init.c:init_vfs_thread:525
+[35m[1m[DEBUG]:[7504][2014-07-16 14:40:22]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[7503][2014-07-16 14:40:22]./ott_server.so listen on 80
+[35m[1m[DEBUG]:[7503][2014-07-16 14:40:22]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[7503][2014-07-16 14:40:31]fd [9] [127.0.0.1]set ok 9
+[35m[1m[DEBUG]:[7504][2014-07-16 14:40:32]fd [10] [119.167.152.46]set ok 10
+[32m[1m[NORMAL]:[7504][2014-07-16 14:40:32]fd[10] send len 325, datalen 325
+[31m[1m[ERROR]:[7504][2014-07-16 14:40:32]chown [/ott/docroot/youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv] 99 99 [No such file or directory][2]!
+[32m[1m[NORMAL]:[7498][2014-07-16 14:41:24]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=0|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  0
+[31m[1m[ERROR]:[7504][2014-07-16 14:41:58]fd[10] close vfs_so.c:316!
+[35m[1m[DEBUG]:[7504][2014-07-16 14:41:58]vfs_so.c:do_close:147 close fd 10
+[32m[1m[NORMAL]:[7498][2014-07-16 14:42:26]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
+[31m[1m[ERROR]:[7503][2014-07-16 14:42:37]fd[9] close vfs_so.c:279!
+[35m[1m[DEBUG]:[7503][2014-07-16 14:42:37]vfs_so.c:do_close:147 close fd 9
+[35m[1m[DEBUG]:[7503][2014-07-16 14:42:39]fd [9] [127.0.0.1]set ok 9
+[32m[1m[NORMAL]:[7503][2014-07-16 14:42:39]fd[9] send len 85, datalen 85
+[31m[1m[ERROR]:[7503][2014-07-16 14:42:39]fd[9] close vfs_so.c:279!
+[35m[1m[DEBUG]:[7503][2014-07-16 14:42:39]vfs_so.c:do_close:147 close fd 9

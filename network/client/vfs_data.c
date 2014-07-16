@@ -217,7 +217,7 @@ int svc_recv(int fd)
 recvfileing:
 	peer->hbtime = time(NULL);
 	list_move_tail(&(peer->alist), &activelist);
-	LOG(vfs_sig_log, LOG_DEBUG, "fd[%d] sock stat %d!\n", fd, peer->sock_stat);
+	LOG(vfs_sig_log, LOG_TRACE, "fd[%d] sock stat %d!\n", fd, peer->sock_stat);
 	if (peer->sock_stat == RECV_BODY_ING)
 	{
 		LOG(vfs_sig_log, LOG_TRACE, "%s:%s:%d\n", ID, FUNC, LN);
