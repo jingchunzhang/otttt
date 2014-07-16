@@ -1,68 +1,40 @@
-[32m[1m[NORMAL]:[8518][2014-07-16 16:07:04]vfs run in no continue_flag mode !
-[32m[1m[NORMAL]:[8518][2014-07-16 16:07:04]vfs run in normal mode !
-[32m[1m[NORMAL]:[8518][2014-07-16 16:07:04]task_timeout = 86400
-[35m[1m[DEBUG]:[8518][2014-07-16 16:07:04]args [] add into delay [60] [1405498084] [1405498024]
-[35m[1m[DEBUG]:[8518][2014-07-16 16:07:04]init_task_info ok!
-[32m[1m[NORMAL]:[8518][2014-07-16 16:07:04]prepare start 
-[35m[1m[DEBUG]:[8518][2014-07-16 16:07:04]vfs_init.c:init_vfs_thread:525
-[32m[1m[NORMAL]:[8518][2014-07-16 16:07:04]prepare start ./ott_client.so
-[35m[1m[DEBUG]:[8518][2014-07-16 16:07:04]vfs_init.c:init_vfs_thread:525
-[35m[1m[DEBUG]:[8524][2014-07-16 16:07:04]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[8523][2014-07-16 16:07:04]./ott_server.so listen on 80
-[35m[1m[DEBUG]:[8523][2014-07-16 16:07:04]vfs_so.c:vfs_signalling_thread:404
-[35m[1m[DEBUG]:[8523][2014-07-16 16:07:14]fd [9] [127.0.0.1]set ok 9
-[35m[1m[DEBUG]:[8524][2014-07-16 16:07:16]fd [10] [119.167.152.46]set ok 10
-[32m[1m[NORMAL]:[8524][2014-07-16 16:07:16]fd[10] send len 325, datalen 325
-[31m[1m[ERROR]:[8524][2014-07-16 16:07:16]chown [/ott/docroot/youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv] 99 99 [No such file or directory][2]!
-[32m[1m[NORMAL]:[8523][2014-07-16 16:07:16]fd[9] send len 85, datalen 85
-[32m[1m[NORMAL]:[8518][2014-07-16 16:08:06]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=0|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  0
-[31m[1m[ERROR]:[8524][2014-07-16 16:08:38]fd[10] close vfs_so.c:316!
-[35m[1m[DEBUG]:[8524][2014-07-16 16:08:38]vfs_so.c:do_close:147 close fd 10
-[31m[1m[ERROR]:[8523][2014-07-16 16:08:39]fd[9] close vfs_so.c:279!
-[35m[1m[DEBUG]:[8523][2014-07-16 16:08:39]vfs_so.c:do_close:147 close fd 9
-[32m[1m[NORMAL]:[8518][2014-07-16 16:09:08]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:10:10]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:11:12]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:12:14]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:13:16]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:14:18]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:15:20]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:16:22]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:17:24]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:18:26]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:19:28]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:20:30]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:21:32]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:22:34]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:23:36]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:24:38]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:25:40]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:26:42]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:27:43]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:28:45]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:29:47]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[35m[1m[DEBUG]:[8523][2014-07-16 16:30:39]fd [9] [127.0.0.1]set ok 9
-[32m[1m[NORMAL]:[8523][2014-07-16 16:30:39]fd[9] send len 85, datalen 85
-[31m[1m[ERROR]:[8523][2014-07-16 16:30:39]fd[9] close vfs_so.c:279!
-[35m[1m[DEBUG]:[8523][2014-07-16 16:30:39]vfs_so.c:do_close:147 close fd 9
-[32m[1m[NORMAL]:[8518][2014-07-16 16:30:49]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:31:51]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:32:53]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:33:55]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:34:57]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:35:59]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:37:01]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:38:03]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:39:05]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:40:07]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:41:09]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:42:11]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:43:13]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:44:15]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:45:17]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:46:19]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:47:21]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:48:23]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:49:25]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:50:27]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
-[32m[1m[NORMAL]:[8518][2014-07-16 16:51:29]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
+[32m[1m[NORMAL]:[2736][2014-07-16 18:49:25]vfs run in no continue_flag mode !
+[32m[1m[NORMAL]:[2736][2014-07-16 18:49:25]vfs run in normal mode !
+[32m[1m[NORMAL]:[2736][2014-07-16 18:49:25]task_timeout = 86400
+[35m[1m[DEBUG]:[2736][2014-07-16 18:49:25]args [] add into delay [60] [1405507825] [1405507765]
+[35m[1m[DEBUG]:[2736][2014-07-16 18:49:25]init_task_info ok!
+[32m[1m[NORMAL]:[2736][2014-07-16 18:49:25]prepare start 
+[35m[1m[DEBUG]:[2736][2014-07-16 18:49:25]vfs_init.c:init_vfs_thread:525
+[32m[1m[NORMAL]:[2736][2014-07-16 18:49:25]prepare start ./ott_client.so
+[35m[1m[DEBUG]:[2736][2014-07-16 18:49:25]vfs_init.c:init_vfs_thread:525
+[35m[1m[DEBUG]:[2742][2014-07-16 18:49:25]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[2741][2014-07-16 18:49:25]./ott_server.so listen on 80
+[35m[1m[DEBUG]:[2741][2014-07-16 18:49:25]vfs_so.c:vfs_signalling_thread:404
+[35m[1m[DEBUG]:[2741][2014-07-16 18:49:30]fd [9] [127.0.0.1]set ok 9
+[35m[1m[DEBUG]:[2742][2014-07-16 18:49:31]fd [10] [119.167.152.46]set ok 10
+[32m[1m[NORMAL]:[2742][2014-07-16 18:49:31]fd[10] send len 320, datalen 320
+[31m[1m[ERROR]:[2742][2014-07-16 18:49:31]fd[10] close vfs_so.c:316!
+[35m[1m[DEBUG]:[2742][2014-07-16 18:49:31]vfs_so.c:do_close:147 close fd 10
+[32m[1m[NORMAL]:[2736][2014-07-16 18:50:27]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
+[32m[1m[NORMAL]:[2736][2014-07-16 18:51:29]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
+[32m[1m[NORMAL]:[2736][2014-07-16 18:52:31]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
+[32m[1m[NORMAL]:[2736][2014-07-16 18:53:33]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=1|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  1
+[35m[1m[DEBUG]:[2741][2014-07-16 18:53:45]fd [10] [127.0.0.1]set ok 10
+[35m[1m[DEBUG]:[2742][2014-07-16 18:53:45]fd [11] [119.188.38.101]set ok 11
+[32m[1m[NORMAL]:[2742][2014-07-16 18:53:45]fd[11] send len 319, datalen 319
+[31m[1m[ERROR]:[2742][2014-07-16 18:53:45]chown [/ott/docroot/youku/6758166804183086DDF865F9/030002010053C2A92EE789003E8803B3993E77-ABFA-B688-0116-47B8C4EBC636.flv] 99 99 [No such file or directory][2]!
+[31m[1m[ERROR]:[2742][2014-07-16 18:53:46]fd[11] close vfs_so.c:316!
+[35m[1m[DEBUG]:[2742][2014-07-16 18:53:46]vfs_so.c:do_close:147 close fd 11
+[32m[1m[NORMAL]:[2741][2014-07-16 18:53:47]fd[10] send len 83, datalen 83
+[31m[1m[ERROR]:[2741][2014-07-16 18:53:47]fd[10] close vfs_so.c:279!
+[35m[1m[DEBUG]:[2741][2014-07-16 18:53:47]vfs_so.c:do_close:147 close fd 10
+[32m[1m[NORMAL]:[2736][2014-07-16 18:54:35]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=2|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  2
+[35m[1m[DEBUG]:[2741][2014-07-16 18:55:31]vfs_so.c:do_close:147 close fd 9
+[35m[1m[DEBUG]:[2741][2014-07-16 18:55:32]fd [9] [127.0.0.1]set ok 9
+[32m[1m[NORMAL]:[2736][2014-07-16 18:55:37]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=2|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  2
+[31m[1m[ERROR]:[2741][2014-07-16 18:56:30]fd[9] close vfs_so.c:279!
+[35m[1m[DEBUG]:[2741][2014-07-16 18:56:30]vfs_so.c:do_close:147 close fd 9
+[32m[1m[NORMAL]:[2736][2014-07-16 18:56:39]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=2|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  2
+[32m[1m[NORMAL]:[2736][2014-07-16 18:57:41]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=2|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  2
+[32m[1m[NORMAL]:[2736][2014-07-16 18:58:43]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=2|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  2
+[32m[1m[NORMAL]:[2736][2014-07-16 18:59:45]report 2 nm vfs_test=0|task_timeout=86400|task_run=0|task_wait=0|task_fin=2|task_clean=0|task_wait_sync=0|task_wait_sync_ip=0|task_wait_tmp=0|  2

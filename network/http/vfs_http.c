@@ -231,11 +231,15 @@ int svc_recv(int fd)
 
 int svc_send(int fd)
 {
+	struct conn *curcon = &acon[fd];
+	http_peer *peer = (http_peer *) curcon->user;
+	peer->hbtime = time(NULL);
 	return SEND_ADD_EPOLLIN;
 }
 
 void svc_timeout()
 {
+	time_t now = time(NULL);
 	http_peer *peer = NULL;
 	list_head_t *l;
 	list_for_each_entry_safe_l(peer, l, &activelist, alist)
@@ -249,6 +253,11 @@ void svc_timeout()
 				peer->nostandby = 0;
 				modify_fd_event(peer->fd, EPOLLOUT);
 			}
+			else
+			{
+				if (now - peer->hbtime > g_config.timeout)
+					do_close(peer->fd);
+			}
 		}
 	}
 }
@@ -256,4 +265,9 @@ void svc_timeout()
 void svc_finiconn(int fd)
 {
 	LOG(vfs_http_log, LOG_DEBUG, "close %d\n", fd);
+	struct conn *curcon = &acon[fd];
+	if (curcon->user == NULL)
+		return;
+	http_peer *peer = (http_peer *) curcon->user;
+	list_del_init(&(peer->alist));
 }
