@@ -147,40 +147,30 @@ int open_localfile_4_read(t_task_base *task, int *fd)
 	return LOCALFILE_OK;
 }
 
-int open_tmp_localfile_4_write(t_task_base *task, int *fd)
+int open_tmp_localfile_4_write(t_task_base *task, int *fd, off_t fsize)
 {
 	char outdir[256] = {0x0};
-
-	if (get_localdir(task, outdir))
-		return LOCALFILE_DIR_E;
-	strcat(outdir, ".svn/");
-	if (access(outdir, F_OK) != 0)
-	{
-		LOG(glogfd, LOG_DEBUG, "dir %s not exist, try create !\n", outdir);
-		if (createdir(outdir))
-		{
-			LOG(glogfd, LOG_ERROR, "dir %s create %m!\n", outdir);
-			return LOCALFILE_DIR_E;
-		}
-	}
-	char *t = strrchr(task->filename, '/');
-	if (t == NULL)
-		return LOCALFILE_DIR_E;
-	t++;
-	strcat(outdir, ".");
-	strcat(outdir, t);
-	char tmpstr[32] = {0x0};
-	get_tmpstr(tmpstr, sizeof(tmpstr));
-	strcat(outdir, tmpstr);
-	strcat(outdir, ".vfs");
+	snprintf(outdir, sizeof(outdir), "%s/%s", g_config.docroot, task->filename);
 	*fd = open(outdir, O_CREAT | O_RDWR | O_LARGEFILE, 0644);
 	if (*fd < 0)
 	{
 		LOG(glogfd, LOG_ERROR, "open %s err %m\n", outdir);
 		return LOCALFILE_OPEN_E;
 	}
-	memset(task->tmpfile, 0, sizeof(task->tmpfile));
-	snprintf(task->tmpfile, sizeof(task->tmpfile), "%s", outdir);
+
+	strcat(outdir, ".size");
+	int tfd = open(outdir, O_CREAT | O_RDWR | O_LARGEFILE, 0644);
+	if(tfd < 0)
+	{
+		LOG(glogfd, LOG_ERROR, "open %s err %m\n", outdir);
+		close(*fd);
+		return LOCALFILE_OPEN_E;
+	}
+
+	char buf[64] = {0x0};
+	snprintf(buf, sizeof(buf), "%ld\n", fsize);
+	write(tfd, buf, strlen(buf));
+	close(tfd);
 	return LOCALFILE_OK;
 }
 
@@ -192,35 +182,6 @@ int close_tmp_check_mv(t_task_base *task, int fd)
 		return LOCALFILE_OPEN_E;
 	}
 	close(fd);
-	int ret = check_localfile_md5(task, VIDEOTMP);
-	if (ret != LOCALFILE_OK)
-	{
-		LOG(glogfd, LOG_ERROR, "check_localfile_md5 ERR %s\n", task->filename);
-		return ret;
-	}
-
-	char outdir[256] = {0x0};
-	if (get_localdir(task, outdir))
-	{
-		LOG(glogfd, LOG_ERROR, "get_localdir ERR %s\n", task->filename);
-		return LOCALFILE_DIR_E;
-	}
-	char *t = strrchr(task->filename, '/');
-	if (t == NULL)
-	{
-		LOG(glogfd, LOG_ERROR, "LOCALFILE_DIR_E ERR %s\n", task->filename);
-		return LOCALFILE_DIR_E;
-	}
-	t++;
-	char dstfile[256] = {0x0};
-	snprintf(dstfile, sizeof(dstfile), "%s/%s", outdir, t);
-	if (rename(task->tmpfile, dstfile))
-	{
-		LOG(glogfd, LOG_ERROR, "rename %s to %s err %m\n", task->tmpfile, dstfile);
-		return LOCALFILE_RENAME_E;
-	}
-	if (chown(dstfile, g_config.dir_uid, g_config.dir_gid))
-		LOG(glogfd, LOG_ERROR, "chown [%s] %d %d [%m][%d]!\n", dstfile, g_config.dir_uid, g_config.dir_gid, errno);
 	return LOCALFILE_OK;
 }
 

@@ -22,7 +22,7 @@
 
 #define SELF_ROLE ROLE_CS
 
-enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};
+enum SOCK_STAT {LOGOUT = 0, CONNECTED, RECV_HEAD_ING, RECV_BODY_ING};
 
 extern const char *sock_stat_cmd[] ;
 
@@ -35,7 +35,6 @@ typedef struct {
 	uint32_t ip;
 	uint32_t headlen; /*当前传输文件的头信息长度*/
 	uint8_t sock_stat;   /* SOCK_STAT */
-	uint8_t server_stat; /* server stat*/
 	t_vfs_tasklist *recvtask; /*当前数据链路正在执行的数据接收任务 */
 } vfs_cs_peer;
 

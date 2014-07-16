@@ -84,6 +84,10 @@ void check_task()
 		}
 		int fd = active_connect(base->srcip, base->srcport);
 		active_send(fd, base->data);
+		struct conn *curcon = &acon[fd];
+		vfs_cs_peer *peer = (vfs_cs_peer *) curcon->user;
+		peer->recvtask = task;
+		peer->sock_stat = RECV_HEAD_ING;
 	}
 }
 

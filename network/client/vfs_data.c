@@ -216,8 +216,8 @@ int svc_recv(int fd)
 recvfileing:
 	peer->hbtime = time(NULL);
 	list_move_tail(&(peer->alist), &activelist);
-	LOG(vfs_sig_log, LOG_TRACE, "fd[%d] sock stat %s!\n", fd, sock_stat_cmd[peer->sock_stat]);
-	if (peer->sock_stat == RECVFILEING)
+	LOG(vfs_sig_log, LOG_TRACE, "fd[%d] sock stat %d!\n", fd, peer->sock_stat);
+	if (peer->sock_stat == RECV_BODY_ING)
 	{
 		LOG(vfs_sig_log, LOG_TRACE, "%s:%s:%d\n", ID, FUNC, LN);
 		char *data;
@@ -267,14 +267,7 @@ recvfileing:
 			}
 			peer->local_in_fd = -1;
 			peer->recvtask = NULL;
-			peer->sock_stat = IDLE;
-			if (g_proxyed)
-			{
-				LOG(vfs_sig_log, LOG_NORMAL, "work in proxy! short connect!\n");
-				return RECV_CLOSE;
-			}
-			else
-				return RECV_ADD_EPOLLIN;
+			return RECV_CLOSE;
 		}
 		else
 			return RECV_ADD_EPOLLIN;  /*no suffic data, need to get data more */
@@ -287,12 +280,9 @@ recvfileing:
 		subret = check_req(fd);
 		if (subret == -1)
 			break;
-		if (subret == RECV_ADD_EPOLLOUT)
-			return RECV_ADD_EPOLLOUT;
 		if (subret == RECV_CLOSE)
 			return RECV_CLOSE;
-
-		if (peer->sock_stat == RECVFILEING)
+		if (peer->sock_stat == RECV_BODY_ING)
 			goto recvfileing;
 	}
 	return ret;

@@ -28,7 +28,7 @@ int open_localfile_4_read(t_task_base *task, int *fd);
 /*
  *CS作为目的机器时，先在本地打开一个临时文件
  */
-int open_tmp_localfile_4_write(t_task_base *task, int *fd);
+int open_tmp_localfile_4_write(t_task_base *task, int *fd, off_t fsize);
 
 /*
  *CS作为目的机器时，文件传输完成后，关闭临时文件，校验并且mv到输出文件```
