@@ -32,7 +32,7 @@ static list_head_t online_list[256]; //用来快速定位查找
 int g_proxyed = 0;
 t_vfs_up_proxy g_proxy;
 int svc_initconn(int fd); 
-int active_send(vfs_cs_peer *peer, t_vfs_sig_head *h, t_vfs_sig_body *b);
+int active_send(int fd, char *data);
 const char *sock_stat_cmd[] = {"LOGOUT", "CONNECTED", "LOGIN", "IDLE", "PREPARE_RECVFILE", "RECVFILEING", "SENDFILEING", "LAST_STAT"};
 
 #include "vfs_data_base.c"

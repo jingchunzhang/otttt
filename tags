@@ -1,0 +1,1400 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADDONE_REQ	lib/protocol.h	32;"	d
+ADDONE_RSP	lib/protocol.h	33;"	d
+AGENT	3rdlib/TNmShm.h	/^enum {APP = 0, AGENT};$/;"	e	enum:__anon54
+ALL	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+ALLHOT	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+ALLMASK	network/vfs_init.h	33;"	d
+APHash	lib/GeneralHashFunctions.c	/^unsigned int APHash(char* str, unsigned int len)$/;"	f
+APP	3rdlib/TNmShm.h	/^enum {APP = 0, AGENT};$/;"	e	enum:__anon54
+ATOMIC_INIT	network/atomic.h	30;"	d
+Add	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Add(const int &keyno, const T *data)$/;"	f	class:TShmBuffer
+Alive	3rdlib/TShmBuffer.h	/^bool TShmBuffer<T>::Alive(void)$/;"	f	class:TShmBuffer
+Alloc	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Alloc(const key_t &key, int nhash, int nrec)$/;"	f	class:TShmBuffer
+BKDRHash	lib/GeneralHashFunctions.c	/^unsigned int BKDRHash(char* str, unsigned int len)$/;"	f
+BPHash	lib/GeneralHashFunctions.c	/^unsigned int BPHash(char* str, unsigned int len)$/;"	f
+BUFF_DATA	network/vfs_agent.h	16;"	d
+Begin	3rdlib/TShmBuffer.h	/^void TShmBuffer<T>::Begin()$/;"	f	class:TShmBuffer
+Bufsize	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Bufsize()$/;"	f	class:TShmBuffer
+CC	3rdlib/makefile	/^CC:=$(shell sh -c 'type $(CC) >\/dev\/null 2>\/dev\/null && echo $(CC) || echo gcc')$/;"	m
+CC	lib/makefile	/^CC:=$(shell sh -c 'type $(CC) >\/dev\/null 2>\/dev\/null && echo $(CC) || echo gcc')$/;"	m
+CC	network/client/makefile	/^CC=gcc$/;"	m
+CC	network/http/makefile	/^CC=gcc$/;"	m
+CC	network/makefile	/^CC=gcc$/;"	m
+CC	network/voss/makefile	/^CC=gcc$/;"	m
+CDC_ADD_NODE_ERR	3rdlib/nm_app_vfs.h	37;"	d
+CDC_NORMAL_ERR	3rdlib/nm_app_vfs.h	35;"	d
+CDC_SHM_INIT_ERR	3rdlib/nm_app_vfs.h	38;"	d
+CDC_TOO_MANY_IP	3rdlib/nm_app_vfs.h	36;"	d
+CMD_GET_FILE_REQ	lib/protocol.h	122;"	d
+CMD_GET_FILE_RSP	lib/protocol.h	123;"	d
+CMD_MASK	lib/pro_voss.h	13;"	d
+CNC	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+CONNECTED	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+CONNECTED	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+CONNETED	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+CON_ACTIVE	network/global.h	/^enum MODE {CON_PASSIVE = 0, CON_ACTIVE};$/;"	e	enum:MODE
+CON_PASSIVE	network/global.h	/^enum MODE {CON_PASSIVE = 0, CON_ACTIVE};$/;"	e	enum:MODE
+CXX	3rdlib/makefile	/^CXX=g++$/;"	m
+CXX	lib/makefile	/^CXX=g++$/;"	m
+CXX	network/client/makefile	/^CXX=g++$/;"	m
+CXX	network/http/makefile	/^CXX=g++$/;"	m
+CXX	network/makefile	/^CXX=g++$/;"	m
+CXX	network/voss/makefile	/^CXX=g++$/;"	m
+C_A_2_C	lib/protocol.h	64;"	d
+C_A_2_F	lib/protocol.h	65;"	d
+C_A_2_T	lib/protocol.h	63;"	d
+Clear	3rdlib/TShmBuffer.h	/^void TShmBuffer<T>::Clear(void)$/;"	f	class:TShmBuffer
+ConcatPairList	network/parsepara.c	/^StringPairList *ConcatPairList(StringPairList *p1, const StringPairList *p2)$/;"	f
+CreateStringPairList	network/parsepara.c	/^StringPairList *CreateStringPairList(int iListNum)$/;"	f
+DEBUG	3rdlib/makefile	/^DEBUG?= -g -ggdb$/;"	m
+DEBUG	lib/makefile	/^DEBUG?= -g -ggdb$/;"	m
+DEFAULT_ITEMS	network/vfs_tmp_status.h	24;"	d
+DEFAULT_MAX_LOG_NUM	lib/log.c	15;"	d	file:
+DEFAULT_SCORE	network/vfs_init.h	34;"	d
+DEKHash	lib/GeneralHashFunctions.c	/^unsigned int DEKHash(char* str, unsigned int len)$/;"	f
+DELAYCLOSE	lib/log.c	19;"	d	file:
+DIR1	network/global.h	69;"	d
+DIR2	network/global.h	70;"	d
+DISK_ERR	network/vfs_localfile.h	/^enum {DISK_OK = 0, DISK_SPACE_TOO_SMALL, DISK_ERR};$/;"	e	enum:__anon37
+DISK_OK	network/vfs_localfile.h	/^enum {DISK_OK = 0, DISK_SPACE_TOO_SMALL, DISK_ERR};$/;"	e	enum:__anon37
+DISK_SPACE_TOO_SMALL	network/vfs_localfile.h	/^enum {DISK_OK = 0, DISK_SPACE_TOO_SMALL, DISK_ERR};$/;"	e	enum:__anon37
+DJBHash	lib/GeneralHashFunctions.c	/^unsigned int DJBHash(char* str, unsigned int len)$/;"	f
+DOMAIN_PREFIX	network/vfs_task.h	19;"	d
+DecodePara	network/parsepara.c	/^int DecodePara(const char* sRequest,$/;"	f
+Delete	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Delete(SHM_DATA_STRU<T> *node)$/;"	f	class:TShmBuffer
+Destroy	3rdlib/TShmBuffer.h	/^void TShmBuffer<T>::Destroy()$/;"	f	class:TShmBuffer
+DestroyStringPairList	network/parsepara.c	/^void DestroyStringPairList(StringPairList *pList)$/;"	f
+Disconnect	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Disconnect()$/;"	f	class:TShmBuffer
+EDU	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+ELFHash	lib/GeneralHashFunctions.c	/^unsigned int ELFHash(char* str, unsigned int len)$/;"	f
+ENCODE_TABLE	network/parsepara.c	16;"	d	file:
+END	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+EXE_TASK	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+E_DATA_LEN	lib/protocol.h	/^enum {E_PACKET_ERR_CLOSE = -100, E_PRO_OK = 0, E_PRO_HEAD_LEN, E_PRO_TOTAL_LEN, E_DATA_LEN};$/;"	e	enum:__anon45
+E_NOT_SUFFIC	lib/pro_voss.h	/^enum RETCODE {OK = 0, E_NOT_SUFFIC, E_TOO_LONG};  \/*too long need close , reset socket*\/$/;"	e	enum:RETCODE
+E_PACKET_ERR_CLOSE	lib/protocol.h	/^enum {E_PACKET_ERR_CLOSE = -100, E_PRO_OK = 0, E_PRO_HEAD_LEN, E_PRO_TOTAL_LEN, E_DATA_LEN};$/;"	e	enum:__anon45
+E_PRO_HEAD_LEN	lib/protocol.h	/^enum {E_PACKET_ERR_CLOSE = -100, E_PRO_OK = 0, E_PRO_HEAD_LEN, E_PRO_TOTAL_LEN, E_DATA_LEN};$/;"	e	enum:__anon45
+E_PRO_OK	lib/protocol.h	/^enum {E_PACKET_ERR_CLOSE = -100, E_PRO_OK = 0, E_PRO_HEAD_LEN, E_PRO_TOTAL_LEN, E_DATA_LEN};$/;"	e	enum:__anon45
+E_PRO_TOTAL_LEN	lib/protocol.h	/^enum {E_PACKET_ERR_CLOSE = -100, E_PRO_OK = 0, E_PRO_HEAD_LEN, E_PRO_TOTAL_LEN, E_DATA_LEN};$/;"	e	enum:__anon45
+E_TOO_LONG	lib/pro_voss.h	/^enum RETCODE {OK = 0, E_NOT_SUFFIC, E_TOO_LONG};  \/*too long need close , reset socket*\/$/;"	e	enum:RETCODE
+EncodePara	network/parsepara.c	/^int EncodePara(const StringPairList *pPairList, $/;"	f
+Erase	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Erase(int keyno)$/;"	f	class:TShmBuffer
+F1	lib/md5.c	159;"	d	file:
+F2	lib/md5.c	160;"	d	file:
+F3	lib/md5.c	161;"	d	file:
+F4	lib/md5.c	162;"	d	file:
+FILE_DATA	network/vfs_agent.h	17;"	d
+FILE_SYNC_DST_2_SRC	lib/protocol.h	126;"	d
+FILE_SYNC_DST_2_SRC_ERR	lib/protocol.h	128;"	d
+FILE_SYNC_DST_2_SRC_E_DISK	lib/protocol.h	132;"	d
+FILE_SYNC_DST_2_SRC_E_EXIST	lib/protocol.h	131;"	d
+FILE_SYNC_DST_2_SRC_E_MALLOC	lib/protocol.h	134;"	d
+FILE_SYNC_DST_2_SRC_E_OPENFILE	lib/protocol.h	133;"	d
+FILE_SYNC_DST_2_SRC_E_SYNCING	lib/protocol.h	130;"	d
+FILE_SYNC_SRC_2_DST	lib/protocol.h	125;"	d
+FILE_SYNC_SRC_2_DST_ERR	lib/protocol.h	127;"	d
+FNVHash	lib/GeneralHashFunctions.c	/^unsigned int FNVHash(char* str, unsigned int len)$/;"	f
+FUNC	lib/common.h	25;"	d
+FUNC	network/global.h	19;"	d
+F_A_2_C	lib/protocol.h	67;"	d
+Find	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Find(const int &keyno, T *&result)$/;"	f	class:TShmBuffer
+GETLOGLEVEL	lib/log.c	47;"	d	file:
+GET_TASK_ERR	network/vfs_task.h	/^enum {GET_TASK_ERR = -1, GET_TASK_OK, GET_TASK_NOTHING};  \/*从指定队列取任务的结果*\/$/;"	e	enum:__anon10
+GET_TASK_NOTHING	network/vfs_task.h	/^enum {GET_TASK_ERR = -1, GET_TASK_OK, GET_TASK_NOTHING};  \/*从指定队列取任务的结果*\/$/;"	e	enum:__anon10
+GET_TASK_OK	network/vfs_task.h	/^enum {GET_TASK_ERR = -1, GET_TASK_OK, GET_TASK_NOTHING};  \/*从指定队列取任务的结果*\/$/;"	e	enum:__anon10
+GSIZE	network/vfs_so.h	15;"	d
+GetBinaryPara	network/parsepara.c	/^inline const char *GetBinaryPara($/;"	f
+GetKey	3rdlib/TShmBuffer.h	/^key_t TShmBuffer<T>::GetKey(void)$/;"	f	class:TShmBuffer
+GetParaValue	network/parsepara.c	/^inline const char * GetParaValue(const StringPairList *pPairList, $/;"	f
+GetShmId	3rdlib/TShmBuffer.h	/^unsigned int TShmBuffer<T>::GetShmId(void)$/;"	f	class:TShmBuffer
+HB_C_2_C	lib/protocol.h	55;"	d
+HB_C_2_F	lib/protocol.h	56;"	d
+HB_C_2_T	lib/protocol.h	54;"	d
+HB_RSP	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+HB_SEND	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+HB_T_2_F	lib/protocol.h	52;"	d
+HB_T_2_T	lib/protocol.h	53;"	d
+HEADSIZE	lib/pro_voss.h	39;"	d
+HEARTBEAT_REQ	lib/protocol.h	29;"	d
+HEARTBEAT_RSP	lib/protocol.h	30;"	d
+HS	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+ICALL	network/main.c	111;"	d	file:
+ID	lib/common.h	24;"	d
+ID	network/global.h	17;"	d
+IDLE	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+IDLE	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+INCLUDE_GENERALHASHFUNCTION_C_H	lib/GeneralHashFunctions.h	22;"	d
+INIT_LIST_HEAD	lib/list.h	30;"	d
+INVALID	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+ISP	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	g
+ISP_FCS	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+ISP_TRACKER	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+ISP_VOSS	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+IncInt	3rdlib/c_api.cpp	/^void IncInt(uint32_t key, uint32_t val)$/;"	f
+Init	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Init(const key_t &key, const int &mode)$/;"	f	class:TShmBuffer
+JSHash	lib/GeneralHashFunctions.c	/^unsigned int JSHash(char* str, unsigned int len)$/;"	f
+KeepAlive	3rdlib/TShmBuffer.h	/^void TShmBuffer<T>::KeepAlive(void)$/;"	f	class:TShmBuffer
+LAST_STAT	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+LIBNAME	3rdlib/makefile	/^LIBNAME=libnmshm$/;"	m
+LIBNAME	lib/makefile	/^LIBNAME=libvfs$/;"	m
+LINKSEND	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+LINKSTAT	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	g
+LINKTEST	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+LIST_HEAD	lib/list.h	27;"	d
+LIST_HEAD_INIT	lib/list.h	25;"	d
+LN	lib/common.h	26;"	d
+LN	network/global.h	18;"	d
+LOCALFILE_DIR_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_FILE_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_MD5_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_OK	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_OPEN_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_RENAME_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_SIZE_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_TMPFILE	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCALFILE_UNLINK_E	network/vfs_localfile.h	/^enum {LOCALFILE_OK = 0, LOCALFILE_TMPFILE, LOCALFILE_MD5_E, LOCALFILE_SIZE_E, LOCALFILE_DIR_E, LOCALFILE_FILE_E, LOCALFILE_OPEN_E, LOCALFILE_RENAME_E, LOCALFILE_UNLINK_E};$/;"	e	enum:__anon35
+LOCK	network/atomic.h	18;"	d
+LOCK	network/atomic.h	20;"	d
+LOG	lib/log.c	/^void LOG(int fd, int level, const char* fmt, ...) $/;"	f
+LOGIN	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+LOGIN	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+LOGON	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+LOGOUT	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+LOGOUT	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+LOG_DEBUG	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	e	enum:loglevel
+LOG_DEBUG	network/daemon.c	21;"	d	file:
+LOG_ERROR	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	e	enum:loglevel
+LOG_FAULT	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	e	enum:loglevel
+LOG_NONE	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	e	enum:loglevel
+LOG_NORMAL	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	e	enum:loglevel
+LOG_TRACE	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	e	enum:loglevel
+LoadFromFile	network/parsepara.c	/^int LoadFromFile(const char *sMsgFile, StringPair *pPairArr, const int iMaxNum)$/;"	f
+MAXBODYSIZE	lib/pro_voss.h	40;"	d
+MAXCS_ONEGRUOP	network/global.h	63;"	d
+MAXDIR_FOR_CS	network/global.h	64;"	d
+MAXFCS	network/global.h	67;"	d
+MAXISP	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+MAXSIG	network/global.h	62;"	d
+MAXTMPFILE	network/vfs_agent.c	29;"	d	file:
+MAXTRACKER	network/global.h	66;"	d
+MAX_LOG	lib/log.c	13;"	d	file:
+MAX_LOG_LEN	lib/log.c	14;"	d	file:
+MAX_NAME_LEN	network/parsepara.h	16;"	d
+MAX_RELOAD_KEY_NUM	lib/myconfig.c	39;"	d	file:
+MAX_SIG_BODY	lib/protocol.h	13;"	d
+MAX_VALUE_LEN	network/parsepara.h	17;"	d
+MD5Context	lib/md5.h	/^struct MD5Context {$/;"	s
+MD5Digest	lib/md5.c	/^void MD5Digest( const unsigned char *msg, int len, unsigned char *digest) {$/;"	f
+MD5Final	lib/md5.c	/^void MD5Final(unsigned char digest[16], struct MD5Context *ctx)$/;"	f
+MD5HMAC	lib/md5.c	/^void MD5HMAC (const unsigned char *password,  unsigned pass_len,$/;"	f
+MD5HMAC2	lib/md5.c	/^void MD5HMAC2 (const unsigned char *password,  unsigned pass_len,$/;"	f
+MD5Init	lib/md5.c	/^void MD5Init(struct MD5Context *ctx)$/;"	f
+MD5STEP	lib/md5.c	165;"	d	file:
+MD5Transform	lib/md5.c	/^static void MD5Transform(uint32_t buf[4], uint32_t const in[16])$/;"	f	file:
+MD5Update	lib/md5.c	/^void MD5Update(struct MD5Context *ctx, unsigned char const *buf, unsigned len)$/;"	f
+MIN_PAGESIZE	3rdlib/TNmShm.cpp	9;"	d	file:
+MLIB	lib/makefile	/^MLIB=$(LIB) libmnm.a$/;"	m
+MNM_INT	3rdlib/TNmShm.h	/^}MNM_INT;$/;"	t	typeref:struct:__anon52
+MNM_STR	3rdlib/TNmShm.h	/^}MNM_STR;$/;"	t	typeref:struct:__anon53
+MODE	network/global.h	/^enum MODE {CON_PASSIVE = 0, CON_ACTIVE};$/;"	g
+MP4	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+M_CONFUPDA	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_DELFILE	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_EXECUTE	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_GETDIRTIME	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_GETINFO	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_OFFLINE	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_ONLINE	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_SETDIRTIME	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_SYNCDIR	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+M_SYNCFILE	network/vfs_maintain.h	/^enum {M_ONLINE = 0, M_OFFLINE, M_GETINFO, M_SYNCDIR, M_SYNCFILE, M_CONFUPDA, M_SETDIRTIME, M_GETDIRTIME, M_DELFILE, M_EXECUTE, INVALID};$/;"	e	enum:__anon21
+NEWTASK_REQ	lib/protocol.h	82;"	d
+NEWTASK_RSP	lib/protocol.h	83;"	d
+NEWTRACKER4CS_REQ	lib/protocol.h	35;"	d
+NEWTRACKER4CS_RSP	lib/protocol.h	36;"	d
+NMSHM	3rdlib/TNmShm.cpp	/^NMSHM::NMSHM()$/;"	f	class:NMSHM
+NMSHM	3rdlib/TNmShm.h	/^class NMSHM$/;"	c
+NM_INC_VFS_BASE	3rdlib/nm_app_vfs.h	7;"	d
+NM_INT_VFS_BASE	3rdlib/nm_app_vfs.h	6;"	d
+NM_STR_CDC_BASE	3rdlib/nm_app_vfs.h	34;"	d
+NM_STR_VFS_BASE	3rdlib/nm_app_vfs.h	8;"	d
+NOWTIME	lib/log.c	18;"	d	file:
+NS	network/makefile	/^NS=vfs_master$/;"	m
+Next	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Next(const int &keyno, T *&result)$/;"	f	class:TShmBuffer
+Next	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Next(int *keyno, T *&result)$/;"	f	class:TShmBuffer
+OBJ	3rdlib/makefile	/^OBJ=TException.o TShareMem.o TNmShm.o c_api.o $/;"	m
+OBJ	lib/makefile	/^OBJ=log.o  util_ip.o myconfig.o md5.o util_hex.o util_misc.o util_str.o myepoll.o protocol.o acl.o common.o pro_voss.o GeneralHashFunctions.o$/;"	m
+OBJ	network/client/makefile	/^OBJ=vfs_data.o vfs_data_task.o$/;"	m
+OBJ	network/http/makefile	/^OBJ=vfs_http.o $/;"	m
+OBJ	network/makefile	/^OBJ= main.o	\\$/;"	m
+OBJ	network/voss/makefile	/^OBJ=vfs_voss.o$/;"	m
+OFF_LINE	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	e	enum:SERVER_STAT
+OK	lib/pro_voss.h	/^enum RETCODE {OK = 0, E_NOT_SUFFIC, E_TOO_LONG};  \/*too long need close , reset socket*\/$/;"	e	enum:RETCODE
+ON_LINE	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	e	enum:SERVER_STAT
+OPER_GET_REQ	network/vfs_task.h	/^enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};$/;"	e	enum:__anon6
+OPER_GET_RSP	network/vfs_task.h	/^enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};$/;"	e	enum:__anon6
+OPER_IDLE	network/vfs_task.h	/^enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};$/;"	e	enum:__anon6
+OPER_PUT	network/vfs_task.h	/^enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};$/;"	e	enum:__anon6
+OPTIMIZATION	3rdlib/makefile	/^OPTIMIZATION?=-O3$/;"	m
+OPTIMIZATION	lib/makefile	/^OPTIMIZATION?=-O3$/;"	m
+OVER_DISK_ERR	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_E_IP	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_E_MD5	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_E_OPEN_DSTFILE	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_E_OPEN_SRCFILE	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_E_TYPE	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_LAST	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_MALLOC	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_OK	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_PEERCLOSE	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_PEERERR	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_SEND_LEN	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_SRC_DOMAIN_ERR	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_SRC_IP_OFFLINE	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_TIMEOUT	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_TOO_MANY_TRY	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_UNKNOWN	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+OVER_UNLINK	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+PATH_BKDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PATH_INDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PATH_MAXDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PATH_OUTDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PATH_SYNCDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PATH_TMPDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PATH_WKDIR	network/vfs_init.h	/^enum {PATH_INDIR = 0, PATH_OUTDIR, PATH_WKDIR, PATH_BKDIR, PATH_TMPDIR, PATH_SYNCDIR, PATH_MAXDIR};$/;"	e	enum:__anon23
+PJWHash	lib/GeneralHashFunctions.c	/^unsigned int PJWHash(char* str, unsigned int len)$/;"	f
+PREFIX	network/vfs_agent.c	30;"	d	file:
+PREFIX_LEN	network/vfs_agent.c	31;"	d	file:
+PREPARE_RECVFILE	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+PREPARE_SENDFILE	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+PREPARE_SYNCFILE	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+PR_SET_NAME	lib/log.c	244;"	d	file:
+PR_SET_NAME	network/thread.c	64;"	d	file:
+PrintPairs	network/parsepara.c	/^void PrintPairs(StringPair *pPairArr)$/;"	f
+REAL_CFLAGS	3rdlib/makefile	/^REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG)$/;"	m
+REAL_CFLAGS	lib/makefile	/^REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG)$/;"	m
+REAL_LDFLAGS	3rdlib/makefile	/^REAL_LDFLAGS=$(LDFLAGS)$/;"	m
+REAL_LDFLAGS	lib/makefile	/^REAL_LDFLAGS=$(LDFLAGS)$/;"	m
+RECVFILEING	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+RECV_ADD_EPOLLALL	network/global.h	47;"	d
+RECV_ADD_EPOLLIN	network/global.h	45;"	d
+RECV_ADD_EPOLLOUT	network/global.h	46;"	d
+RECV_CLOSE	network/global.h	44;"	d
+RECV_LAST	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+RECV_SEND	network/global.h	48;"	d
+REQ_AUTH	lib/pro_voss.h	15;"	d
+REQ_CONF_UPDATE	lib/pro_voss.h	21;"	d
+REQ_HEARTBEAT	lib/pro_voss.h	30;"	d
+REQ_STOPVFS	lib/pro_voss.h	36;"	d
+REQ_SUBMIT	lib/pro_voss.h	18;"	d
+REQ_SYNC_DIR	lib/pro_voss.h	24;"	d
+REQ_SYNC_FILE	lib/pro_voss.h	27;"	d
+REQ_VFS_CMD	lib/pro_voss.h	33;"	d
+RETCODE	lib/pro_voss.h	/^enum RETCODE {OK = 0, E_NOT_SUFFIC, E_TOO_LONG};  \/*too long need close , reset socket*\/$/;"	g
+RET_CLOSE_DUP	network/global.h	60;"	d
+RET_CLOSE_HB	network/global.h	58;"	d
+RET_CLOSE_MALLOC	network/global.h	59;"	d
+RET_OK	network/global.h	56;"	d
+RET_SUCCESS	network/global.h	57;"	d
+ROLE	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	g
+ROLE_CS	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+ROLE_FCS	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+ROLE_MAX	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+ROLE_TRACKER	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+ROLE_VOSS_MASTER	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+RSHash	lib/GeneralHashFunctions.c	/^unsigned int RSHash(char* str, unsigned int len)$/;"	f
+RSP_AUTH	lib/pro_voss.h	16;"	d
+RSP_CONF_UPDATE	lib/pro_voss.h	22;"	d
+RSP_HEARTBEAT	lib/pro_voss.h	31;"	d
+RSP_STOPVFS	lib/pro_voss.h	37;"	d
+RSP_SUBMIT	lib/pro_voss.h	19;"	d
+RSP_SYNC_DIR	lib/pro_voss.h	25;"	d
+RSP_SYNC_FILE	lib/pro_voss.h	28;"	d
+RSP_VFS_CMD	lib/pro_voss.h	34;"	d
+RUN	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+Realloc	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Realloc(int nhash, int nrec)$/;"	f	class:TShmBuffer
+ResetStringPairList	network/parsepara.c	/^void ResetStringPairList(StringPairList *pList)$/;"	f
+SDBMHash	lib/GeneralHashFunctions.c	/^unsigned int SDBMHash(char* str, unsigned int len)$/;"	f
+SELF_IP	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+SELF_ROLE	network/client/vfs_data.h	23;"	d
+SENDFILEING	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	e	enum:SOCK_STAT
+SENDFILEING	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+SENDFILE_OK	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+SEND_ADD_EPOLLALL	network/global.h	53;"	d
+SEND_ADD_EPOLLIN	network/global.h	51;"	d
+SEND_ADD_EPOLLOUT	network/global.h	52;"	d
+SEND_CLOSE	network/global.h	50;"	d
+SEND_LAST	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+SEND_SUSPEND	network/global.h	54;"	d
+SEP	lib/myconfig.c	36;"	d	file:
+SERVER_STAT	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	g
+SHARE_SHM_PERM	3rdlib/TShareMem.h	13;"	d
+SHM_CONTROL_BYTE	3rdlib/TNmShm.h	46;"	d
+SHM_CONTROL_ID	3rdlib/TNmShm.h	28;"	d
+SHM_CONTROL_ID	3rdlib/TNmShm.h	34;"	d
+SHM_DATA_STRU	3rdlib/TShmBuffer.h	/^class SHM_DATA_STRU$/;"	c
+SHM_HEAD	3rdlib/TShmBuffer.h	/^struct SHM_HEAD$/;"	s
+SHM_INT_ID_1	3rdlib/TNmShm.h	29;"	d
+SHM_INT_ID_1	3rdlib/TNmShm.h	35;"	d
+SHM_INT_ID_2	3rdlib/TNmShm.h	30;"	d
+SHM_INT_ID_2	3rdlib/TNmShm.h	36;"	d
+SHM_INT_SIZE	3rdlib/TNmShm.h	43;"	d
+SHM_STR_ID_1	3rdlib/TNmShm.h	31;"	d
+SHM_STR_ID_1	3rdlib/TNmShm.h	38;"	d
+SHM_STR_ID_2	3rdlib/TNmShm.h	32;"	d
+SHM_STR_ID_2	3rdlib/TNmShm.h	39;"	d
+SHM_STR_SIZE	3rdlib/TNmShm.h	44;"	d
+SIG_HEADSIZE	lib/protocol.h	12;"	d
+SOCK_CLOSE	network/vfs_agent.h	19;"	d
+SOCK_COMP	network/vfs_agent.h	22;"	d
+SOCK_SEND	network/vfs_agent.h	20;"	d
+SOCK_SEND_FILE	network/vfs_agent.h	21;"	d
+SOCK_STAT	network/client/vfs_data.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, IDLE, PREPARE_RECVFILE, RECVFILEING, SENDFILEING, LAST_STAT};$/;"	g
+SOCK_STAT	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	g
+START	lib/pro_voss.h	/^enum LINKSTAT {CONNETED = 0, LOGON, RUN, START, EXE_TASK, END, LINKSEND, LINKTEST};$/;"	e	enum:LINKSTAT
+STAT_MAX	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	e	enum:SERVER_STAT
+STLIBNAME	3rdlib/makefile	/^STLIBNAME=$(LIBNAME).$(STLIBSUFFIX)$/;"	m
+STLIBNAME	lib/makefile	/^STLIBNAME=$(LIBNAME).$(STLIBSUFFIX)$/;"	m
+STLIBSUFFIX	3rdlib/makefile	/^STLIBSUFFIX=a$/;"	m
+STLIBSUFFIX	lib/makefile	/^STLIBSUFFIX=a$/;"	m
+STLIB_MAKE_CMD	3rdlib/makefile	/^STLIB_MAKE_CMD=ar rcs $(STLIBNAME)$/;"	m
+STLIB_MAKE_CMD	lib/makefile	/^STLIB_MAKE_CMD=ar rcs $(STLIBNAME)$/;"	m
+SUBDIRS	makefile	/^SUBDIRS = lib 3rdlib network network\/http network\/client$/;"	m
+SUBOBJS	network/makefile	/^SUBOBJS=vfs_so.o$/;"	m
+SUBOBJS	network/makefile	/^SUBOBJS=vfs_so_r.o$/;"	m
+SUFFIX	network/vfs_agent.c	32;"	d	file:
+SYNCFILEING	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+SYNCFILESTR	network/voss/vfs_voss_sub.c	8;"	d	file:
+SYNCFILESTRLEN	network/voss/vfs_voss_sub.c	9;"	d	file:
+SYNCFILE_OK	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+SYNCFILE_POST	network/voss/vfs_voss.h	/^enum SOCK_STAT {LOGOUT = 0, CONNECTED, LOGIN, HB_SEND, HB_RSP, IDLE, RECV_LAST, SEND_LAST, PREPARE_SYNCFILE, SYNCFILEING, SYNCFILE_POST, SYNCFILE_OK, PREPARE_SENDFILE, SENDFILEING, SENDFILE_OK};$/;"	e	enum:SOCK_STAT
+SYNCING	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	e	enum:SERVER_STAT
+SYNCIP	network/vfs_task.h	18;"	d
+SYNCSIGNALLING_REQ	lib/protocol.h	41;"	d
+SYNCSIGNALLING_RSP	lib/protocol.h	42;"	d
+SYNC_2_GROUP	network/vfs_task.h	/^enum {OPER_IDLE, OPER_GET_REQ, OPER_GET_RSP, OPER_PUT, SYNC_2_GROUP};$/;"	e	enum:__anon6
+SYNC_DEL_REQ	lib/protocol.h	88;"	d
+SYNC_DEL_RSP	lib/protocol.h	89;"	d
+SYNC_DIR_REQ	lib/protocol.h	85;"	d
+SYNC_DIR_RSP	lib/protocol.h	86;"	d
+SetBinaryPara	network/parsepara.c	/^int SetBinaryPara($/;"	f
+SetInt	3rdlib/c_api.cpp	/^void SetInt(uint32_t key, uint32_t val)$/;"	f
+SetParaValue	network/parsepara.c	/^int    SetParaValue(StringPairList *pPairList,$/;"	f
+SetStr	3rdlib/c_api.cpp	/^void SetStr(uint32_t key, char *val)$/;"	f
+Size	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::Size(void)$/;"	f	class:TShmBuffer
+StringPair	network/parsepara.h	/^}StringPair;$/;"	t	typeref:struct:__anon31
+StringPairList	network/parsepara.h	/^}StringPairList;$/;"	t	typeref:struct:__anon32
+TARGET	lib/makefile	/^TARGET = testmd5$/;"	m
+TARGET	network/client/makefile	/^TARGET=ott_client.so$/;"	m
+TARGET	network/http/makefile	/^TARGET=ott_server.so$/;"	m
+TARGET	network/makefile	/^TARGET=$(NS)$/;"	m
+TARGET	network/voss/makefile	/^TARGET=vfs_voss_master_sig.so$/;"	m
+TASKINFO_C_2_T	lib/protocol.h	71;"	d
+TASKINFO_F_2_T	lib/protocol.h	74;"	d
+TASKINFO_REQ	lib/protocol.h	44;"	d
+TASKINFO_RSP	lib/protocol.h	45;"	d
+TASKINFO_T_2_C	lib/protocol.h	72;"	d
+TASKINFO_T_2_F	lib/protocol.h	73;"	d
+TASK_ADDFILE	network/vfs_task.h	/^enum {TASK_ADDFILE = '0', TASK_DELFILE, TASK_LINKFILE, TASK_SYNCDIR};  \/* 任务类型 *\/$/;"	e	enum:__anon8
+TASK_ALL	network/vfs_task.c	/^static pthread_mutex_t TASK_ALL = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+TASK_CLEAN	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_DELAY	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_DELFILE	network/vfs_task.h	/^enum {TASK_ADDFILE = '0', TASK_DELFILE, TASK_LINKFILE, TASK_SYNCDIR};  \/* 任务类型 *\/$/;"	e	enum:__anon8
+TASK_DISPATCH	lib/protocol.h	92;"	d
+TASK_DST	network/vfs_task.h	/^enum {TASK_DST = 0, TASK_SOURCE, TASK_SRC_NOSYNC, TASK_SYNC_ISDIR, TASK_SYNC_VOSS_FILE}; \/*本次任务是否需要相同组机器同步 *\/$/;"	e	enum:__anon11
+TASK_EXIST	network/vfs_task.h	/^enum {OVER_UNKNOWN = 0, OVER_OK, OVER_E_MD5, OVER_PEERERR, TASK_EXIST, OVER_PEERCLOSE, OVER_UNLINK, OVER_TIMEOUT, OVER_MALLOC, OVER_SRC_DOMAIN_ERR, OVER_SRC_IP_OFFLINE, OVER_E_OPEN_SRCFILE, OVER_E_OPEN_DSTFILE, OVER_E_IP, OVER_E_TYPE, OVER_SEND_LEN, OVER_TOO_MANY_TRY, OVER_DISK_ERR, OVER_LAST};  \/*任务结束时的状态*\/$/;"	e	enum:__anon9
+TASK_FAILED	lib/protocol.h	109;"	d
+TASK_FIN	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_HASHSIZE	network/vfs_task.c	16;"	d	file:
+TASK_HOME	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_LINKFILE	network/vfs_task.h	/^enum {TASK_ADDFILE = '0', TASK_DELFILE, TASK_LINKFILE, TASK_SYNCDIR};  \/* 任务类型 *\/$/;"	e	enum:__anon8
+TASK_MOD	network/vfs_task.c	17;"	d	file:
+TASK_Q_SYNC_DIR	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_Q_SYNC_DIR_REQ	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_Q_SYNC_DIR_RSP	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_Q_SYNC_DIR_TMP	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_RECV	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_RUN	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_SEND	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_SOURCE	network/vfs_task.h	/^enum {TASK_DST = 0, TASK_SOURCE, TASK_SRC_NOSYNC, TASK_SYNC_ISDIR, TASK_SYNC_VOSS_FILE}; \/*本次任务是否需要相同组机器同步 *\/$/;"	e	enum:__anon11
+TASK_SRC_NOSYNC	network/vfs_task.h	/^enum {TASK_DST = 0, TASK_SOURCE, TASK_SRC_NOSYNC, TASK_SYNC_ISDIR, TASK_SYNC_VOSS_FILE}; \/*本次任务是否需要相同组机器同步 *\/$/;"	e	enum:__anon11
+TASK_START	lib/protocol.h	95;"	d
+TASK_SUCCESS	lib/protocol.h	108;"	d
+TASK_SYNC	lib/protocol.h	98;"	d
+TASK_SYNCDIR	network/vfs_task.h	/^enum {TASK_ADDFILE = '0', TASK_DELFILE, TASK_LINKFILE, TASK_SYNCDIR};  \/* 任务类型 *\/$/;"	e	enum:__anon8
+TASK_SYNC_DIR	lib/protocol.h	111;"	d
+TASK_SYNC_ISDIR	network/vfs_task.h	/^enum {TASK_DST = 0, TASK_SOURCE, TASK_SRC_NOSYNC, TASK_SYNC_ISDIR, TASK_SYNC_VOSS_FILE}; \/*本次任务是否需要相同组机器同步 *\/$/;"	e	enum:__anon11
+TASK_SYNC_VOSS	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_SYNC_VOSS_FILE	network/vfs_task.h	/^enum {TASK_DST = 0, TASK_SOURCE, TASK_SRC_NOSYNC, TASK_SYNC_ISDIR, TASK_SYNC_VOSS_FILE}; \/*本次任务是否需要相同组机器同步 *\/$/;"	e	enum:__anon11
+TASK_UNKNOWN	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_WAIT	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_WAIT_ERR	lib/protocol.h	105;"	d
+TASK_WAIT_OK	lib/protocol.h	103;"	d
+TASK_WAIT_SYNC	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_WAIT_SYNC_IP	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TASK_WAIT_TMP	network/vfs_task.h	/^enum {TASK_DELAY = 0, TASK_WAIT, TASK_WAIT_SYNC, TASK_WAIT_SYNC_IP, TASK_WAIT_TMP, TASK_Q_SYNC_DIR, TASK_Q_SYNC_DIR_TMP, TASK_RUN, TASK_FIN, TASK_CLEAN, TASK_HOME, TASK_SEND, TASK_RECV, TASK_SYNC_VOSS, TASK_Q_SYNC_DIR_REQ, TASK_Q_SYNC_DIR_RSP, TASK_UNKNOWN}; \/*任务队列*\/  \/*add TASK_Q_SYNC_DIR_REQ TASK_Q_SYNC_DIR_RSP for thread sync dir *\/$/;"	e	enum:__anon7
+TEL	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+TEXCEPTION_H	3rdlib/TException.h	2;"	d
+TException	3rdlib/TException.cpp	/^TException::TException()$/;"	f	class:TException
+TException	3rdlib/TException.cpp	/^TException::TException(const char* fmt,...)$/;"	f	class:TException
+TException	3rdlib/TException.cpp	/^TException::TException(int code,const char* fmt,...)$/;"	f	class:TException
+TException	3rdlib/TException.h	/^class TException  $/;"	c
+THREAD_EXITED	network/thread.h	/^	THREAD_EXITED,		\/* exited *\/$/;"	e	enum:__anon38
+THREAD_KILLED	network/thread.h	/^	THREAD_KILLED		\/* killed *\/$/;"	e	enum:__anon38
+THREAD_RUNNING	network/thread.h	/^	THREAD_RUNNING,		\/* busy running *\/$/;"	e	enum:__anon38
+THREAD_STANDBY	network/thread.h	/^	THREAD_STANDBY,		\/* in standby list *\/$/;"	e	enum:__anon38
+THREAD_STARTING	network/thread.h	/^	THREAD_STARTING,	\/* starting thread *\/$/;"	e	enum:__anon38
+THREAD_STOPPED	network/thread.h	/^	THREAD_STOPPED = 1,	\/* not running *\/$/;"	e	enum:__anon38
+THREAD_STOPPING	network/thread.h	/^	THREAD_STOPPING,	\/* stopping req *\/$/;"	e	enum:__anon38
+THREAD_UNUSED	network/thread.h	/^	THREAD_UNUSED = 0,	\/* slot not used *\/$/;"	e	enum:__anon38
+TIMEOUT	3rdlib/TShmBuffer.h	17;"	d
+TMP_SHM_KEY	3rdlib/TShmBuffer.h	16;"	d
+TRACKERLIST4CS_REQ	lib/protocol.h	38;"	d
+TRACKERLIST4CS_RSP	lib/protocol.h	39;"	d
+TSHARE_MEM_H	3rdlib/TShareMem.h	3;"	d
+TShareMem	3rdlib/TShareMem.cpp	/^TShareMem::TShareMem()$/;"	f	class:TShareMem
+TShareMem	3rdlib/TShareMem.h	/^class TShareMem {$/;"	c
+TShmBuffer	3rdlib/TShmBuffer.h	/^TShmBuffer<T>::TShmBuffer()$/;"	f	class:TShmBuffer
+TShmBuffer	3rdlib/TShmBuffer.h	/^class TShmBuffer$/;"	c
+TT	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+T_A_2_F	lib/protocol.h	61;"	d
+T_A_2_T	lib/protocol.h	62;"	d
+TraverseList	network/parsepara.c	/^void TraverseList($/;"	f
+TrimLeft	network/parsepara.c	/^void TrimLeft(char *s)$/;"	f
+TrimRight	network/parsepara.c	/^void TrimRight(char *s)$/;"	f
+TrimString	network/parsepara.c	/^void TrimString(char *s)$/;"	f
+UNKNOW_ISP	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+UNKOWN	network/global.h	/^enum ROLE {UNKOWN = 0, ROLE_FCS , ROLE_CS, ROLE_TRACKER, ROLE_VOSS_MASTER, SELF_IP, ROLE_MAX};$/;"	e	enum:ROLE
+UNKOWN_STAT	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	e	enum:SERVER_STAT
+UnitSize	3rdlib/TShmBuffer.h	/^int TShmBuffer<T>::UnitSize()$/;"	f	class:TShmBuffer
+VAL_MAX_LEN	lib/myconfig.c	15;"	d	file:
+VFS_ABORT_INC	3rdlib/nm_app_vfs.h	29;"	d
+VFS_GET_IP_ERR	3rdlib/nm_app_vfs.h	20;"	d
+VFS_INC_TASK_OVER	3rdlib/nm_app_vfs.h	23;"	d
+VFS_INT_TASK_ALL	3rdlib/nm_app_vfs.h	22;"	d
+VFS_MALLOC	3rdlib/nm_app_vfs.h	15;"	d
+VFS_RE_EXECUTE_INC	3rdlib/nm_app_vfs.h	28;"	d
+VFS_START_ERR	3rdlib/nm_app_vfs.h	18;"	d
+VFS_STR_CONNECT_E	3rdlib/nm_app_vfs.h	11;"	d
+VFS_STR_MD5_E	3rdlib/nm_app_vfs.h	13;"	d
+VFS_STR_OPENFILE_E	3rdlib/nm_app_vfs.h	10;"	d
+VFS_TASK_COUNT	3rdlib/nm_app_vfs.h	16;"	d
+VFS_TASK_COUNT_INT	3rdlib/nm_app_vfs.h	24;"	d
+VFS_TASK_DEPTH_BASE	3rdlib/nm_app_vfs.h	26;"	d
+VFS_TASK_MUTEX_ERR	3rdlib/nm_app_vfs.h	17;"	d
+VFS_UNTRUST_IP	3rdlib/nm_app_vfs.h	19;"	d
+VFS_WRITE_FILE	3rdlib/nm_app_vfs.h	14;"	d
+VIDEOFILE	network/vfs_localfile.h	/^enum {VIDEOFILE = 0, VIDEOTMP};$/;"	e	enum:__anon36
+VIDEOTMP	network/vfs_localfile.h	/^enum {VIDEOFILE = 0, VIDEOTMP};$/;"	e	enum:__anon36
+VOSSPREFIX	lib/pro_voss.h	10;"	d
+VOSSSUFFIX	lib/pro_voss.h	11;"	d
+WAIT_SYNC	network/global.h	/^enum SERVER_STAT {UNKOWN_STAT = 0, WAIT_SYNC, SYNCING, ON_LINE, OFF_LINE, STAT_MAX};$/;"	e	enum:SERVER_STAT
+WARNINGS	3rdlib/makefile	/^WARNINGS=-Wall -W -Wwrite-strings$/;"	m
+WARNINGS	lib/makefile	/^WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings$/;"	m
+YD	network/global.h	/^enum ISP {TEL = 0, CNC, EDU, TT, YD, HS, MP4, ALL = 50, ALLHOT, ISP_TRACKER, ISP_FCS, ISP_VOSS, UNKNOW_ISP=254, MAXISP};$/;"	e	enum:ISP
+_56_VFS_EPOLL_H	lib/myepoll.h	8;"	d
+_56_VFS_INIT_H_	network/vfs_init.h	8;"	d
+_56_VFS_PROTOCOL_H_	lib/protocol.h	8;"	d
+_56_VFS_SO_H_	network/vfs_so.h	8;"	d
+_DAEMON_H_	network/daemon.h	8;"	d
+_FDINFO_H_	network/fdinfo.h	8;"	d
+_GLOBAL_H_	network/global.h	8;"	d
+_HTTP_ACL_H_	lib/acl.h	8;"	d
+_H_MD5_H	lib/md5.h	8;"	d
+_LIST_H_	lib/list.h	8;"	d
+_LOG_H_	lib/log.h	8;"	d
+_MYBUFF_H_	network/mybuff.h	8;"	d
+_MYCONFIG_H_	lib/myconfig.h	8;"	d
+_NM_COMMON_H_	lib/common.h	8;"	d
+_PARSEPARA_H	network/parsepara.h	8;"	d
+_THREAD_H_	network/thread.h	8;"	d
+_TSHMBUFFER_H	3rdlib/TShmBuffer.h	2;"	d
+_UTIL_H_	lib/util.h	8;"	d
+_VFS_AGENT_H_	network/vfs_agent.h	8;"	d
+_VFS_FILE_FILTER_H_	network/vfs_file_filter.h	8;"	d
+_VFS_LOCALFILE_H_	network/vfs_localfile.h	8;"	d
+_VFS_SOLIB_H_	network/solib.h	8;"	d
+_VFS_TASK_H_	network/vfs_task.h	8;"	d
+_VFS_TIME_STAMP_H_	network/vfs_time_stamp.h	8;"	d
+_VFS_TMP_STATUS_H_	network/vfs_tmp_status.h	14;"	d
+_WATCHDOG_H_	network/watchdog.h	8;"	d
+__56NM_PLUGINS_H__	network/plugins.h	8;"	d
+__ARCH_X86_64_ATOMIC__	network/atomic.h	8;"	d
+__MAINTAIN_H__	network/vfs_maintain.h	8;"	d
+__NM_APP_VFS_H__	3rdlib/nm_app_vfs.h	2;"	d
+__NM_C_API_H_	3rdlib/c_api.h	2;"	d
+__PROTOCOL_H_	lib/pro_voss.h	8;"	d
+__TNmShm_H_	3rdlib/TNmShm.h	2;"	d
+__USE_STRING_INLINES	lib/md5.c	27;"	d	file:
+__VFS_CB_H_	network/vfs_timer.h	8;"	d
+__VFS_DEL_FILE_H_	network/vfs_del_file.h	8;"	d
+__VFS_SIG_SO_H	network/client/vfs_data.h	8;"	d
+__VFS_SIG_SO_H	network/voss/vfs_voss.h	8;"	d
+__VFS_SIG_TASK_H_	network/client/vfs_data_task.h	8;"	d
+__list_add	lib/list.h	/^static inline void __list_add(struct list_head *new1,$/;"	f
+__list_del	lib/list.h	/^static inline void __list_del(struct list_head *prev, struct list_head *next)$/;"	f
+__list_for_each	lib/list.h	203;"	d
+__list_for_each_prev	lib/list.h	215;"	d
+__list_splice	lib/list.h	/^static inline void __list_splice(struct list_head *list,$/;"	f
+accept_new	network/vfs_so.c	/^static void accept_new()$/;"	f	file:
+accept_new	network/vfs_so_r.c	/^static void accept_new()$/;"	f	file:
+acon	network/fdinfo.c	/^struct conn *acon = NULL;$/;"	v	typeref:struct:conn
+active_connect	network/client/vfs_data_base.c	/^static int active_connect(char *ip, int port)$/;"	f	file:
+active_send	network/client/vfs_data_sub.c	/^int active_send(vfs_cs_peer *peer, t_vfs_sig_head *h, t_vfs_sig_body *b)$/;"	f
+activelist	network/client/vfs_data.c	/^static list_head_t activelist;  \/\/用来检测超时$/;"	v	file:
+activelist	network/http/vfs_http.c	/^static list_head_t activelist;  \/\/用来检测超时$/;"	v	file:
+activelist	network/voss/vfs_voss.c	/^static list_head_t activelist;  \/\/用来检测超时$/;"	v	file:
+add_2_del_file	network/vfs_del_file.c	/^int add_2_del_file (t_task_base *base)$/;"	f
+add_fd_2_efd	network/vfs_so.c	/^void add_fd_2_efd(int fd)$/;"	f
+add_fd_2_efd	network/vfs_so_r.c	/^void add_fd_2_efd(int fd)$/;"	f
+add_filter	network/vfs_file_filter.c	/^static int add_filter(char *s, int type, list_head_t *mlist)$/;"	f	file:
+add_ip_info	network/vfs_init.c	/^int add_ip_info(t_ip_info *ipinfo)$/;"	f
+add_task_to_alltask	network/vfs_task.c	/^int add_task_to_alltask(t_vfs_tasklist *task)$/;"	f
+add_tmp_to_task	network/vfs_tmp_status.c	/^static int add_tmp_to_task(t_vfs_tasklist *item)$/;"	f	file:
+add_to_delay_task	network/vfs_timer.c	/^int add_to_delay_task(t_vfs_timer *vfs_timer)$/;"	f
+agent_log_init	network/vfs_agent.c	/^static int agent_log_init() $/;"	f	file:
+alist	network/client/vfs_data.h	/^	list_head_t alist;$/;"	m	struct:__anon19
+alist	network/http/vfs_http.c	/^	list_head_t alist;$/;"	m	struct:__anon42	file:
+alist	network/voss/vfs_voss.h	/^	list_head_t alist;$/;"	m	struct:__anon41
+allow_list	network/vfs_file_filter.c	/^static list_head_t allow_list;$/;"	v	file:
+alltask	network/vfs_task.c	/^static list_head_t alltask[TASK_HASHSIZE];  \/*总的任务，用来对任务进行快速定位，查找 ，为Tracker设计,排重*\/$/;"	v	file:
+archive	network/vfs_init.h	/^	unsigned char archive:1;$/;"	m	struct:__anon24
+archive_isp	network/vfs_init.h	/^	uint8_t archive_isp;$/;"	m	struct:__anon24
+archive_isp	network/vfs_init.h	/^	uint8_t archive_isp[MAXCS_ONEGRUOP];$/;"	m	struct:__anon27
+archive_list	network/vfs_init.h	/^	list_head_t archive_list;$/;"	m	struct:__anon25
+arg	network/thread.h	/^	void *arg;							$/;"	m	struct:thread
+arg_end	network/daemon.c	/^static char *arg_end;$/;"	v	file:
+arg_start	network/daemon.c	/^static char *arg_start;$/;"	v	file:
+args	network/vfs_timer.h	/^	char args[256];$/;"	m	struct:__anon17
+atomic_add	network/atomic.h	/^static __inline__ void atomic_add(int i, atomic_t *v)$/;"	f
+atomic_add_negative	network/atomic.h	/^static __inline__ int atomic_add_negative(int i, atomic_t *v)$/;"	f
+atomic_clear_mask	network/atomic.h	196;"	d
+atomic_dec	network/atomic.h	/^static __inline__ void atomic_dec(atomic_t *v)$/;"	f
+atomic_dec_and_test	network/atomic.h	/^static __inline__ int atomic_dec_and_test(atomic_t *v)$/;"	f
+atomic_inc	network/atomic.h	/^static __inline__ void atomic_inc(atomic_t *v)$/;"	f
+atomic_inc_and_test	network/atomic.h	/^static __inline__ int atomic_inc_and_test(atomic_t *v)$/;"	f
+atomic_read	network/atomic.h	39;"	d
+atomic_set	network/atomic.h	49;"	d
+atomic_set_mask	network/atomic.h	200;"	d
+atomic_sub	network/atomic.h	/^static __inline__ void atomic_sub(int i, atomic_t *v)$/;"	f
+atomic_sub_and_test	network/atomic.h	/^static __inline__ int atomic_sub_and_test(int i, atomic_t *v)$/;"	f
+atomic_t	network/atomic.h	/^typedef struct { volatile int counter; } atomic_t;$/;"	t	typeref:struct:__anon30
+badcnt	network/watchdog.h	/^	int badcnt;			\/\/线程被判定为停滞状态的次数$/;"	m	struct:threadstat
+barrier	network/vfs_so_r.c	/^static inline void barrier(void) { __asm__ volatile("":::"memory"); }$/;"	f	file:
+barrier	network/vfs_so_r.c	/^static inline void barrier(void) { __sync_synchronize (); }$/;"	f	file:
+base	network/vfs_task.h	/^	t_task_base base;$/;"	m	struct:__anon13
+base64_encode	lib/common.c	/^void base64_encode(const char *buf, int len, char *out, int pad)$/;"	f
+been_send_bytes	network/vfs_task.c	/^uint64_t been_send_bytes;  \/*已经发送的字节数*\/$/;"	v
+begin_read_shm	3rdlib/TNmShm.cpp	/^int NMSHM::begin_read_shm()$/;"	f	class:NMSHM
+begin_read_shm_str	3rdlib/TNmShm.cpp	/^int NMSHM::begin_read_shm_str()$/;"	f	class:NMSHM
+bits	lib/md5.h	/^	uint32_t bits[2];$/;"	m	struct:MD5Context
+bk	3rdlib/TNmShm.h	/^	unsigned char bk[2];$/;"	m	struct:__anon51
+bk	lib/log.c	/^	unsigned char bk[3];$/;"	m	struct:__anon48	file:
+bk	network/vfs_task.h	/^	uint8_t bk[3];$/;"	m	struct:__anon14
+bk	network/voss/vfs_voss.h	/^	uint8_t bk;$/;"	m	struct:__anon41
+bkdir	lib/common.h	/^	char bkdir[256];$/;"	m	struct:__anon49
+body	lib/protocol.h	/^	char body[MAX_SIG_BODY];$/;"	m	struct:__anon47
+bodylen	lib/protocol.h	/^	uint16_t bodylen;$/;"	m	struct:__anon46
+bool	lib/acl.h	21;"	d
+buf	3rdlib/TNmShm.h	/^	char buf[252];$/;"	m	struct:__anon53
+buf	lib/md5.h	/^	uint32_t buf[4];$/;"	m	struct:MD5Context
+buf	lib/pro_voss.h	/^	char buf[MAXBODYSIZE];$/;"	m	struct:__anon43
+buf_size	3rdlib/TShmBuffer.h	/^	long buf_size;$/;"	m	struct:SHM_HEAD
+build_ifs	lib/util_str.c	/^void inline build_ifs(char *tifs, const char *ifs0) {$/;"	f
+byteReverse	lib/md5.c	/^static void byteReverse(unsigned char *buf, unsigned longs)$/;"	f	file:
+byteReverse	lib/md5.c	34;"	d	file:
+c_stat	network/voss/vfs_voss.c	/^t_client_stat c_stat;$/;"	v
+cb	network/vfs_timer.h	/^	void (*cb)(char *);$/;"	m	struct:__anon17
+cfg_iplist	network/vfs_init.c	/^list_head_t cfg_iplist[256];$/;"	v
+cfg_list	network/voss/vfs_voss.c	/^static list_head_t cfg_list[256]; \/\/配置定位查找$/;"	v	file:
+cfgip	network/voss/vfs_voss.h	/^	uint32_t cfgip;$/;"	m	struct:__anon41
+cfglist	network/voss/vfs_voss.h	/^	list_head_t cfglist;$/;"	m	struct:__anon41
+check_close_local	network/voss/vfs_voss_sub.c	/^static int check_close_local(int fd)$/;"	f	file:
+check_disk_space	network/vfs_localfile.c	/^int check_disk_space(t_task_base *base)$/;"	f
+check_file_allow	network/vfs_file_filter.c	/^static int check_file_allow(char *file)$/;"	f	file:
+check_file_filter	network/vfs_file_filter.c	/^int check_file_filter(char *file)$/;"	f
+check_indir	network/voss/vfs_voss_sub.c	/^static void check_indir()$/;"	f	file:
+check_localfile_md5	network/vfs_localfile.c	/^int check_localfile_md5(t_task_base *task, int type)$/;"	f
+check_mp4_filter	network/vfs_file_filter.c	/^int check_mp4_filter(char *file)$/;"	f
+check_path	lib/acl.c	/^int check_path( char* path )$/;"	f
+check_referer	lib/acl.c	/^int check_referer(const char* referer, const char* referer_list, int allow_null_referer) {$/;"	f
+check_req	network/client/vfs_data.c	/^static int check_req(int fd)$/;"	f	file:
+check_req	network/client/vfs_http_client.c	/^static int check_req(int fd)$/;"	f	file:
+check_req	network/http/vfs_http.c	/^static int check_req(int fd)$/;"	f	file:
+check_req	network/vfs_agent.c	/^static int check_req(int fd, int *o)$/;"	f	file:
+check_req	network/voss/vfs_voss.c	/^static int check_req(int fd)$/;"	f	file:
+check_request	network/client/vfs_http_client.c	/^static int check_request(int fd, char* data, int len) $/;"	f	file:
+check_request	network/http/vfs_http.c	/^static int check_request(int fd, char* data, int len) $/;"	f	file:
+check_self_ip	network/vfs_init.c	/^int check_self_ip(uint32_t ip)$/;"	f
+check_self_stat	network/vfs_init.c	/^void check_self_stat()$/;"	f
+check_stat_file	network/voss/vfs_voss.c	/^static int check_stat_file()$/;"	f	file:
+check_task	network/client/vfs_data_base.c	/^void check_task()$/;"	f
+check_task_from_alltask	network/vfs_task.c	/^int check_task_from_alltask(char *fname)$/;"	f
+check_task_timeout	network/vfs_task.c	/^void check_task_timeout(t_vfs_tasklist *task)$/;"	f
+check_threadmap	network/watchdog.c	/^static void check_threadmap(void) {$/;"	f	file:
+check_timestamp	3rdlib/TNmShm.cpp	/^int NMSHM::check_timestamp()$/;"	f	class:NMSHM
+cktimeout	network/vfs_init.h	/^	uint16_t cktimeout;$/;"	m	struct:__anon28
+close_all_time_stamp	network/vfs_time_stamp.c	/^void close_all_time_stamp()$/;"	f
+close_tmp_check_mv	network/vfs_localfile.c	/^int close_tmp_check_mv(t_task_base *task, int fd)$/;"	f
+cmd_argv0	lib/myconfig.c	/^static char cmd_argv0[4096];$/;"	v	file:
+cmd_type	network/vfs_maintain.c	/^static char *cmd_type[] = {"M_ONLINE", "M_OFFLINE", "M_GETINFO", "M_SYNCDIR", "M_SYNCFILE", "M_CONFUPDA", "M_SETDIRTIME", "M_GETDIRTIME", "M_DELFILE", "M_EXECUTE"};$/;"	v	file:
+cmdid	lib/pro_voss.h	/^	unsigned int cmdid;$/;"	m	struct:__anon44
+cmdid	lib/protocol.h	/^	uint8_t cmdid;$/;"	m	struct:__anon46
+compiling_date	network/version.c	/^const char compiling_date[] = __DATE__;$/;"	v
+compiling_time	network/version.c	/^const char compiling_time[] = __TIME__;$/;"	v
+con_ip	network/voss/vfs_voss.h	/^	uint32_t con_ip;$/;"	m	struct:__anon41
+conn	network/global.h	/^struct conn {$/;"	s
+consume_client_data	network/vfs_so.c	/^int consume_client_data(int fd, size_t len)$/;"	f
+consume_client_data	network/vfs_so_r.c	/^int consume_client_data(int fd, size_t len)$/;"	f
+continue_flag	network/vfs_init.h	/^	uint8_t continue_flag;$/;"	m	struct:__anon28
+control	3rdlib/TNmShm.h	/^	    TShareMem control;$/;"	m	class:NMSHM
+control_shm	3rdlib/TNmShm.h	/^} control_shm;$/;"	t	typeref:struct:__anon51
+counter	network/atomic.h	/^typedef struct { volatile int counter; } atomic_t;$/;"	m	struct:__anon30
+create_msg	lib/pro_voss.c	/^int create_msg(char *outbuf, int *outlen, unsigned int cmdid, char *inbuf, int inlen)$/;"	f
+create_sig_msg	lib/protocol.c	/^int create_sig_msg(uint8_t cmdid, uint8_t status, t_vfs_sig_body *b, char *o, uint16_t bodylen)$/;"	f
+create_voss_head	lib/pro_voss.c	/^int create_voss_head(char *outbuf, unsigned int cmdid, int datalen)$/;"	f
+createdir	network/vfs_localfile.c	/^static int createdir(char *file)$/;"	f	file:
+createsocket	lib/myepoll.c	/^int createsocket(char *ip, int port)$/;"	f
+cs_max_connects	network/vfs_init.h	/^	uint16_t cs_max_connects;$/;"	m	struct:__anon28
+cs_max_task	network/vfs_init.h	/^	uint16_t cs_max_task;$/;"	m	struct:__anon28
+cs_max_task_run_once	network/vfs_init.h	/^	uint16_t cs_max_task_run_once;$/;"	m	struct:__anon28
+cs_preday	network/vfs_init.h	/^	uint16_t cs_preday;$/;"	m	struct:__anon28
+cs_sync_dir	network/vfs_init.h	/^	uint8_t cs_sync_dir;$/;"	m	struct:__anon28
+cshm	3rdlib/TNmShm.h	/^		control_shm * cshm;$/;"	m	class:NMSHM
+csinfo	network/vfs_init.c	/^static t_cs_dir_info  csinfo[DIR1][DIR2];$/;"	v	file:
+curid	network/thread.c	/^static int curid = 0;$/;"	v	file:
+curlogid	lib/log.c	/^static int curlogid = 0;$/;"	v	file:
+d1	network/vfs_task.h	/^	int d1;$/;"	m	struct:__anon15
+d2	network/vfs_task.h	/^	int d2;$/;"	m	struct:__anon15
+daemon_set_title	network/daemon.c	/^void daemon_set_title(const char *title) {$/;"	f
+daemon_start	network/daemon.c	/^int daemon_start(int argc, char **argv){$/;"	f
+daemon_stop	network/daemon.c	/^void daemon_stop(void) {$/;"	f
+data	network/global.h	/^	char* data;			\/\/buffer指针$/;"	m	struct:mybuff
+data	network/vfs_task.h	/^	char data[1024];$/;"	m	struct:__anon12
+data_calcu_md5	network/vfs_init.h	/^	uint8_t data_calcu_md5;$/;"	m	struct:__anon28
+data_port	network/vfs_init.h	/^	uint16_t data_port;$/;"	m	struct:__anon28
+data_size	3rdlib/TShmBuffer.h	/^	int data_size;$/;"	m	struct:SHM_HEAD
+databuff	network/vfs_agent.c	/^struct mybuff databuff;  \/*存放从TASK_FIN队列获取的任务信息数据*\/$/;"	v	typeref:struct:mybuff
+datainfo	network/voss/vfs_voss.h	/^	t_voss_data_info datainfo;$/;"	m	struct:__anon41
+datalen	network/voss/vfs_voss.h	/^	int datalen;$/;"	m	struct:__anon40
+db	lib/common.h	/^	char db[32];$/;"	m	struct:__anon50
+deadlock_count	network/watchdog.c	/^static int deadlock_count = 1;$/;"	v	file:
+decode_hex	lib/util_hex.c	/^int decode_hex(const char* hex, char* bin, int buflen)$/;"	f
+decode_hexstring	network/parsepara.c	/^int decode_hexstring(const char *s, char *sDecoded, int *piDecodedLen)$/;"	f
+decode_string	network/parsepara.c	/^inline int decode_string(const char *s, char *sDecoded, size_t n)$/;"	f
+decode_stringnew	network/parsepara.c	/^inline int decode_stringnew(const char *s, char *dst, size_t n)$/;"	f
+decode_url	lib/acl.c	/^char* decode_url( char* url )$/;"	f
+decodeurl	lib/acl.c	/^void decodeurl( const char *url, char *filename, int len )$/;"	f
+decodeurlstring	lib/acl.c	/^const char* decodeurlstring[][2] = { { "20", " " }, { "21", "!" } };$/;"	v
+default_ifs	lib/util_str.c	/^static const char default_ifs[256] = { [9]=1, [10]=1, [13]=1, [32]=1 };$/;"	v	file:
+default_max	network/vfs_timer.c	/^static int default_max = 1024;$/;"	v	file:
+defconn	network/vfs_agent.c	/^struct conn defconn;$/;"	v	typeref:struct:conn
+delay_active	network/vfs_timer.c	/^static list_head_t delay_active;$/;"	v	file:
+delay_close	lib/log.c	/^static void delay_close(int num, int fd, int timeout)$/;"	f	file:
+delay_home	network/vfs_timer.c	/^static list_head_t delay_home;$/;"	v	file:
+delay_mutex	network/vfs_timer.c	/^static pthread_mutex_t delay_mutex = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+delay_task_init	network/vfs_timer.c	/^int delay_task_init()$/;"	f
+delete_localfile	network/vfs_localfile.c	/^int delete_localfile(t_task_base *task)$/;"	f
+deny_list	network/vfs_file_filter.c	/^static list_head_t deny_list;$/;"	v	file:
+dir_gid	network/vfs_init.h	/^	uint16_t dir_gid;$/;"	m	struct:__anon28
+dir_uid	network/vfs_init.h	/^	uint16_t dir_uid;$/;"	m	struct:__anon28
+dirs	network/vfs_init.h	/^	char dirs[MAXDIR_FOR_CS][8];  \/* if cs , every cs have about 10 dirs *\/$/;"	m	struct:__anon24
+dirtime	network/vfs_time_stamp.c	/^	time_t dirtime[MAXFCS];$/;"	m	struct:__anon5	file:
+do_close	network/vfs_so.c	/^void do_close(int fd)$/;"	f
+do_close	network/vfs_so_r.c	/^void do_close(int fd)$/;"	f
+do_confupda	network/vfs_maintain.c	/^static int do_confupda(StringPairList *pairlist)$/;"	f	file:
+do_group_msg	network/voss/vfs_voss_sub.c	/^static void do_group_msg(char *msg, int group)$/;"	f	file:
+do_hb	network/vfs_agent.c	/^static int do_hb(int fd, int *havedata)$/;"	f	file:
+do_ip_msg	network/voss/vfs_voss_sub.c	/^static void do_ip_msg(char *msg, char *sip)$/;"	f	file:
+do_ip_off_line	network/vfs_init.c	/^void do_ip_off_line(uint32_t ip, int type)$/;"	f
+do_login	network/vfs_agent.c	/^static int do_login(int fd, int *havedata)$/;"	f	file:
+do_peer_msg	network/voss/vfs_voss_sub.c	/^static void do_peer_msg(char *msg, vfs_voss_peer *peer)$/;"	f	file:
+do_prepare_recvfile	network/client/vfs_data_task.c	/^int do_prepare_recvfile(int fd, off_t fsize)$/;"	f
+do_process	network/vfs_so.c	/^static void do_process(int fd, int events)$/;"	f	file:
+do_process	network/vfs_so_r.c	/^static void do_process(int fd, int events)$/;"	f	file:
+do_recv	network/vfs_agent.c	/^static int do_recv(int fd)$/;"	f	file:
+do_recv	network/vfs_so.c	/^static void do_recv(int fd)$/;"	f	file:
+do_recv	network/vfs_so_r.c	/^static void do_recv(int fd)$/;"	f	file:
+do_req	network/client/vfs_data_sub.c	/^static int do_req(int fd, off_t fsize)$/;"	f	file:
+do_request	network/vfs_maintain.c	/^void do_request(int fd, int datalen, char *data)$/;"	f
+do_run	network/vfs_agent.c	/^static void do_run(struct threadstat *thst)$/;"	f	file:
+do_scan	network/vfs_agent.c	/^static void do_scan(struct conn *curcon, int *outdata, int type)$/;"	f	file:
+do_send	network/vfs_agent.c	/^static int do_send(int fd)$/;"	f	file:
+do_send	network/vfs_so.c	/^static void do_send(int fd)$/;"	f	file:
+do_send	network/vfs_so_r.c	/^static void do_send(int fd)$/;"	f	file:
+do_sub_msg	network/voss/vfs_voss_sub.c	/^static void do_sub_msg(char *buf)$/;"	f	file:
+do_sync_dir	network/vfs_agent.c	/^static int do_sync_dir(int fd, t_head_info *h, char *data)$/;"	f	file:
+do_sync_file	network/vfs_agent.c	/^static int do_sync_file(int fd, t_head_info *h, char *data)$/;"	f	file:
+do_timeout_task	network/vfs_task.c	/^void do_timeout_task()$/;"	f
+do_update	network/vfs_agent.c	/^static int do_update(int fd, t_head_info *h, char *data)$/;"	f	file:
+do_voss_del_file	network/vfs_maintain.c	/^int do_voss_del_file(char *domain, char *file)$/;"	f
+do_voss_sync_dir	network/vfs_maintain.c	/^int do_voss_sync_dir(char *domain, char *file, time_t starttime)$/;"	f
+do_voss_sync_file	network/vfs_maintain.c	/^int do_voss_sync_file(char *domain, char *file, char *sip, char *fmd5)$/;"	f
+docroot	network/vfs_init.h	/^	char docroot[128];$/;"	m	struct:__anon28
+domain	network/vfs_task.h	/^	char domain[64];$/;"	m	struct:__anon15
+domain_prefix	network/vfs_init.h	/^	char domain_prefix[32];$/;"	m	struct:__anon28
+domain_suffix	network/vfs_init.h	/^	char domain_suffix[32];$/;"	m	struct:__anon28
+dtime	network/vfs_del_file.h	/^	char dtime[10];$/;"	m	struct:__anon29
+dump_cs_time_stamp	network/vfs_time_stamp.c	/^static void dump_cs_time_stamp()$/;"	f	file:
+dump_fcs_time_stamp	network/vfs_time_stamp.c	/^static void dump_fcs_time_stamp()$/;"	f	file:
+dump_task_info	network/client/vfs_data_task.c	/^void dump_task_info (char *from, int line, t_task_base *task)$/;"	f
+dump_to_file	network/vfs_agent.c	/^static void dump_to_file(struct conn *curcon, char *tmpdir)$/;"	f	file:
+dup_argv	network/daemon.c	/^static void dup_argv(int argc, char **argv) {$/;"	f	file:
+encode_hex	lib/util_hex.c	/^int encode_hex(char* hex, const char* bin, int binlen)$/;"	f
+encode_hexstring	network/parsepara.c	/^int encode_hexstring(const char *s, int len, char *sEncoded)$/;"	f
+encode_string	network/parsepara.c	/^int encode_string(const char *s, char *sEncoded)$/;"	f
+end_read_shm	3rdlib/TNmShm.cpp	/^int NMSHM::end_read_shm(unsigned char index)$/;"	f	class:NMSHM
+end_read_shm_str	3rdlib/TNmShm.cpp	/^int NMSHM::end_read_shm_str(unsigned char index)$/;"	f	class:NMSHM
+endtime	network/vfs_task.h	/^	time_t endtime; \/*同步结束时间点，对CS来说 填写 0，对FCS来说，填写FCS最近一次启动的时间戳 *\/ $/;"	m	struct:__anon15
+entry	network/thread.h	/^	int (*entry)(void *);$/;"	m	struct:thread
+env_start	network/daemon.c	/^static char *env_start;$/;"	v	file:
+epfd	network/vfs_so.c	/^static __thread int epfd;$/;"	v	file:
+epfd	network/vfs_so_r.c	/^static int epfd;$/;"	v	file:
+epoll_add	lib/myepoll.c	/^void epoll_add(int epfd, int fd, int events) $/;"	f
+epoll_del	lib/myepoll.c	/^void epoll_del(int epfd, int fd) $/;"	f
+epoll_mod	lib/myepoll.c	/^void epoll_mod(int epfd, int fd, int events) $/;"	f
+exist_tmp	network/vfs_tmp_status.c	/^static int exist_tmp = 1;  \/*默认tmp文件存在*\/$/;"	v	file:
+f_delMem	3rdlib/TShareMem.cpp	/^void TShareMem::f_delMem()$/;"	f	class:TShareMem
+f_getMem	3rdlib/TShareMem.cpp	/^void *TShareMem::f_getMem(key_t id, size_t isize, int mode)$/;"	f	class:TShareMem
+f_getShmID	3rdlib/TShareMem.cpp	/^int TShareMem::f_getShmID()$/;"	f	class:TShareMem
+f_getSize	3rdlib/TShareMem.cpp	/^size_t TShareMem::f_getSize()$/;"	f	class:TShareMem
+f_unlinkMem	3rdlib/TShareMem.cpp	/^void TShareMem::f_unlinkMem()$/;"	f	class:TShareMem
+false	lib/acl.h	23;"	d
+fcs_max_connects	network/vfs_init.h	/^	uint16_t fcs_max_connects;$/;"	m	struct:__anon28
+fcs_max_task	network/vfs_init.h	/^	uint16_t fcs_max_task;$/;"	m	struct:__anon28
+fcslist	network/vfs_init.c	/^static uint8_t fcslist[MAXFCS] = {0x0};$/;"	v	file:
+fd	lib/log.c	/^	int fd;				\/\/log fd, internel variable		$/;"	m	struct:logentity	file:
+fd	lib/log.c	/^	int fd;$/;"	m	struct:__anon48	file:
+fd	network/client/vfs_data.h	/^	int fd;$/;"	m	struct:__anon19
+fd	network/global.h	/^	int fd;      \/\/recheck avoid coredump$/;"	m	struct:conn
+fd	network/global.h	/^	int fd;$/;"	m	struct:mybuff
+fd	network/http/vfs_http.c	/^	int fd;$/;"	m	struct:__anon42	file:
+fd	network/voss/vfs_voss.c	/^	int fd;$/;"	m	struct:__anon39	file:
+fd	network/voss/vfs_voss.h	/^	int fd;$/;"	m	struct:__anon41
+fd_cs_time_stamp	network/vfs_time_stamp.c	/^static int fd_cs_time_stamp = -1;$/;"	v	file:
+fd_fcs_time_stamp	network/vfs_time_stamp.c	/^static int fd_fcs_time_stamp = -1;$/;"	v	file:
+fdinfo	lib/log.c	/^	t_fdinfo fdinfo;    \/\/store delay_close info;$/;"	m	struct:logentity	file:
+file	network/vfs_agent.h	/^	char file[256];$/;"	m	struct:__anon1
+file	network/vfs_del_file.h	/^	char file[256];$/;"	m	struct:__anon29
+file	network/voss/vfs_voss.c	/^	char file[256];$/;"	m	struct:__anon39	file:
+fileinfo	network/vfs_agent.h	/^}fileinfo;$/;"	t	typeref:struct:__anon1
+filename	network/vfs_task.h	/^	char filename[256];$/;"	m	struct:__anon12
+find_ip_stat	network/client/vfs_data_base.c	/^int find_ip_stat(uint32_t ip, vfs_cs_peer **dpeer, int mode, int status)$/;"	f
+find_ip_stat	network/voss/vfs_voss_sub.c	/^int find_ip_stat(uint32_t ip, vfs_voss_peer **dpeer)$/;"	f
+find_last_index	network/vfs_del_file.c	/^int find_last_index(t_task_base *base, time_t last)$/;"	f
+fini_fdinfo	network/fdinfo.c	/^void fini_fdinfo(void) {$/;"	f
+fini_libs	network/plugins.c	/^void fini_libs()$/;"	f
+fini_vfs_thread	network/vfs_init.c	/^void fini_vfs_thread(char *name)$/;"	f
+flag	lib/acl.h	/^	char				flag;$/;"	m	struct:matchitem
+flag	network/vfs_so.h	/^	char flag; \/*是否需要设置sockbuff ，对信令线路采用默认设置，对数据链路采用配置文件设置 *\/$/;"	m	struct:__anon2
+flen	network/global.h	/^	size_t flen;$/;"	m	struct:mybuff
+fn	lib/log.c	/^	char fn[256];		\/\/log filename, caller set$/;"	m	struct:logentity	file:
+fname	network/http/vfs_http.c	/^	char fname[256];$/;"	m	struct:__anon42	file:
+foffset	network/global.h	/^	off_t foffset;$/;"	m	struct:mybuff
+free_argv	network/daemon.c	/^static void free_argv(void) {$/;"	f	file:
+fsize	network/vfs_task.h	/^	off_t fsize;$/;"	m	struct:__anon12
+fulldir	lib/common.h	/^	char fulldir[256];$/;"	m	struct:__anon49
+func	lib/myconfig.c	/^	int (*func)(void);$/;"	m	struct:reload_cb	file:
+g_config	network/vfs_init.c	/^t_g_config g_config;$/;"	v
+g_index	network/vfs_localfile.c	/^static uint32_t g_index = 0;$/;"	v	file:
+g_proxy	network/client/vfs_data.c	/^t_vfs_up_proxy g_proxy;$/;"	v
+g_proxyed	network/client/vfs_data.c	/^int g_proxyed = 0;$/;"	v
+g_tmp_files	network/vfs_agent.c	/^static fileinfo *g_tmp_files = NULL;$/;"	v	file:
+g_tmp_index	network/vfs_agent.c	/^static int g_tmp_index;$/;"	v	file:
+gen_pidfile	network/main.c	/^static void gen_pidfile() {$/;"	f	file:
+getErrMsg	3rdlib/TException.cpp	/^const char* TException::getErrMsg(void)$/;"	f	class:TException
+getError	3rdlib/TException.cpp	/^void TException::getError(int& code,char* msg,int len)$/;"	f	class:TException
+get_3_hash	lib/GeneralHashFunctions.c	/^void get_3_hash(char *s, uint32_t *h1, uint32_t *h2, uint32_t *h3)$/;"	f
+get_cfg_lock	network/vfs_init.c	/^int get_cfg_lock()$/;"	f
+get_client_data	network/vfs_so.c	/^int get_client_data(int fd, char **data, size_t *len)$/;"	f
+get_client_data	network/vfs_so_r.c	/^int get_client_data(int fd, char **data, size_t *len)$/;"	f
+get_cmd_position	network/vfs_maintain.c	/^static inline int get_cmd_position(char *cmd)$/;"	f	file:
+get_cs_dirtime	network/vfs_maintain.c	/^int get_cs_dirtime(char *buf, int len)$/;"	f
+get_cs_info	network/vfs_init.c	/^int get_cs_info(int dir1, int dir2, t_cs_dir_info *cs)$/;"	f
+get_cs_info_by_path	network/vfs_init.c	/^int get_cs_info_by_path(char *path, t_cs_dir_info *cs)$/;"	f
+get_cs_time_stamp	network/vfs_time_stamp.c	/^time_t get_cs_time_stamp(t_task_base *base)$/;"	f
+get_cs_time_stamp_by_int	network/vfs_time_stamp.c	/^time_t get_cs_time_stamp_by_int(int dir1, int dir2, int domain)$/;"	f
+get_data_from_task	network/vfs_agent.c	/^void get_data_from_task(t_vfs_tasklist *task)$/;"	f
+get_del_file	network/vfs_del_file.c	/^static void get_del_file(t_task_base *base, char *file)$/;"	f	file:
+get_dimain_int	network/vfs_time_stamp.c	/^static int get_dimain_int(char *domain)$/;"	f	file:
+get_dir1_dir2	network/vfs_init.c	/^int get_dir1_dir2(char *pathsrc, int *dir1, int *dir2)$/;"	f
+get_dirtime	network/vfs_maintain.c	/^int get_dirtime(char *buf, int len)$/;"	f
+get_fcs_dirtime	network/vfs_maintain.c	/^int get_fcs_dirtime(char *buf, int len)$/;"	f
+get_fcs_time_stamp	network/vfs_time_stamp.c	/^time_t get_fcs_time_stamp(t_task_base *base)$/;"	f
+get_fcs_time_stamp_by_int	network/vfs_time_stamp.c	/^time_t get_fcs_time_stamp_by_int(int dir1, int dir2)$/;"	f
+get_file_from_src	network/http/vfs_http.c	/^static int get_file_from_src(char *fname, char *data, int len)$/;"	f	file:
+get_from_del_file	network/vfs_del_file.c	/^int get_from_del_file (t_task_base *base, int next, time_t cur)$/;"	f
+get_index	network/parsepara.c	/^inline int get_index(char ch)$/;"	f
+get_info	network/vfs_maintain.c	/^int get_info(char *buf,  int len)$/;"	f
+get_init_flag	3rdlib/TNmShm.cpp	/^int NMSHM::get_init_flag()$/;"	f	class:NMSHM
+get_ip_by_domain	lib/common.c	/^int get_ip_by_domain(char *serverip, char *domain)$/;"	f
+get_ip_info	network/vfs_init.c	/^int get_ip_info(t_ip_info **ipinfo, char *sip, int type)$/;"	f
+get_ip_info_by_uint	network/vfs_init.c	/^int get_ip_info_by_uint(t_ip_info **ipinfo, uint32_t ip, int type, char *s_ip, char *sip)$/;"	f
+get_isp_by_name	network/vfs_init.c	/^int get_isp_by_name(char *name)$/;"	f
+get_listen_sock	lib/myepoll.c	/^int get_listen_sock(int port)$/;"	f
+get_localdir	network/vfs_localfile.c	/^static int get_localdir(t_task_base *task, char *outdir)$/;"	f	file:
+get_localfile_stat	network/vfs_localfile.c	/^int get_localfile_stat(t_task_base *task)$/;"	f
+get_most_old_file	network/vfs_agent.c	/^static void get_most_old_file(struct conn *curcon, int *outdata)$/;"	f	file:
+get_my_thread	network/thread.c	/^struct thread *get_my_thread(void) {$/;"	f
+get_next_fcs	network/vfs_init.c	/^int get_next_fcs(int fcs, uint8_t isp)$/;"	f
+get_progname	network/daemon.c	/^static void get_progname(void) {$/;"	f	file:
+get_self_info	network/vfs_init.c	/^int get_self_info(t_ip_info *ipinfo0)$/;"	f
+get_strtime	lib/common.c	/^int get_strtime(char *buf)$/;"	f
+get_strtime_by_t	lib/common.c	/^int get_strtime_by_t(char *buf, time_t now)$/;"	f
+get_task_count	network/vfs_task.c	/^inline int get_task_count(int status)$/;"	f
+get_task_from_alltask	network/vfs_task.c	/^int get_task_from_alltask(t_vfs_tasklist **task, t_task_base *base)$/;"	f
+get_thread_id	network/thread.c	/^int get_thread_id() { $/;"	f
+get_threadstat	network/watchdog.c	/^struct threadstat *get_threadstat(void) {$/;"	f
+get_time_t	lib/common.c	/^time_t get_time_t (char *p)$/;"	f
+get_timeout_task_from_alltask	network/vfs_task.c	/^int get_timeout_task_from_alltask(int timeout, timeout_task cb)$/;"	f
+get_tmpstr	network/vfs_localfile.c	/^static void get_tmpstr(char *d, int len)$/;"	f	file:
+get_uint32_ip	lib/common.c	/^uint32_t get_uint32_ip(char *sip, char *s_ip)$/;"	f
+get_vfs_task_hash	network/vfs_task.c	/^static int get_vfs_task_hash(char *fname)$/;"	f	file:
+getconfigname	lib/myconfig.c	/^static void getconfigname(char* buf, const char* argv0) {$/;"	f	file:
+getcpunum	lib/util_misc.c	/^int getcpunum() {$/;"	f
+getfilemd5	lib/util_misc.c	/^int getfilemd5(const char* filename, unsigned char* md5) {$/;"	f
+getfilemd5view	lib/util_misc.c	/^int getfilemd5view(const char* filename, unsigned char* md5) $/;"	f
+getipbyif	lib/util_ip.c	/^unsigned getipbyif(const char* ifname) {$/;"	f
+getlen	network/vfs_task.h	/^	off_t getlen;$/;"	m	struct:__anon12
+getloglevel	lib/log.c	/^int getloglevel(const char* llstr) $/;"	f
+getmatch	lib/acl.c	/^struct matchitem* getmatch( char* str )$/;"	f
+getmd5	lib/util_misc.c	/^void getmd5(const char* data, unsigned len, unsigned char* md5) {$/;"	f
+getpeerip	lib/util_ip.c	/^unsigned getpeerip(int fd) {$/;"	f
+getseq	lib/pro_voss.c	/^unsigned int getseq()$/;"	f
+getsize	network/http/vfs_http.c	/^static int getsize(char *fname)$/;"	f	file:
+getval	lib/acl.c	/^void getval( char* str, char* pstr, char* end, char** val, unsigned short count )$/;"	f
+getvalue	lib/acl.c	/^char* getvalue( char** val, unsigned short count, char* str, short len )$/;"	f
+glogfd	network/main.c	/^int glogfd = -1;$/;"	v
+handle	network/plugins.h	/^	void* handle;$/;"	m	struct:__anon3
+handle	network/solib.h	/^	void* handle;$/;"	m	struct:mylib
+handle_request	network/client/vfs_http_client.c	/^static int handle_request(int cfd) $/;"	f	file:
+handle_request	network/http/vfs_http.c	/^static int handle_request(int cfd) $/;"	f	file:
+handler10sec	network/watchdog.c	/^static void handler10sec(int signo) {$/;"	f	file:
+hash	lib/myconfig.c	/^	uint32_t hash;		\/\/hash value for key$/;"	m	struct:myconfig	file:
+hash_function	lib/GeneralHashFunctions.h	/^typedef unsigned int (*hash_function)(char*, unsigned int len);$/;"	t
+hash_size	3rdlib/TShmBuffer.h	/^	int hash_size;$/;"	m	struct:SHM_HEAD
+hbtime	network/client/vfs_data.h	/^	uint32_t hbtime;$/;"	m	struct:__anon19
+hbtime	network/http/vfs_http.c	/^	uint32_t hbtime;$/;"	m	struct:__anon42	file:
+hbtime	network/voss/vfs_voss.h	/^	uint32_t hbtime;$/;"	m	struct:__anon41
+headlen	network/client/vfs_data.h	/^	uint32_t headlen; \/*当前传输文件的头信息长度*\/$/;"	m	struct:__anon19
+hlist	network/client/vfs_data.h	/^	list_head_t hlist;$/;"	m	struct:__anon19
+hlist	network/vfs_init.h	/^	list_head_t hlist;$/;"	m	struct:__anon25
+hlist	network/vfs_init.h	/^	list_head_t hlist;$/;"	m	struct:__anon26
+hlist	network/vfs_task.h	/^	list_head_t hlist;$/;"	m	struct:__anon14
+hlist	network/voss/vfs_voss.h	/^	list_head_t hlist;$/;"	m	struct:__anon41
+hometmp	network/vfs_tmp_status.c	/^static list_head_t hometmp;$/;"	v	file:
+host	lib/common.h	/^	char host[512];$/;"	m	struct:__anon50
+host	network/client/vfs_data.h	/^	char host[32];$/;"	m	struct:__anon20
+hostname	network/vfs_init.c	/^char hostname[128];$/;"	v
+hothome	network/vfs_init.c	/^list_head_t hothome;$/;"	v
+hotlist	network/vfs_init.h	/^	list_head_t hotlist;$/;"	m	struct:__anon25
+http_peer	network/http/vfs_http.c	/^} http_peer;$/;"	t	typeref:struct:__anon42	file:
+iLast	network/parsepara.h	/^    int iLast;$/;"	m	struct:__anon32
+iMaxPairNum	network/parsepara.h	/^    int iMaxPairNum;$/;"	m	struct:__anon32
+iclose	lib/log.c	/^	unsigned char iclose;$/;"	m	struct:__anon48	file:
+id	network/thread.h	/^	unsigned short id;$/;"	m	struct:thread
+idle	network/vfs_del_file.h	/^	char idle;$/;"	m	struct:__anon29
+idletmp	network/vfs_tmp_status.c	/^static list_head_t idletmp;$/;"	v	file:
+in	lib/md5.h	/^	uint8_t  in[64];$/;"	m	struct:MD5Context
+inc_shm	3rdlib/TNmShm.cpp	/^int NMSHM::inc_shm(int alarmid, MNM_INT *val)$/;"	f	class:NMSHM
+index	3rdlib/TNmShm.h	/^	unsigned char index;$/;"	m	struct:__anon51
+index	network/vfs_init.h	/^	uint16_t index;$/;"	m	struct:__anon27
+indir	lib/common.h	/^	char indir[256];$/;"	m	struct:__anon49
+init_buff_size	network/vfs_init.c	/^int init_buff_size = 20480;$/;"	v
+init_cfg_connect	network/voss/vfs_voss_sub.c	/^static int init_cfg_connect(char *sip, vfs_voss_peer *peer)$/;"	f	file:
+init_cs_time_stamp	network/vfs_time_stamp.c	/^int init_cs_time_stamp()$/;"	f
+init_fcs_time_stamp	network/vfs_time_stamp.c	/^int init_fcs_time_stamp()$/;"	f
+init_fdinfo	network/fdinfo.c	/^int init_fdinfo(void) {$/;"	f
+init_file_filter	network/vfs_file_filter.c	/^int init_file_filter()$/;"	f
+init_global	network/vfs_init.c	/^int init_global()$/;"	f
+init_glog	network/main.c	/^static int init_glog()$/;"	f	file:
+init_int_str_shm	3rdlib/TNmShm.cpp	/^int NMSHM::init_int_str_shm()$/;"	f	class:NMSHM
+init_libs	network/plugins.c	/^int init_libs()$/;"	f
+init_load_tmp_status	network/vfs_tmp_status.c	/^int init_load_tmp_status()$/;"	f
+init_local_ip	network/vfs_init.c	/^static int init_local_ip()$/;"	f	file:
+init_log	lib/log.c	/^int init_log()$/;"	f
+init_ok	3rdlib/TNmShm.h	/^		int init_ok;$/;"	m	class:NMSHM
+init_proxy_info	network/client/vfs_data.c	/^static int init_proxy_info()$/;"	f	file:
+init_rwmutex	network/vfs_init.c	/^static pthread_rwlock_t init_rwmutex;$/;"	v	file:
+init_shm	3rdlib/TNmShm.cpp	/^int NMSHM::init_shm(int index, key_t intkey, key_t strkey)$/;"	f	class:NMSHM
+init_task_info	network/vfs_task.c	/^int init_task_info()$/;"	f
+init_thread	network/thread.c	/^int init_thread(void) {$/;"	f
+init_threadmap	network/watchdog.c	/^static void init_threadmap(void) {$/;"	f	file:
+init_vfs_agent	network/vfs_agent.c	/^int init_vfs_agent()$/;"	f
+init_vfs_thread	network/vfs_init.c	/^int init_vfs_thread(t_thread_arg *arg)$/;"	f
+inited	lib/myconfig.c	/^static int inited = 0;$/;"	v	file:
+initnextlogno	lib/log.c	/^static int initnextlogno(struct logentity* le) $/;"	f	file:
+inline	lib/md5.c	25;"	d	file:
+installdir	makefile	/^installdir = \/home\/vfs\/$/;"	m
+int2str	lib/util.h	/^static inline char *int2str(char *p, int32_t n) {$/;"	f
+intval	lib/myconfig.c	/^	int intval;			\/\/integer format for value$/;"	m	struct:myconfig	file:
+inuse	network/thread.h	/^	unsigned char inuse;$/;"	m	struct:thread
+iobuf	network/vfs_so.c	/^static __thread char *iobuf;$/;"	v	file:
+ip	network/client/vfs_data.h	/^	uint32_t ip;$/;"	m	struct:__anon19
+ip	network/vfs_init.h	/^	uint32_t ip;$/;"	m	struct:__anon24
+ip	network/vfs_init.h	/^	uint32_t ip;$/;"	m	struct:__anon26
+ip	network/vfs_init.h	/^	uint32_t ip[MAXCS_ONEGRUOP];$/;"	m	struct:__anon27
+ip	network/vfs_task.h	/^	uint32_t ip;$/;"	m	struct:__anon15
+ip	network/voss/vfs_voss.h	/^	char ip[16];$/;"	m	struct:__anon41
+ip2str	lib/util_ip.c	/^char *ip2str(char *str, uint32_t ip) {$/;"	f
+iphome	network/vfs_init.c	/^static list_head_t iphome;$/;"	v	file:
+ipinfo	network/vfs_init.h	/^	t_ip_info ipinfo;$/;"	m	struct:__anon25
+iprole	network/main.c	/^char *iprole[] = {"unkown", "fcs", "cs", "tracker", "voss_master", "self_ip"}; $/;"	v
+isDigit	network/client/vfs_data_base.c	/^static inline int isDigit(const char *ptr) $/;"	f	file:
+ishot	network/vfs_init.h	/^	unsigned char ishot:1;$/;"	m	struct:__anon24
+isp	network/vfs_init.h	/^	uint8_t isp;  \/*if have *\/$/;"	m	struct:__anon24
+isp	network/vfs_init.h	/^	uint8_t isp[MAXCS_ONEGRUOP];$/;"	m	struct:__anon27
+isp_iplist	network/vfs_init.c	/^list_head_t isp_iplist[256];$/;"	v
+isplist	network/vfs_init.h	/^	list_head_t isplist;$/;"	m	struct:__anon25
+ispname	network/vfs_init.c	/^const char *ispname[MAXISP] = {"tel", "cnc", "edu", "tt", "yd", "hs", "mp4"};$/;"	v
+isself	network/vfs_init.h	/^	unsigned char isself:1;$/;"	m	struct:__anon24
+isvalid	network/vfs_maintain.c	/^static int isvalid(char *key)$/;"	f	file:
+key	lib/myconfig.c	/^	char key[0];		\/\/key$/;"	m	struct:myconfig	file:
+keyno	3rdlib/TShmBuffer.h	/^		unsigned int keyno;$/;"	m	class:SHM_DATA_STRU
+last	network/voss/vfs_voss.c	/^	time_t last;$/;"	m	struct:__anon39	file:
+len	network/global.h	/^	size_t len;		\/\/数据有效长度$/;"	m	struct:mybuff
+lfd	network/vfs_so.c	/^static __thread int lfd;$/;"	v	file:
+lfd	network/vfs_so_r.c	/^static int lfd;$/;"	v	file:
+line	network/vfs_del_file.h	/^	char line;$/;"	m	struct:__anon29
+link_shm	3rdlib/TNmShm.cpp	/^int NMSHM::link_shm()$/;"	f	class:NMSHM
+list	lib/myconfig.c	/^	list_head_t list;$/;"	m	struct:myconfig	file:
+list	lib/myconfig.c	/^	list_head_t list;$/;"	m	struct:prehash	file:
+list	network/plugins.h	/^	list_head_t list;$/;"	m	struct:__anon3
+list	network/vfs_file_filter.c	/^	list_head_t list;$/;"	m	struct:__anon4	file:
+list	network/vfs_task.h	/^	list_head_t list;$/;"	m	struct:__anon16
+list	network/vfs_tmp_status.h	/^	list_head_t list;$/;"	m	struct:__anon22
+list_add_head	lib/list.h	/^static inline void list_add_head(struct list_head *new1, struct list_head *head)$/;"	f
+list_add_tail	lib/list.h	/^static inline void list_add_tail(struct list_head *new1, struct list_head *head)$/;"	f
+list_del	lib/list.h	/^static inline void list_del(struct list_head *entry)$/;"	f
+list_del_init	lib/list.h	/^static inline void list_del_init(struct list_head *entry)$/;"	f
+list_empty	lib/list.h	/^static inline int list_empty(struct list_head *head)$/;"	f
+list_entry	lib/list.h	190;"	d
+list_for_each	lib/list.h	198;"	d
+list_for_each_entry	lib/list.h	235;"	d
+list_for_each_entry_safe	lib/list.h	250;"	d
+list_for_each_entry_safe_l	lib/list.h	256;"	d
+list_for_each_prev	lib/list.h	210;"	d
+list_for_each_safe	lib/list.h	225;"	d
+list_head	lib/list.h	/^struct list_head {$/;"	s
+list_head_t	lib/list.h	/^typedef struct list_head list_head_t;$/;"	t	typeref:struct:list_head
+list_move	lib/list.h	/^static inline void list_move(struct list_head *list, struct list_head *head)$/;"	f
+list_move_tail	lib/list.h	/^static inline void list_move_tail(struct list_head *list,$/;"	f
+list_splice	lib/list.h	/^static inline void list_splice(struct list_head *list, struct list_head *head)$/;"	f
+list_splice_init	lib/list.h	/^static inline void list_splice_init(struct list_head *list,$/;"	f
+llist	network/vfs_task.h	/^	list_head_t llist;$/;"	m	struct:__anon14
+local_in_fd	network/client/vfs_data.h	/^	int local_in_fd; \/* 当cs接受对端文件传输时，打开的本地句柄 该fd由插件自己管理 *\/$/;"	m	struct:__anon19
+local_in_fd	network/voss/vfs_voss.h	/^	int local_in_fd; \/* 接受vfs侧数据时，写到本地的文件句柄*\/$/;"	m	struct:__anon41
+localfile_link_task	network/vfs_localfile.c	/^void localfile_link_task(t_task_base *task)$/;"	f
+localip	network/vfs_init.c	/^static uint32_t localip[64];$/;"	v	file:
+lock_timeout	network/vfs_init.h	/^	uint16_t lock_timeout;$/;"	m	struct:__anon28
+log_mutex	lib/log.c	/^static pthread_mutex_t log_mutex = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+logclose	lib/log.c	/^void logclose(int fd)$/;"	f
+logcolors	lib/log.c	/^static char *logcolors[] = {"36m", "35m", "32m", "31m", "41;30m", "41;30m"};$/;"	v	file:
+logentities	lib/log.c	/^static struct logentity logentities[MAX_LOG];$/;"	v	typeref:struct:logentity	file:
+logentity	lib/log.c	/^struct logentity {$/;"	s	file:
+loglevel	lib/log.c	/^	int loglevel;		\/\/log level, caller set$/;"	m	struct:logentity	file:
+loglevel	lib/log.h	/^enum loglevel {LOG_TRACE = 0, LOG_DEBUG, LOG_NORMAL, LOG_ERROR, LOG_FAULT, LOG_NONE}; $/;"	g
+logstring	lib/log.c	/^static char *logstring[] = {"TRACE", "DEBUG", "NORMAL", "ERROR", "FAULT", "NONE"};$/;"	v	file:
+loop	network/vfs_timer.h	/^	int loop;    \/*0 only once, 1 loop for ever *\/$/;"	m	struct:__anon17
+m_buffer	3rdlib/TShmBuffer.h	/^		SHM_DATA_STRU<T> *m_pNode, *m_buffer;$/;"	m	class:TShmBuffer
+m_code	3rdlib/TException.h	/^	int m_code;$/;"	m	class:TException
+m_key	3rdlib/TShmBuffer.h	/^		key_t m_key;$/;"	m	class:TShmBuffer
+m_msg	3rdlib/TException.h	/^    char m_msg[2048];$/;"	m	class:TException
+m_pNode	3rdlib/TShmBuffer.h	/^		SHM_DATA_STRU<T> *m_pNode, *m_buffer;$/;"	m	class:TShmBuffer
+m_pmem	3rdlib/TShareMem.h	/^	void *m_pmem;$/;"	m	class:TShareMem
+m_shareMem	3rdlib/TShmBuffer.h	/^		TShareMem m_shareMem;$/;"	m	class:TShmBuffer
+m_shmHead	3rdlib/TShmBuffer.h	/^		SHM_HEAD *m_shmHead;$/;"	m	class:TShmBuffer
+m_shmid	3rdlib/TShareMem.h	/^	int m_shmid;$/;"	m	class:TShareMem
+m_shmmap_int	3rdlib/TNmShm.h	/^		TShmBuffer<MNM_INT> m_shmmap_int[2];$/;"	m	class:NMSHM
+m_shmmap_str	3rdlib/TNmShm.h	/^		TShmBuffer<MNM_STR> m_shmmap_str[2];$/;"	m	class:NMSHM
+main	lib/testmd5.c	/^int main(int argc, char **argv)$/;"	f
+main	network/main.c	/^int main(int argc, char **argv) {$/;"	f
+main	network/parsepara.c	/^int main(int argc, char *argv[])$/;"	f
+main_loop	network/main.c	/^static void main_loop(struct threadstat *thst) {$/;"	f	file:
+maintain	network/vfs_init.c	/^volatile int maintain = 0;		\/\/1-维护配置 0 -可以使用$/;"	v
+maintain_log	lib/log.c	/^static void * maintain_log(void *arg)$/;"	f	file:
+mainthread	network/thread.c	/^struct thread mainthread;$/;"	v	typeref:struct:thread
+matchitem	lib/acl.h	/^struct matchitem$/;"	s
+maxevent	network/vfs_so.c	/^static __thread int maxevent;$/;"	v	file:
+maxevent	network/vfs_so.h	/^	int maxevent;$/;"	m	struct:__anon2
+maxevent	network/vfs_so_r.c	/^static int maxevent;$/;"	v	file:
+maxfds	network/fdinfo.c	/^int maxfds = 4096; $/;"	v
+maxid	network/thread.c	/^static int maxid;$/;"	v	file:
+maxlognum	lib/log.c	/^	int maxlognum;		\/\/maximum log files number, caller set		$/;"	m	struct:logentity	file:
+md5_t	lib/md5.h	/^typedef struct MD5Context md5_t;$/;"	t	typeref:struct:MD5Context
+mindiskfree	network/vfs_init.h	/^	uint64_t mindiskfree;$/;"	m	struct:__anon28
+mode	network/client/vfs_data.h	/^	uint8_t mode;  \/* active , passive *\/$/;"	m	struct:__anon19
+modify_fd_event	network/vfs_so.c	/^void modify_fd_event(int fd, int events)$/;"	f
+modify_fd_event	network/vfs_so_r.c	/^void modify_fd_event(int fd, int events)$/;"	f
+mthreads	network/watchdog.c	/^			int mthreads;$/;"	m	struct:threadmap::__anon33::__anon34	file:
+mtime	network/vfs_agent.h	/^	unsigned int mtime;$/;"	m	struct:__anon1
+mutex	network/vfs_task.c	/^static pthread_mutex_t mutex[TASK_UNKNOWN];$/;"	v	file:
+mybuff	network/global.h	/^struct mybuff {$/;"	s
+mybuff_fini	network/mybuff.c	/^void mybuff_fini(struct mybuff* mybuff) {$/;"	f
+mybuff_getdata	network/mybuff.c	/^int mybuff_getdata(struct mybuff* mybuff, char** data, size_t * len) {$/;"	f
+mybuff_getfile	network/mybuff.c	/^int mybuff_getfile(struct mybuff* mybuff, int* fd, off_t * offset, size_t * len) {$/;"	f
+mybuff_init	network/mybuff.c	/^void mybuff_init(struct mybuff* mybuff) {$/;"	f
+mybuff_reinit	network/mybuff.c	/^void mybuff_reinit(struct mybuff* mybuff) {$/;"	f
+mybuff_setdata	network/mybuff.c	/^int mybuff_setdata(struct mybuff* mybuff, const char* data, size_t len) {$/;"	f
+mybuff_setfile	network/mybuff.c	/^int mybuff_setfile(struct mybuff* mybuff, int fd, off_t offset, size_t len) {$/;"	f
+mybuff_skipdata	network/mybuff.c	/^void mybuff_skipdata(struct mybuff* mybuff, size_t len) {$/;"	f
+mybuff_skipfile	network/mybuff.c	/^void mybuff_skipfile(struct mybuff* mybuff, size_t len) {$/;"	f
+myconfig	lib/myconfig.c	/^struct myconfig {$/;"	s	file:
+myconfig_cleanup	lib/myconfig.c	/^int myconfig_cleanup(void) {$/;"	f
+myconfig_delete_value	lib/myconfig.c	/^int myconfig_delete_value(const char *prefix, const char *key) {$/;"	f
+myconfig_dump_to_file	lib/myconfig.c	/^int myconfig_dump_to_file()$/;"	f
+myconfig_get_decimal	lib/myconfig.c	/^double myconfig_get_decimal(const char *key) {$/;"	f
+myconfig_get_intval	lib/myconfig.c	/^int myconfig_get_intval(const char *key, int def) {$/;"	f
+myconfig_get_multivalue	lib/myconfig.c	/^char* myconfig_get_multivalue(const char *key, int index) {$/;"	f
+myconfig_get_size	lib/myconfig.c	/^unsigned long myconfig_get_size(const char *key, int def) {$/;"	f
+myconfig_get_value	lib/myconfig.c	/^char* myconfig_get_value(const char *key) {$/;"	f
+myconfig_init	lib/myconfig.c	/^int myconfig_init(int argc, char **argv) {$/;"	f
+myconfig_loadfile0	lib/myconfig.c	/^static int myconfig_loadfile0(const char *file) {$/;"	f	file:
+myconfig_put_value	lib/myconfig.c	/^int myconfig_put_value(const char *pre, const char *key0, const char *val) {$/;"	f
+myconfig_register_reload	lib/myconfig.c	/^void myconfig_register_reload(int (*func)(void), char** keys, int keynum) {$/;"	f
+myconfig_reload	lib/myconfig.c	/^void myconfig_reload() {$/;"	f
+myconfig_update_value	lib/myconfig.c	/^int myconfig_update_value(const char *key, const char *value) {$/;"	f
+myhash	lib/myconfig.c	/^static list_head_t myhash[256];$/;"	v	file:
+mylib	network/solib.h	/^struct mylib {$/;"	s
+mythreadid	network/thread.c	/^static __thread int mythreadid;$/;"	v	file:
+name	network/thread.h	/^	char name[16];$/;"	m	struct:thread
+name	network/vfs_so.h	/^	char name[255];$/;"	m	struct:__anon2
+need_send_bytes	network/vfs_task.c	/^uint64_t need_send_bytes;  \/*等待发送的字节数*\/$/;"	v
+next	3rdlib/TShmBuffer.h	/^		unsigned int next;$/;"	m	class:SHM_DATA_STRU
+next	lib/acl.h	/^	struct matchitem*	next;$/;"	m	struct:matchitem	typeref:struct:matchitem::matchitem
+next	lib/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
+next	lib/myconfig.c	/^	struct reload_cb* next;$/;"	m	struct:reload_cb	typeref:struct:reload_cb::reload_cb	file:
+next_time	network/vfs_timer.h	/^	time_t next_time;$/;"	m	struct:__anon17
+nextlogno	lib/log.c	/^	int nextlogno;		\/\/next log file no, internel variable$/;"	m	struct:logentity	file:
+nop_handler	network/daemon.c	/^static void nop_handler(int signo) {$/;"	f	file:
+nostandby	network/http/vfs_http.c	/^	int nostandby; \/\/ 1: delay process $/;"	m	struct:__anon42	file:
+nowtime	lib/log.h	18;"	d
+nthreads	network/watchdog.c	/^			int nthreads;$/;"	m	struct:threadmap::__anon33::__anon34	file:
+offline	network/vfs_init.h	/^	unsigned char offline:1;$/;"	m	struct:__anon24
+offline_rwmutex	network/vfs_init.c	/^static pthread_rwlock_t offline_rwmutex;$/;"	v	file:
+offlinehome	network/vfs_init.c	/^list_head_t offlinehome;$/;"	v
+online_list	network/client/vfs_data.c	/^static list_head_t online_list[256]; \/\/用来快速定位查找$/;"	v	file:
+online_list	network/voss/vfs_voss.c	/^static list_head_t online_list[256]; \/\/用来快速定位查找$/;"	v	file:
+open_localfile_4_read	network/vfs_localfile.c	/^int open_localfile_4_read(t_task_base *task, int *fd)$/;"	f
+open_tmp_localfile_4_write	network/vfs_localfile.c	/^int open_tmp_localfile_4_write(t_task_base *task, int *fd)$/;"	f
+openfile	lib/log.c	/^static int openfile(const char* fn) $/;"	f	file:
+opentime	network/voss/vfs_voss.h	/^	time_t opentime;$/;"	m	struct:__anon40
+oper_ip_off_line	network/vfs_init.c	/^void oper_ip_off_line(uint32_t ip, int type)$/;"	f
+outdir	lib/common.h	/^	char outdir[256];$/;"	m	struct:__anon49
+outfile	network/voss/vfs_voss.h	/^	char outfile[256];$/;"	m	struct:__anon40
+over_status	network/vfs_task.c	/^const char *over_status[OVER_LAST] = {"OVER_UNKNOWN", "OVER_OK", "OVER_E_MD5", "OVER_PEERERR", "TASK_EXIST", "OVER_PEERCLOSE", "OVER_UNLINK", "OVER_TIMEOUT", "OVER_MALLOC", "OVER_SRC_DOMAIN_ERR", "OVER_SRC_IP_OFFLINE", "OVER_E_OPEN_SRCFILE", "OVER_E_OPEN_DSTFILE", "OVER_E_IP", "OVER_E_TYPE", "OVER_SEND_LEN", "OVER_TOO_MANY_TRY", "OVER_DISK_ERR"};$/;"	v
+overstatus	network/vfs_task.h	/^	short overstatus;$/;"	m	struct:__anon12
+pStrPairList	network/parsepara.h	/^    StringPair *pStrPairList;$/;"	m	struct:__anon32
+padding	network/watchdog.c	/^		char padding[16<<10];$/;"	m	union:threadmap::__anon33	file:
+parse_args	network/main.c	/^static int parse_args(int argc, char* argv[]) {$/;"	f	file:
+parse_msg	lib/pro_voss.c	/^int parse_msg(char *inbuf, int inlen, t_head_info *head)$/;"	f
+parse_sig_msg	lib/protocol.c	/^int parse_sig_msg(t_vfs_sig_head *h, t_vfs_sig_body *b, char *s, int slen)$/;"	f
+parsepara	network/parsepara.c	/^int parsepara($/;"	f
+partnership	lib/acl.c	/^int partnership( char* currval, char* prefix, char* suffix, char* pattern )$/;"	f
+passwd	lib/common.h	/^	char passwd[32];$/;"	m	struct:__anon50
+password	network/client/vfs_data.h	/^	char password[64];$/;"	m	struct:__anon20
+path	network/vfs_init.h	/^	char path[256];$/;"	m	struct:__anon28
+path_dirs	network/vfs_init.c	/^const char *path_dirs[] = {"indir", "outdir", "workdir", "bkdir", "tmpdir", "syncdir"};$/;"	v
+peerip	network/global.h	/^	char peerip[16];    \/\/for debug print$/;"	m	struct:conn
+pev	network/vfs_so.c	/^static __thread struct epoll_event *pev;$/;"	v	typeref:struct:epoll_event	file:
+pid	network/thread.h	/^	pid_t pid;$/;"	m	struct:thread
+plist	network/plugins.c	/^list_head_t plist;$/;"	v
+port	lib/common.h	/^	int port;$/;"	m	struct:__anon50
+port	network/client/vfs_data.h	/^	int port;$/;"	m	struct:__anon20
+port	network/vfs_so.h	/^	int port;$/;"	m	struct:__anon2
+pos	network/vfs_tmp_status.h	/^	off_t pos;$/;"	m	struct:__anon22
+pre	lib/myconfig.c	/^	char pre[20];$/;"	m	struct:prehash	file:
+pre_list	lib/myconfig.c	/^	list_head_t pre_list;$/;"	m	struct:myconfig	file:
+prehash	lib/myconfig.c	/^struct prehash {$/;"	s	file:
+prelist	lib/myconfig.c	/^static struct prehash     prelist[256];$/;"	v	typeref:struct:prehash	file:
+prev	lib/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::
+print	3rdlib/TException.cpp	/^void TException::print()$/;"	f	class:TException
+proc_fini	network/solib.h	/^typedef void (*proc_fini) (int fd);$/;"	t
+proc_init	network/solib.h	/^typedef int (*proc_init) (void);$/;"	t
+proc_method	network/solib.h	/^typedef int (*proc_method) (int fd);$/;"	t
+proc_timeout	network/solib.h	/^typedef void (*proc_timeout) (void);$/;"	t
+process_data_req	network/voss/vfs_voss_sub.c	/^static int process_data_req(int fd, t_head_info *h)$/;"	f	file:
+progname	network/daemon.c	/^static char *progname = NULL;$/;"	v	file:
+protocol_err	lib/protocol.c	/^const char *protocol_err[] = {"ok", "head len err", "total len err", "error data len, close socket!"};$/;"	v
+r5hash	lib/common.c	/^uint32_t r5hash(const char *p) $/;"	f
+read_shm	3rdlib/TNmShm.cpp	/^int NMSHM::read_shm(unsigned char index, int *alarmid, MNM_INT **val)$/;"	f	class:NMSHM
+read_shm_str	3rdlib/TNmShm.cpp	/^int NMSHM::read_shm_str(unsigned char index, int *alarmid, MNM_STR **val)$/;"	f	class:NMSHM
+real_isp	network/vfs_init.h	/^	uint8_t real_isp;  \/*for some arichive machine reuse :) *\/$/;"	m	struct:__anon24
+real_isp	network/vfs_init.h	/^	uint8_t real_isp[MAXCS_ONEGRUOP];$/;"	m	struct:__anon27
+real_rm_file	network/vfs_localfile.c	/^void real_rm_file(char *file)$/;"	f
+real_rm_time	network/vfs_init.h	/^	time_t real_rm_time;$/;"	m	struct:__anon28
+recv_buff	network/global.h	/^	struct mybuff recv_buff;	\/\/recv buffer for client$/;"	m	struct:conn	typeref:struct:conn::mybuff
+recvlen	network/voss/vfs_voss.h	/^	int recvlen;$/;"	m	struct:__anon40
+recvtask	network/client/vfs_data.h	/^	t_vfs_tasklist *recvtask; \/*当前数据链路正在执行的数据接收任务 *\/$/;"	m	struct:__anon19
+register_thread	network/thread.c	/^int register_thread(const char *name, int (*entry)(void *), void *arg) {$/;"	f
+registerlog	lib/log.c	/^int registerlog(const char* filename, int level, int rotatesize, int rotateintval, int filenum)$/;"	f
+registerlog_internal	lib/log.c	/^static int registerlog_internal(struct logentity* le) $/;"	f	file:
+release_cfg_lock	network/vfs_init.c	/^int release_cfg_lock()$/;"	f
+reload_cb	lib/myconfig.c	/^struct reload_cb {$/;"	s	file:
+reload_cb_list	lib/myconfig.c	/^static struct reload_cb* reload_cb_list = NULL;$/;"	v	typeref:struct:reload_cb	file:
+reload_cfg	network/vfs_init.c	/^int reload_cfg()$/;"	f
+reload_config	network/vfs_init.c	/^void reload_config()$/;"	f
+reload_handler	network/daemon.c	/^static void reload_handler(int signo) {$/;"	f	file:
+reload_key	lib/myconfig.c	/^static const char* reload_key[MAX_RELOAD_KEY_NUM] = {	\/* config keys could be reload *\/$/;"	v	file:
+reload_time	network/vfs_init.h	/^	uint16_t reload_time;$/;"	m	struct:__anon28
+report_2_nm	network/vfs_task.c	/^void report_2_nm()$/;"	f
+report_err_2_nm	network/vfs_init.c	/^void report_err_2_nm (char *file, const char *func, int line, int ret)$/;"	f
+reserver	network/vfs_init.h	/^	unsigned char reserver:4;$/;"	m	struct:__anon24
+restart	network/daemon.c	/^volatile int restart = 1;$/;"	v
+retry	network/vfs_init.h	/^	int8_t retry;$/;"	m	struct:__anon28
+retry	network/vfs_task.h	/^	int8_t retry;     \/*任务执行失败时，根据配置是否执行重新发起任务，已经重试次数，不能超过设定重试次数*\/$/;"	m	struct:__anon12
+rm_last_send_file	network/vfs_agent.c	/^static void rm_last_send_file()$/;"	f	file:
+role	network/client/vfs_data.h	/^	uint8_t role;  \/*FCS, CS, TRACKER *\/$/;"	m	struct:__anon19
+role	network/vfs_init.h	/^	uint8_t role;$/;"	m	struct:__anon24
+role	network/voss/vfs_voss.h	/^	uint8_t role;$/;"	m	struct:__anon41
+rotateintval	lib/log.c	/^	int rotateintval;	\/\/rotate interval time, caller set, 0 for disable	$/;"	m	struct:logentity	file:
+rotatesize	lib/log.c	/^	int rotatesize;		\/\/rotate size(max log file size), caller set, 0 for disable$/;"	m	struct:logentity	file:
+rotatetime	lib/log.c	/^	unsigned int rotatetime;		\/\/internel variable$/;"	m	struct:logentity	file:
+rv	network/thread.h	/^	int rv;$/;"	m	struct:thread
+sFirst	network/parsepara.h	/^    char sFirst[MAX_NAME_LEN];$/;"	m	struct:__anon31
+sSecond	network/parsepara.h	/^    char sSecond[MAX_VALUE_LEN];$/;"	m	struct:__anon31
+s_ip	network/vfs_init.h	/^	char s_ip[16]; \/*sip*\/$/;"	m	struct:__anon24
+s_len	network/vfs_file_filter.c	/^	uint8_t s_len;$/;"	m	struct:__anon4	file:
+s_server_stat	network/vfs_agent.c	/^const char *s_server_stat[STAT_MAX] = {"UNKOWN_STAT", "WAIT_SYNC", "SYNCING", "ON_LINE", "OFFLINE"};$/;"	v
+saved_argc	network/daemon.c	/^static int saved_argc = 0;$/;"	v	file:
+saved_argv	network/daemon.c	/^static char **saved_argv = NULL;$/;"	v	file:
+scan_delay_task	network/vfs_timer.c	/^void scan_delay_task()$/;"	f
+scan_libs	network/plugins.c	/^void scan_libs()$/;"	f
+scan_some_status_task	network/vfs_task.c	/^int scan_some_status_task(int status, timeout_task cb)$/;"	f
+scanlogs	lib/log.c	/^static void scanlogs() $/;"	f	file:
+scantmpdir	network/vfs_agent.c	/^static void scantmpdir(char *tmpdir, struct conn *curcon) $/;"	f	file:
+self_ipinfo	network/main.c	/^t_ip_info self_ipinfo;$/;"	v
+self_offline_time	network/global.h	/^time_t self_offline_time;$/;"	v
+self_stat	network/global.h	/^uint8_t self_stat ;$/;"	v
+send_buff	network/global.h	/^	struct mybuff send_buff;	\/\/send buffer for client$/;"	m	struct:conn	typeref:struct:conn::mybuff
+send_len	network/global.h	/^	int send_len;            \/\/send len between call svc_send$/;"	m	struct:conn
+sendtask	network/client/vfs_data.h	/^	t_vfs_tasklist *sendtask; \/*当前数据链路正在执行的数据传输任务 *\/$/;"	m	struct:__anon19
+sep	lib/myconfig.c	/^static const char sep[256] = { [' ']=1, ['.']=1, ['-']=1, ['_']=1 };$/;"	v	file:
+seq	lib/pro_voss.h	/^	unsigned int seq;$/;"	m	struct:__anon44
+server_stat	network/client/vfs_data.h	/^	uint8_t server_stat; \/* server stat*\/$/;"	m	struct:__anon19
+server_stat	network/voss/vfs_voss.h	/^	uint8_t server_stat;$/;"	m	struct:__anon41
+set_client_data	network/vfs_so.c	/^int set_client_data(int fd, char *buf, size_t len)$/;"	f
+set_client_data	network/vfs_so_r.c	/^int set_client_data(int fd, char *buf, size_t len)$/;"	f
+set_client_fd	network/vfs_so.c	/^int set_client_fd(int fd, int localfd, size_t offset, size_t len)$/;"	f
+set_client_fd	network/vfs_so_r.c	/^int set_client_fd(int fd, int localfd, size_t offset, size_t len)$/;"	f
+set_cs_time_stamp	network/vfs_time_stamp.c	/^int set_cs_time_stamp(t_task_base *base)$/;"	f
+set_cs_time_stamp_by_int	network/vfs_time_stamp.c	/^int set_cs_time_stamp_by_int(int dir1, int dir2, int domain, time_t tval)$/;"	f
+set_dirtime	network/vfs_maintain.c	/^int set_dirtime(StringPairList *pairlist, char *buf, int len)$/;"	f
+set_fcs_time_stamp	network/vfs_time_stamp.c	/^int set_fcs_time_stamp(t_task_base *base)$/;"	f
+set_fcs_time_stamp_by_int	network/vfs_time_stamp.c	/^int set_fcs_time_stamp_by_int(int dir1, int dir2, time_t val)$/;"	f
+set_from_voss	network/vfs_agent.c	/^static int set_from_voss(int fd, t_head_info *h, char *data)$/;"	f	file:
+set_shm	3rdlib/TNmShm.cpp	/^int NMSHM::set_shm(int alarmid, MNM_INT *val)$/;"	f	class:NMSHM
+set_shm_str	3rdlib/TNmShm.cpp	/^int NMSHM::set_shm_str(int alarmid, MNM_STR *val)$/;"	f	class:NMSHM
+set_socket_attr	network/vfs_so.c	/^static void set_socket_attr(int fd)$/;"	f	file:
+set_socket_attr	network/vfs_so_r.c	/^static void set_socket_attr(int fd)$/;"	f	file:
+set_task_to_tmp	network/vfs_tmp_status.c	/^int set_task_to_tmp(t_vfs_tasklist *tasklist)$/;"	f
+set_tmp_blank	network/vfs_tmp_status.c	/^void set_tmp_blank(off_t pos, t_tmp_status *tmp)$/;"	f
+setval	network/parsepara.c	/^int setval(const char *sName, $/;"	f
+shiftfile	lib/log.c	/^static int shiftfile(struct logentity* le) $/;"	f	file:
+shouldencode	network/parsepara.c	/^inline int shouldencode(char ch)$/;"	f
+sig_port	network/vfs_init.h	/^	uint16_t sig_port;$/;"	m	struct:__anon28
+sighup_handler	network/daemon.c	/^static void sighup_handler(int signo) {$/;"	f	file:
+sigterm_handler	network/daemon.c	/^static void sigterm_handler(int signo) {$/;"	f	file:
+silib	network/plugins.h	/^} silib;$/;"	t	typeref:struct:__anon3
+sip	network/vfs_init.h	/^	char sip[128]; \/*sip or domain *\/$/;"	m	struct:__anon24
+size	network/global.h	/^	size_t size;		\/\/buffer大小$/;"	m	struct:mybuff
+smp_mb__after_atomic_dec	network/atomic.h	206;"	d
+smp_mb__after_atomic_inc	network/atomic.h	208;"	d
+smp_mb__before_atomic_dec	network/atomic.h	205;"	d
+smp_mb__before_atomic_inc	network/atomic.h	207;"	d
+so_fini	network/plugins.h	/^	so_method   so_fini;$/;"	m	struct:__anon3
+so_init	network/plugins.h	/^	so_method	so_init;$/;"	m	struct:__anon3
+so_method	network/plugins.h	/^typedef int (*so_method) ();$/;"	t
+so_proc	network/plugins.h	/^	so_method	so_proc;$/;"	m	struct:__anon3
+so_thread_entry	network/vfs_so_r.c	/^static void so_thread_entry(void *arg)$/;"	f	file:
+sock_stat	network/client/vfs_data.h	/^	uint8_t sock_stat;   \/* SOCK_STAT *\/$/;"	m	struct:__anon19
+sock_stat	network/voss/vfs_voss.h	/^	uint8_t sock_stat;$/;"	m	struct:__anon41
+sock_stat_cmd	network/client/vfs_data.c	/^const char *sock_stat_cmd[] = {"LOGOUT", "CONNECTED", "LOGIN", "IDLE", "PREPARE_RECVFILE", "RECVFILEING", "SENDFILEING", "LAST_STAT"};$/;"	v
+sock_stat_cmd	network/voss/vfs_voss.c	/^const char *sock_stat_cmd[] = {"LOGOUT", "CONNECTED", "LOGIN", "HB_SEND", "HB_RSP", "IDLE", "RECV_LAST", "SEND_LAST", "PREPARE_SYNCFILE", "SYNCFILEING", "SYNCFILE_POST", "SYNCFILE_OK", "PREPARE_SENDFILE", "SENDFILEING", "SENDFILE_OK"};$/;"	v
+solib	network/vfs_so.c	/^static __thread struct mylib solib;$/;"	v	typeref:struct:mylib	file:
+solib	network/vfs_so_r.c	/^static struct mylib solib;$/;"	v	typeref:struct:mylib	file:
+sortmtime	network/vfs_agent.c	/^static int sortmtime(const void *p1, const void *p2)$/;"	f	file:
+span_time	network/vfs_timer.h	/^	time_t span_time;$/;"	m	struct:__anon17
+splitstr	lib/acl.c	/^void splitstr( char* str, char* pstr, char** val, unsigned short count )$/;"	f
+srcip	network/vfs_task.h	/^	char srcip[16];$/;"	m	struct:__anon12
+srcport	network/vfs_task.h	/^	int  srcport;$/;"	m	struct:__anon12
+start_thread_posix	network/thread.c	/^static int start_thread_posix(struct thread *th) {$/;"	f	file:
+start_threads	network/thread.c	/^int start_threads() {$/;"	f
+start_watchdog	network/watchdog.c	/^int start_watchdog(void) {$/;"	f
+starttime	network/vfs_task.h	/^	time_t starttime; \/*同步开始时间点 对CS来说，填写 目录上次同步的时间戳，对FCS来说，填写 0*\/ $/;"	m	struct:__anon15
+state	network/thread.h	/^	unsigned char state;$/;"	m	struct:thread
+status	lib/protocol.h	/^	uint8_t status;$/;"	m	struct:__anon46
+status	network/vfs_task.h	/^	uint8_t status;$/;"	m	struct:__anon14
+stime	network/vfs_task.h	/^	time_t stime;$/;"	m	struct:__anon12
+stop	network/daemon.c	/^volatile int stop = 0;$/;"	v
+stop_threads	network/thread.c	/^void stop_threads() {$/;"	f
+str2ip	lib/util_ip.c	/^uint32_t str2ip(const char *str) {$/;"	f
+str_cmd	lib/protocol.c	/^const char *str_cmd[] = {"ERROR", "HEARTBEAT_REQ", "HEARTBEAT_RSP", "ADDONE_REQ", "ADDONE_RSP", "NEWTRACKER4CS_REQ", "NEWTRACKER4CS_RSP", "TRACKERLIST4CS_REQ", "TRACKERLIST4CS_RSP", "SYNCSIGNALLING_REQ", "SYNCSIGNALLING_RSP", "TASKINFO_REQ", "TASKINFO_RSP", "NEWTASK_REQ", "NEWTASK_RSP", "CMD_PUSH_FILE_REQ", "CMD_PUSH_FILE_RSP", "CMD_GET_FILE_REQ", "CMD_GET_FILE_RSP"};$/;"	v
+str_explode	lib/util_str.c	/^int str_explode(const char *ifs, char *line0, char *field[], int n) {$/;"	f
+strindex	3rdlib/TNmShm.h	/^	unsigned char strindex;$/;"	m	struct:__anon51
+strings	network/vfs_file_filter.c	/^	char strings[64];$/;"	m	struct:__anon4	file:
+strmatch	lib/acl.c	/^int strmatch( struct matchitem* item, const char* dest )$/;"	f
+strpcpy	lib/acl.c	/^char* strpcpy( char* dest, const char* src )$/;"	f
+strtrim	lib/acl.c	/^char* strtrim( char* str )$/;"	f
+sub_init_filter	network/vfs_file_filter.c	/^static int sub_init_filter(char *s, int type, list_head_t *mlist)$/;"	f	file:
+sub_init_signalling	network/vfs_so.c	/^static int sub_init_signalling(char *so)$/;"	f	file:
+sub_init_signalling	network/vfs_so_r.c	/^static int sub_init_signalling(char *so)$/;"	f	file:
+sub_init_tmp_status	network/vfs_tmp_status.c	/^static int sub_init_tmp_status(char * tmpfile, off_t size)$/;"	f	file:
+sub_recv	network/voss/vfs_voss_sub.c	/^static int sub_recv(int fd)$/;"	f	file:
+svc_finiconn	network/client/vfs_data.c	/^void svc_finiconn(int fd)$/;"	f
+svc_finiconn	network/client/vfs_http_client.c	/^void svc_finiconn(int fd)$/;"	f
+svc_finiconn	network/http/vfs_http.c	/^void svc_finiconn(int fd)$/;"	f
+svc_finiconn	network/solib.h	/^	proc_fini		svc_finiconn;\/\/O	$/;"	m	struct:mylib
+svc_finiconn	network/voss/vfs_voss.c	/^void svc_finiconn(int fd)$/;"	f
+svc_init	network/client/vfs_data.c	/^int svc_init() $/;"	f
+svc_init	network/client/vfs_http_client.c	/^int svc_init() $/;"	f
+svc_init	network/http/vfs_http.c	/^int svc_init() $/;"	f
+svc_init	network/solib.h	/^	proc_init		svc_init;    \/\/O$/;"	m	struct:mylib
+svc_init	network/voss/vfs_voss.c	/^int svc_init() $/;"	f
+svc_initconn	network/client/vfs_data.c	/^int svc_initconn(int fd) $/;"	f
+svc_initconn	network/client/vfs_http_client.c	/^int svc_initconn(int fd) $/;"	f
+svc_initconn	network/http/vfs_http.c	/^int svc_initconn(int fd) $/;"	f
+svc_initconn	network/solib.h	/^	proc_method		svc_initconn;\/\/O	$/;"	m	struct:mylib
+svc_initconn	network/voss/vfs_voss.c	/^int svc_initconn(int fd) $/;"	f
+svc_pinit	network/solib.h	/^	proc_init		svc_pinit;    \/\/O for thread init$/;"	m	struct:mylib
+svc_recv	network/client/vfs_data.c	/^int svc_recv(int fd) $/;"	f
+svc_recv	network/client/vfs_http_client.c	/^int svc_recv(int fd) $/;"	f
+svc_recv	network/http/vfs_http.c	/^int svc_recv(int fd) $/;"	f
+svc_recv	network/solib.h	/^	proc_method		svc_recv; \/\/M	$/;"	m	struct:mylib
+svc_recv	network/voss/vfs_voss.c	/^int svc_recv(int fd) $/;"	f
+svc_send	network/client/vfs_data.c	/^int svc_send(int fd)$/;"	f
+svc_send	network/client/vfs_http_client.c	/^int svc_send(int fd)$/;"	f
+svc_send	network/http/vfs_http.c	/^int svc_send(int fd)$/;"	f
+svc_send	network/solib.h	/^	proc_method		svc_send;  \/\/M$/;"	m	struct:mylib
+svc_send	network/voss/vfs_voss.c	/^int svc_send(int fd)$/;"	f
+svc_send_once	network/client/vfs_data.c	/^int svc_send_once(int fd)$/;"	f
+svc_send_once	network/solib.h	/^	proc_method		svc_send_once;  \/\/O$/;"	m	struct:mylib
+svc_timeout	network/client/vfs_data.c	/^void svc_timeout()$/;"	f
+svc_timeout	network/client/vfs_http_client.c	/^void svc_timeout()$/;"	f
+svc_timeout	network/http/vfs_http.c	/^void svc_timeout()$/;"	f
+svc_timeout	network/solib.h	/^	proc_timeout	svc_timeout; \/\/O$/;"	m	struct:mylib
+svc_timeout	network/voss/vfs_voss.c	/^void svc_timeout()$/;"	f
+sync_dir_count	network/vfs_init.h	/^	uint8_t sync_dir_count;$/;"	m	struct:__anon28
+sync_etime	network/vfs_init.h	/^	char sync_etime[12];$/;"	m	struct:__anon28
+sync_stime	network/vfs_init.h	/^	char sync_stime[12];$/;"	m	struct:__anon28
+sync_task	network/vfs_task.h	/^	t_vfs_sync_task sync_task;$/;"	m	struct:__anon16
+t_body_info	lib/pro_voss.h	/^}t_body_info;$/;"	t	typeref:struct:__anon43
+t_client_stat	network/voss/vfs_voss.c	/^} t_client_stat;$/;"	t	typeref:struct:__anon39	file:
+t_cs_dir_info	network/vfs_init.h	/^} t_cs_dir_info;$/;"	t	typeref:struct:__anon27
+t_cs_time_stamp	network/vfs_time_stamp.c	/^} t_cs_time_stamp;$/;"	t	typeref:struct:__anon5	file:
+t_db_info	lib/common.h	/^}t_db_info;$/;"	t	typeref:struct:__anon50
+t_fdinfo	lib/log.c	/^}t_fdinfo;$/;"	t	typeref:struct:__anon48	file:
+t_g_config	network/vfs_init.h	/^} t_g_config;$/;"	t	typeref:struct:__anon28
+t_head_info	lib/pro_voss.h	/^}t_head_info;$/;"	t	typeref:struct:__anon44
+t_ip_info	network/vfs_init.h	/^} t_ip_info;$/;"	t	typeref:struct:__anon24
+t_ip_info_list	network/vfs_init.h	/^} t_ip_info_list;$/;"	t	typeref:struct:__anon25
+t_offline_list	network/vfs_init.h	/^} t_offline_list;$/;"	t	typeref:struct:__anon26
+t_path_info	lib/common.h	/^}t_path_info;$/;"	t	typeref:struct:__anon49
+t_task_base	network/vfs_task.h	/^}t_task_base;$/;"	t	typeref:struct:__anon12
+t_thread_arg	network/vfs_so.h	/^} t_thread_arg;$/;"	t	typeref:struct:__anon2
+t_tmp_status	network/vfs_tmp_status.h	/^} t_tmp_status;$/;"	t	typeref:struct:__anon22
+t_vfs_del_file	network/vfs_del_file.h	/^} t_vfs_del_file;$/;"	t	typeref:struct:__anon29
+t_vfs_filter	network/vfs_file_filter.c	/^} t_vfs_filter;$/;"	t	typeref:struct:__anon4	file:
+t_vfs_sig_body	lib/protocol.h	/^}t_vfs_sig_body;$/;"	t	typeref:struct:__anon47
+t_vfs_sig_head	lib/protocol.h	/^}t_vfs_sig_head;$/;"	t	typeref:struct:__anon46
+t_vfs_sync_list	network/vfs_task.h	/^} t_vfs_sync_list;$/;"	t	typeref:struct:__anon16
+t_vfs_sync_task	network/vfs_task.h	/^} t_vfs_sync_task;$/;"	t	typeref:struct:__anon15
+t_vfs_taskinfo	network/vfs_task.h	/^}t_vfs_taskinfo;$/;"	t	typeref:struct:__anon13
+t_vfs_tasklist	network/vfs_task.h	/^} t_vfs_tasklist;$/;"	t	typeref:struct:__anon14
+t_vfs_timer	network/vfs_timer.h	/^} t_vfs_timer;$/;"	t	typeref:struct:__anon17
+t_vfs_timer_list	network/vfs_timer.h	/^} t_vfs_timer_list;$/;"	t	typeref:struct:__anon18
+t_vfs_up_proxy	network/client/vfs_data.h	/^} t_vfs_up_proxy;$/;"	t	typeref:struct:__anon20
+t_voss_data_info	network/voss/vfs_voss.h	/^} t_voss_data_info;$/;"	t	typeref:struct:__anon40
+task	network/vfs_task.h	/^	t_vfs_taskinfo task;$/;"	m	struct:__anon14
+task_status	network/vfs_task.c	/^const char *task_status[TASK_UNKNOWN] = {"TASK_DELAY", "TASK_WAIT", "TASK_WAIT_SYNC", "TASK_WAIT_SYNC_IP", "TASK_WAIT_TMP", "TASK_Q_SYNC_DIR", "TASK_Q_SYNC_DIR_TMP", "TASK_RUN", "TASK_FIN", "TASK_CLEAN", "TASK_HOME", "TASK_SEND", "TASK_RECV", "TASK_SYNC_VOSS", "TASK_Q_SYNC_DIR_REQ", "TASK_Q_SYNC_DIR_RSP"};$/;"	v
+task_stime	network/vfs_task.h	/^	time_t task_stime; \/*for time_out *\/$/;"	m	struct:__anon15
+task_timeout	network/vfs_init.h	/^	time_t task_timeout;$/;"	m	struct:__anon28
+taskcount	network/vfs_task.c	/^atomic_t taskcount[TASK_UNKNOWN];$/;"	v
+thread	network/thread.h	/^struct thread {$/;"	s
+thread_entry	network/thread.c	/^static int thread_entry(struct thread *th) {$/;"	f	file:
+thread_jumbo_title	network/thread.c	/^void thread_jumbo_title(void) {$/;"	f
+thread_reached	network/watchdog.h	/^static inline void thread_reached(struct threadstat *ts) {$/;"	f
+threadcount	network/vfs_so.h	/^	int threadcount;$/;"	m	struct:__anon2
+threadlist	network/thread.c	/^static struct thread **threadlist;$/;"	v	typeref:struct:thread	file:
+threadlist	network/watchdog.c	/^			struct threadstat threadlist[0];$/;"	m	struct:threadmap::__anon33::__anon34	typeref:struct:threadmap::__anon33::__anon34::threadstat	file:
+threadmap	network/watchdog.c	/^static struct threadmap threadmap[1] __attribute__((__aligned__(4096), __section__(".bss.shared")));$/;"	v	typeref:struct:threadmap	file:
+threadmap	network/watchdog.c	/^struct threadmap {$/;"	s	file:
+threadstat	network/watchdog.h	/^struct threadstat {$/;"	s
+tickcnt	network/watchdog.h	/^	atomic_t tickcnt;	\/\/tick数目$/;"	m	struct:threadstat
+tid	network/thread.h	/^	pthread_t tid;$/;"	m	struct:thread
+tid	network/watchdog.h	/^	int tid;			\/\/线程ID$/;"	m	struct:threadstat
+timeout	lib/log.c	/^	time_t timeout;$/;"	m	struct:__anon48	file:
+timeout	network/vfs_init.h	/^	uint16_t timeout;$/;"	m	struct:__anon28
+timeout_task	network/vfs_task.h	/^typedef void (*timeout_task)(t_vfs_tasklist *task);$/;"	t
+timestamp	3rdlib/TShmBuffer.h	/^	time_t timestamp;$/;"	m	struct:SHM_HEAD
+tlist	network/vfs_timer.h	/^	list_head_t tlist;$/;"	m	struct:__anon18
+tmp_status_fd	network/vfs_tmp_status.c	/^static int tmp_status_fd = -1;$/;"	v	file:
+tmpdir	lib/common.h	/^	char tmpdir[256];$/;"	m	struct:__anon49
+tmpfile	network/vfs_task.h	/^	char tmpfile[256];$/;"	m	struct:__anon12
+total_size	3rdlib/TShmBuffer.h	/^	int total_size;$/;"	m	struct:SHM_HEAD
+totallen	lib/pro_voss.h	/^	unsigned int totallen;$/;"	m	struct:__anon44
+touch_timestamp	3rdlib/c_api.cpp	/^void touch_timestamp()$/;"	f
+tracker_max_task	network/vfs_init.h	/^	uint16_t tracker_max_task;$/;"	m	struct:__anon28
+trim_in	lib/common.c	/^void trim_in(char *s, char *d)$/;"	f
+true	lib/acl.h	22;"	d
+trycount	network/vfs_task.h	/^	uint8_t trycount;$/;"	m	struct:__anon16
+type	network/vfs_file_filter.c	/^	char type;    \/* 0, suffix, 1, prefix, 2, match *\/$/;"	m	struct:__anon4	file:
+type	network/vfs_task.h	/^	char type;  \/*ADDFILE, DELFILE 删除同步，只有CS才会发出请求，FCS不会发出删除同步*\/$/;"	m	struct:__anon15
+uchar	lib/common.c	168;"	d	file:
+uchar	lib/common.c	170;"	d	file:
+uint2str	lib/util.h	/^static inline char *uint2str(char *p, uint32_t n) {$/;"	f
+uniNmShm	3rdlib/TNmShm.cpp	/^NMSHM * uniNmShm(void)$/;"	f
+update_last	3rdlib/TNmShm.cpp	/^void NMSHM::update_last()$/;"	f	class:NMSHM
+upip	network/vfs_task.h	/^	uint32_t upip;$/;"	m	struct:__anon14
+used	lib/myconfig.c	/^	int used;$/;"	m	struct:prehash	file:
+used_size	3rdlib/TShmBuffer.h	/^	int used_size;$/;"	m	struct:SHM_HEAD
+user	network/global.h	/^	void* user;				\/\/user custom data$/;"	m	struct:conn
+user	network/vfs_task.h	/^	void *user;$/;"	m	struct:__anon13
+userlist	network/vfs_task.h	/^	list_head_t userlist;$/;"	m	struct:__anon14
+username	lib/common.h	/^	char username[32];$/;"	m	struct:__anon50
+username	network/client/vfs_data.h	/^	char username[64];$/;"	m	struct:__anon20
+val	lib/acl.h	/^	char*				val;$/;"	m	struct:matchitem
+val	lib/myconfig.c	/^	char *val;			\/\/value $/;"	m	struct:myconfig	file:
+validcmd	network/vfs_maintain.c	/^static char *validcmd[] = {"cs_preday", "fcs_max_connects", "cs_max_connects", "cs_max_task_run_once", "vfs_test", "real_rm_time", "task_timeout", "fcs_max_task", "cs_sync_dir", "data_calcu_md5", "continue_flag", "sync_dir_count"};$/;"	v	file:
+validsize	network/vfs_maintain.c	34;"	d	file:
+value	3rdlib/TNmShm.h	/^	int value;$/;"	m	struct:__anon52
+value	3rdlib/TShmBuffer.h	/^		T value;$/;"	m	class:SHM_DATA_STRU
+version_string	network/version.c	/^const char version_string[] = _NS_"1.00";$/;"	v
+vfs_abs	lib/common.h	28;"	d
+vfs_agent_log	network/vfs_agent.c	/^int vfs_agent_log = -1;$/;"	v
+vfs_agent_thread	network/vfs_agent.c	/^int vfs_agent_thread(void *arg)$/;"	f
+vfs_cs_peer	network/client/vfs_data.h	/^} vfs_cs_peer;$/;"	t	typeref:struct:__anon19
+vfs_get_task	network/vfs_task.c	/^int vfs_get_task(t_vfs_tasklist **task, int status)$/;"	f
+vfs_http_log	network/client/vfs_http_client.c	/^int vfs_http_log = -1;$/;"	v
+vfs_http_log	network/http/vfs_http.c	/^int vfs_http_log = -1;$/;"	v
+vfs_init	network/vfs_init.c	/^int vfs_init()$/;"	f
+vfs_max	lib/common.h	29;"	d
+vfs_min	lib/common.h	30;"	d
+vfs_set_task	network/vfs_task.c	/^int vfs_set_task(t_vfs_tasklist *task, int status)$/;"	f
+vfs_sig_log	network/client/vfs_data.c	/^int vfs_sig_log = -1;$/;"	v
+vfs_signalling_thread	network/vfs_so.c	/^int vfs_signalling_thread(void *arg)$/;"	f
+vfs_signalling_thread	network/vfs_so_r.c	/^int vfs_signalling_thread(void *arg)$/;"	f
+vfs_start_time	network/main.c	/^time_t vfs_start_time;  \/*vfs 启动时间*\/$/;"	v
+vfs_test	network/vfs_init.h	/^	uint8_t vfs_test;$/;"	m	struct:__anon28
+vfs_timer	network/vfs_timer.h	/^	t_vfs_timer vfs_timer;$/;"	m	struct:__anon18
+vfs_voss_log	network/voss/vfs_voss.c	/^int vfs_voss_log = -1;$/;"	v
+vfs_voss_peer	network/voss/vfs_voss.h	/^} vfs_voss_peer;$/;"	t	typeref:struct:__anon41
+vfstask	network/vfs_task.c	/^static list_head_t vfstask[TASK_UNKNOWN];  \/*sub task status ,just for cs or for tracker by cfg*\/$/;"	v	file:
+voss_del_file	network/vfs_maintain.c	/^int voss_del_file(StringPairList *pairlist, char *buf, int len)$/;"	f
+voss_interval	network/vfs_init.h	/^	uint16_t voss_interval;$/;"	m	struct:__anon28
+voss_off_on_line	network/vfs_maintain.c	/^int voss_off_on_line(StringPairList *pairlist, char *buf, int len, int type)$/;"	f
+voss_stat_interval	network/voss/vfs_voss.c	/^int voss_stat_interval = 120;$/;"	v
+voss_sync_dir	network/vfs_maintain.c	/^int voss_sync_dir(StringPairList *pairlist, char *buf, int len)$/;"	f
+voss_sync_file	network/vfs_maintain.c	/^int voss_sync_file(StringPairList *pairlist, char *buf, int len)$/;"	f
+wait_thread_posix	network/thread.c	/^static void wait_thread_posix(struct thread *th) {$/;"	f	file:
+watchdog_pid	network/watchdog.c	/^int watchdog_pid;$/;"	v
+workdir	lib/common.h	/^	char workdir[256];$/;"	m	struct:__anon49
+~NMSHM	3rdlib/TNmShm.cpp	/^NMSHM::~NMSHM()$/;"	f	class:NMSHM
+~TException	3rdlib/TException.cpp	/^TException::~TException()$/;"	f	class:TException
+~TShmBuffer	3rdlib/TShmBuffer.h	/^TShmBuffer<T>::~TShmBuffer()$/;"	f	class:TShmBuffer

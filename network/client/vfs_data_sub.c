@@ -5,15 +5,11 @@
 */
 
 #include "c_api.h"
-int active_send(vfs_cs_peer *peer, t_vfs_sig_head *h, t_vfs_sig_body *b)
+int active_send(int fd, char *data)
 {
-	LOG(vfs_sig_log, LOG_DEBUG, "send %d cmdid %x\n", peer->fd, h->cmdid);
-	char obuf[2048] = {0x0};
-	int n = 0;
-	peer->hbtime = time(NULL);
-	n = create_sig_msg(h->cmdid, h->status, b, obuf, h->bodylen);
-	set_client_data(peer->fd, obuf, n);
-	modify_fd_event(peer->fd, EPOLLOUT);
+	LOG(vfs_sig_log, LOG_DEBUG, "send %d cmdid %s\n", fd, data);
+	set_client_data(fd, data, strlen(data));
+	modify_fd_event(fd, EPOLLOUT);
 	return 0;
 }
 
