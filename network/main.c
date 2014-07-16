@@ -151,6 +151,7 @@ int main(int argc, char **argv) {
 		goto out;
 	thread_reached(thst);
 	gen_pidfile();	
+	ICALL(init_vfs_agent);
 	printf("Server Started\n");
 	vfs_start_time = time(NULL);
 	main_loop(thst);
