@@ -204,6 +204,7 @@ static int check_req(int fd)
 
 	int clen = end - data;
 	int ret = do_req(fd, fsize);
+	LOG(vfs_sig_log, LOG_DEBUG, "%s:%d fd[%d] Content-Length: %ld!\n", FUNC, LN, fd, fsize);
 	consume_client_data(fd, clen);
 	return ret;
 }
