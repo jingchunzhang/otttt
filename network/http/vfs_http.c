@@ -160,7 +160,7 @@ static int get_file_from_src(char *fname, char *data, int len)
 		LOG(vfs_http_log, LOG_ERROR, "fname[%s] no srcip!\n", fname);
 		return -1;
 	}
-	p += 6;
+	p += 7;
 	char *e = strchr(p, '\r');
 	if (e == NULL)
 	{

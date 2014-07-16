@@ -28,6 +28,7 @@ static int active_connect(char *ip, int port)
 		LOG(vfs_sig_log, LOG_ERROR, "connect %s:%d err %m\n", ip, port);
 		return -1;
 	}
+	sleep(20);
 	if (svc_initconn(fd))
 	{
 		LOG(vfs_sig_log, LOG_ERROR, "svc_initconn err %m\n");
@@ -36,7 +37,6 @@ static int active_connect(char *ip, int port)
 	}
 	add_fd_2_efd(fd);
 	LOG(vfs_sig_log, LOG_NORMAL, "fd [%d] connect %s:%d\n", fd, ip, port);
-	sleep(20);
 	return fd;
 }
 

@@ -33,6 +33,7 @@ int do_prepare_recvfile(int fd, off_t fsize)
 	}
 	t_vfs_tasklist *task0 = peer->recvtask;
 	t_task_base *base = &(task0->task.base);
+	base->fsize = fsize;
 
 	if (peer->local_in_fd > 0)
 		close(peer->local_in_fd);
