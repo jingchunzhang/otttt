@@ -9,3 +9,25 @@
 [31m[1m[ERROR]:[11080][2014-07-12 22:24:31]connect :49716 err Connection refused
 [31m[1m[ERROR]:[11080][2014-07-12 22:24:33]connect :49716 err Connection refused
 [31m[1m[ERROR]:[11080][2014-07-12 22:24:35]connect :49716 err Connection refused
+[32m[1m[NORMAL]:[4186][2014-07-16 11:54:21]svc_init init log ok!
+[32m[1m[NORMAL]:[4186][2014-07-16 11:54:21]not proxy mode!
+[31m[1m[ERROR]:[4186][2014-07-16 11:57:15]connect  119.167.152.46:0 err Connection refused
+[35m[1m[DEBUG]:[4186][2014-07-16 11:57:15]send -1 cmdid GET /youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv HTTP/1.0
+User-Agent: Wget/1.12 (linux-gnu)
+Accept: */*
+Host: 127.0.0.1
+Connection: Keep-Alive
+srcip: 119.167.152.46
+
+
+[32m[1m[NORMAL]:[4333][2014-07-16 12:03:54]svc_init init log ok!
+[32m[1m[NORMAL]:[4333][2014-07-16 12:03:54]not proxy mode!
+[32m[1m[NORMAL]:[4333][2014-07-16 12:04:00]connect  119.167.152.46:80
+[35m[1m[DEBUG]:[4333][2014-07-16 12:04:00]send 10 cmdid GET /youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv HTTP/1.0
+User-Agent: Wget/1.12 (linux-gnu)
+Accept: */*
+Host: 127.0.0.1
+Connection: Keep-Alive
+srcip: 119.167.152.46
+
+

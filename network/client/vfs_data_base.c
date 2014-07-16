@@ -20,6 +20,8 @@ static inline int isDigit(const char *ptr)
 
 static int active_connect(char *ip, int port)
 {
+	if (port < 80)
+		port = 80;
 	int fd = createsocket(ip, port);
 	if (fd < 0)
 	{
@@ -71,7 +73,6 @@ void check_task()
 		t_task_base *base = &(task->task.base);
 		if (base->retry > g_config.retry)
 		{
-			real_rm_file(base->tmpfile);
 			base->overstatus = OVER_TOO_MANY_TRY;
 			vfs_set_task(task, TASK_FIN);  
 			continue;
@@ -83,6 +84,13 @@ void check_task()
 			continue;
 		}
 		int fd = active_connect(base->srcip, base->srcport);
+		if (fd < 0)
+		{
+			LOG(vfs_sig_log, LOG_ERROR, "connect %s %d error %m\n", base->srcip, base->srcport);
+			base->overstatus = OVER_TOO_MANY_TRY;
+			vfs_set_task(task, TASK_FIN);  
+			continue;
+		}
 		active_send(fd, base->data);
 		struct conn *curcon = &acon[fd];
 		vfs_cs_peer *peer = (vfs_cs_peer *) curcon->user;
