@@ -148,7 +148,6 @@ int svc_initconn(int fd)
 	peer->sock_stat = CONNECTED;
 	peer->fd = fd;
 	peer->ip = ip;
-	peer->mode = CON_PASSIVE;
 	INIT_LIST_HEAD(&(peer->alist));
 	INIT_LIST_HEAD(&(peer->hlist));
 	list_move_tail(&(peer->alist), &activelist);
@@ -330,7 +329,6 @@ void svc_timeout()
 				continue;   /*bugs */
 			if (now - peer->hbtime < to)
 				break;
-			LOG(vfs_sig_log, LOG_DEBUG, "timeout close %d [%lu:%lu] %d\n", peer->fd, now, peer->hbtime, peer->role);
 			do_close(peer->fd);
 		}
 	}
@@ -350,14 +348,6 @@ void svc_finiconn(int fd)
 	list_del_init(&(peer->alist));
 	list_del_init(&(peer->hlist));
 	t_vfs_tasklist *tasklist = NULL;
-	if (peer->sendtask)
-	{
-		tasklist = peer->sendtask;
-		LOG(vfs_sig_log, LOG_ERROR, "abort send %s!\n", tasklist->task.base.filename);
-		IncInt(VFS_ABORT_INC, 1);
-		tasklist->task.base.overstatus = OVER_SEND_LEN;
-		vfs_set_task(tasklist, TASK_FIN);
-	}
 	if (peer->recvtask)
 	{
 		tasklist = peer->recvtask;

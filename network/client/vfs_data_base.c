@@ -37,26 +37,6 @@ static int active_connect(char *ip, int port)
 	return fd;
 }
 
-/*find 活动链接信息 */
-int find_ip_stat(uint32_t ip, vfs_cs_peer **dpeer, int mode, int status)
-{
-	list_head_t *hashlist = &(online_list[ALLMASK&ip]);
-	vfs_cs_peer *peer = NULL;
-	list_head_t *l;
-	list_for_each_entry_safe_l(peer, l, hashlist, hlist)
-	{
-		if (peer->ip == ip)
-		{
-			if (mode == peer->mode && status == peer->sock_stat)
-			{
-				*dpeer = peer;
-				return 0;
-			}
-		}
-	}
-	return -1;
-}
-
 void check_task()
 {
 	t_vfs_tasklist *task = NULL;

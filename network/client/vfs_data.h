@@ -34,12 +34,9 @@ typedef struct {
 	uint32_t hbtime;
 	uint32_t ip;
 	uint32_t headlen; /*当前传输文件的头信息长度*/
-	uint8_t role;  /*FCS, CS, TRACKER */
 	uint8_t sock_stat;   /* SOCK_STAT */
 	uint8_t server_stat; /* server stat*/
-	uint8_t mode;  /* active , passive */
 	t_vfs_tasklist *recvtask; /*当前数据链路正在执行的数据接收任务 */
-	t_vfs_tasklist *sendtask; /*当前数据链路正在执行的数据传输任务 */
 } vfs_cs_peer;
 
 typedef struct {
