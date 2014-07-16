@@ -151,6 +151,11 @@ int open_tmp_localfile_4_write(t_task_base *task, int *fd, off_t fsize)
 {
 	char outdir[256] = {0x0};
 	snprintf(outdir, sizeof(outdir), "%s/%s", g_config.docroot, task->filename);
+	if (createdir(outdir))
+	{
+		LOG(glogfd, LOG_ERROR, "dir %s create %m!\n", outdir);
+		return LOCALFILE_DIR_E;
+	}
 	*fd = open(outdir, O_CREAT | O_RDWR | O_LARGEFILE, 0644);
 	if (*fd < 0)
 	{
