@@ -177,7 +177,7 @@ static void do_send(int fd)
 			n = send(fd, data, len, MSG_DONTWAIT | MSG_NOSIGNAL);
 			if(n > 0) 
 			{
-				LOG(glogfd, LOG_TRACE, "fd[%d] send len %d, datalen %d\n", fd, n, len);
+				LOG(glogfd, LOG_NORMAL, "fd[%d] send len %d, datalen %d\n", fd, n, len);
 				mybuff_skipdata(&(curcon->send_buff), n);
 				if (n < len)
 					ret = SEND_ADD_EPOLLOUT;

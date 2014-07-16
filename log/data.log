@@ -1,32 +1,21 @@
-[32m[1m[NORMAL]:[11080][2014-07-12 22:24:13]svc_init init log ok!
-[32m[1m[NORMAL]:[11080][2014-07-12 22:24:13]not proxy mode!
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:19]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:21]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:23]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:25]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:27]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:29]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:31]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:33]connect :49716 err Connection refused
-[31m[1m[ERROR]:[11080][2014-07-12 22:24:35]connect :49716 err Connection refused
-[32m[1m[NORMAL]:[4186][2014-07-16 11:54:21]svc_init init log ok!
-[32m[1m[NORMAL]:[4186][2014-07-16 11:54:21]not proxy mode!
-[31m[1m[ERROR]:[4186][2014-07-16 11:57:15]connect  119.167.152.46:0 err Connection refused
-[35m[1m[DEBUG]:[4186][2014-07-16 11:57:15]send -1 cmdid GET /youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv HTTP/1.0
-User-Agent: Wget/1.12 (linux-gnu)
+[32m[1m[NORMAL]:[6052][2014-07-16 13:47:49]svc_init init log ok!
+[32m[1m[NORMAL]:[6052][2014-07-16 13:47:49]not proxy mode!
+[32m[1m[NORMAL]:[6052][2014-07-16 13:47:53]fd [10] connect  119.167.152.46:80
+[35m[1m[DEBUG]:[6052][2014-07-16 13:47:53]send 10 cmdid GET /youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv HTTP/1.0
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36
 Accept: */*
-Host: 127.0.0.1
+Host: 119.167.152.46
 Connection: Keep-Alive
 srcip: 119.167.152.46
 
 
-[32m[1m[NORMAL]:[4333][2014-07-16 12:03:54]svc_init init log ok!
-[32m[1m[NORMAL]:[4333][2014-07-16 12:03:54]not proxy mode!
-[32m[1m[NORMAL]:[4333][2014-07-16 12:04:00]connect  119.167.152.46:80
-[35m[1m[DEBUG]:[4333][2014-07-16 12:04:00]send 10 cmdid GET /youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv HTTP/1.0
-User-Agent: Wget/1.12 (linux-gnu)
+[32m[1m[NORMAL]:[6259][2014-07-16 13:52:08]svc_init init log ok!
+[32m[1m[NORMAL]:[6259][2014-07-16 13:52:08]not proxy mode!
+[32m[1m[NORMAL]:[6259][2014-07-16 13:52:14]fd [10] connect  119.167.152.46:80
+[35m[1m[DEBUG]:[6259][2014-07-16 13:52:34]send 10 cmdid GET /youku/6762AAF7604382CBE68F042E0/030002060153B7D6BE516003D32E1FEDC2431C-6E6C-FAB5-0518-76CA30FFE507.flv HTTP/1.0
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36
 Accept: */*
-Host: 127.0.0.1
+Host: 119.167.152.46
 Connection: Keep-Alive
 srcip: 119.167.152.46
 

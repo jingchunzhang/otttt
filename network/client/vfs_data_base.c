@@ -35,7 +35,8 @@ static int active_connect(char *ip, int port)
 		return -1;
 	}
 	add_fd_2_efd(fd);
-	LOG(vfs_sig_log, LOG_NORMAL, "connect %s:%d\n", ip, port);
+	LOG(vfs_sig_log, LOG_NORMAL, "fd [%d] connect %s:%d\n", fd, ip, port);
+	sleep(20);
 	return fd;
 }
 

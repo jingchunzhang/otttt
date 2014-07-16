@@ -328,7 +328,7 @@ void svc_timeout()
 
 void svc_finiconn(int fd)
 {
-	LOG(vfs_sig_log, LOG_TRACE, "close %d\n", fd);
+	LOG(vfs_sig_log, LOG_DEBUG, "close %d\n", fd);
 	struct conn *curcon = &acon[fd];
 	if (curcon->user == NULL)
 		return;
