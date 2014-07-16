@@ -140,9 +140,6 @@ static int handle_request(int cfd)
 		sprintf(httpheader, "HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: %u\r\n\r\n", (unsigned)st.st_size);
 		
 	}
-	else {
-		sprintf(httpheader, "HTTP/1.1 404 File Not Found\r\n\r\n");	
-	}
 	if(fd > 0)
 	{
 		set_client_data(cfd, httpheader, strlen(httpheader));
@@ -239,6 +236,21 @@ int svc_send(int fd)
 
 void svc_timeout()
 {
+	http_peer *peer = NULL;
+	list_head_t *l;
+	list_for_each_entry_safe_l(peer, l, &activelist, alist)
+	{
+		if (peer == NULL)
+			continue;   /*bugs */
+		if (peer->nostandby)
+		{
+			if (handle_request(peer->fd) == 0)
+			{
+				peer->nostandby = 0;
+				modify_fd_event(peer->fd, EPOLLOUT);
+			}
+		}
+	}
 }
 
 void svc_finiconn(int fd)

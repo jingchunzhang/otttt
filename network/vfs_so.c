@@ -212,7 +212,7 @@ static void do_send(int fd)
 			}
 			else if(errno == EINTR) 
 				continue;
-			else if(errno == EAGAIN) 
+			else if(errno == EAGAIN || errno == ENOENT) 
 				ret = SEND_ADD_EPOLLOUT;
 			else 
 			{
