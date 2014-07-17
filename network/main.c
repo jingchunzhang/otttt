@@ -132,8 +132,8 @@ int main(int argc, char **argv) {
 
 	t_thread_arg arg;
 	memset(&arg, 0, sizeof(arg));
-	LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg.name);
 	snprintf(arg.name, sizeof(arg.name), "./ott_server.so");
+	LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg.name);
 	arg.port = 80;
 	arg.maxevent = myconfig_get_intval("vfs_sig_maxevent", 4096);
 	if (init_vfs_thread(&arg))
@@ -146,12 +146,12 @@ int main(int argc, char **argv) {
 	if (init_vfs_thread(&arg1))
 		goto error;
 	thread_jumbo_title();
+	ICALL(init_vfs_agent);
 	struct threadstat *thst = get_threadstat();
 	if(start_threads() < 0)
 		goto out;
 	thread_reached(thst);
 	gen_pidfile();	
-	ICALL(init_vfs_agent);
 	printf("Server Started\n");
 	vfs_start_time = time(NULL);
 	main_loop(thst);

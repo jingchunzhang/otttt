@@ -134,6 +134,7 @@ int start_threads() {
 
 	for(i = 1; i < curid; i++) {
 		threadlist[i]->state = THREAD_STARTING;
+		printf("prepare threads %s\n",  threadlist[i]->name);
 		if(start_thread_posix(threadlist[i]) < 0) {
 		    printf("\7ERROR: Some threads cannot start, Exitting\n");
 		    exit(-1);
