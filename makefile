@@ -1,4 +1,4 @@
-SUBDIRS = lib 3rdlib network network/http network/client
+SUBDIRS = lib 3rdlib network network/http network/client network/voss
 installdir = /home/vfs/
 #curday = $(shell date '+%Y%m%d')
 all:
