@@ -1,0 +1,5 @@
+[32m[1m[NORMAL]:[2903][2014-07-17 22:34:34]svc_init init log ok!
+[31m[1m[ERROR]:[2903][2014-07-17 22:34:34]open /workdir/voss_stat_20140717223434 err No such file or directory
+[32m[1m[NORMAL]:[3526][2014-07-17 22:44:33]svc_init init log ok!
+[31m[1m[ERROR]:[3526][2014-07-17 22:44:33]open /ott/data//workdir/voss_stat_20140717224433 err No such file or directory
+[32m[1m[NORMAL]:[3667][2014-07-17 22:47:01]svc_init init log ok!

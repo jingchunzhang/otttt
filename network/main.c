@@ -130,6 +130,7 @@ int main(int argc, char **argv) {
 	ICALL(vfs_init);
 	ICALL(init_task_info);
 
+#ifdef VFS_SERVER
 	t_thread_arg arg;
 	memset(&arg, 0, sizeof(arg));
 	snprintf(arg.name, sizeof(arg.name), "./ott_server.so");
@@ -145,8 +146,18 @@ int main(int argc, char **argv) {
 	arg1.maxevent = myconfig_get_intval("vfs_data_maxevent", 4096);
 	if (init_vfs_thread(&arg1))
 		goto error;
-	thread_jumbo_title();
 	ICALL(init_vfs_agent);
+#else
+	t_thread_arg arg;
+	memset(&arg, 0, sizeof(arg));
+	snprintf(arg.name, sizeof(arg.name), "./ott_voss.so");
+	LOG(glogfd, LOG_NORMAL, "prepare start %s\n", arg.name);
+	arg.port = g_config.sig_port;
+	arg.maxevent = myconfig_get_intval("vfs_sig_maxevent", 4096);
+	if (init_vfs_thread(&arg))
+		goto error;
+#endif
+	thread_jumbo_title();
 	struct threadstat *thst = get_threadstat();
 	if(start_threads() < 0)
 		goto out;

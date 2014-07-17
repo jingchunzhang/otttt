@@ -160,6 +160,11 @@ int init_global()
 	snprintf(g_config.docroot, sizeof(g_config.docroot), "%s", docroot);
 
 	reload_config();
+	char *vfs_path = myconfig_get_value("vfs_path");
+	if (vfs_path == NULL)
+		snprintf(g_config.path, sizeof(g_config.path), "/ott/data/");
+	else
+		snprintf(g_config.path, sizeof(g_config.path), "%s", vfs_path);
 	char *v_domain = myconfig_get_value("domain_prefix");
 	if (v_domain == NULL)
 		snprintf(g_config.domain_prefix, sizeof(g_config.domain_prefix), "fcs");
