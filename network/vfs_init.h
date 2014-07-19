@@ -110,6 +110,7 @@ typedef struct {
 	int8_t retry;
 	uint8_t sync_dir_count;
 	uint8_t continue_flag;
+	uint8_t voss_flag;
 } t_g_config;
 
 extern t_g_config g_config;

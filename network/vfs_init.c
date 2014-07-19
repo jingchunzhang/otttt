@@ -124,6 +124,7 @@ void reload_config()
 int init_global()
 {
 	self_stat = UNKOWN_STAT;
+	g_config.voss_flag = myconfig_get_intval("voss_flag", 0);
 	g_config.sig_port = myconfig_get_intval("sig_port", 39090);
 	g_config.data_port = myconfig_get_intval("data_port", 49090);
 	g_config.timeout = myconfig_get_intval("timeout", 300);

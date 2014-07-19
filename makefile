@@ -1,5 +1,5 @@
 SUBDIRS = lib 3rdlib network network/http network/client network/voss
-installdir = /home/vfs/
+installdir = /ott/install
 #curday = $(shell date '+%Y%m%d')
 all:
 	@list='$(SUBDIRS)'; for subdir in $$list; do \
@@ -27,26 +27,6 @@ install:
 	mkdir $(installdir)/path/bkdir -p;
 	mkdir $(installdir)/path/delfile -p;
 	cd network; cp vfs_master $(installdir)/bin; cp vfs_master.conf $(installdir)/conf;
-	cd network/tracker ; cp *.so $(installdir)/bin
-	cd network/cs; cp *.so $(installdir)/bin
-	cd network/data; cp *.so $(installdir)/bin
-	cp script/*.sh $(installdir)/bin
-	cd network/fcs; cp *.so $(installdir)/bin
+	cd network/http; cp *.so $(installdir)/bin
+	cd network/client; cp *.so $(installdir)/bin
 	cd network/voss; cp *.so $(installdir)/bin
-
-install_cdc_m:
-	rm -rf $(installdir)/*;
-	mkdir $(installdir)/bin -p;
-	mkdir $(installdir)/log -p;
-	mkdir $(installdir)/conf -p;
-	cd network; cp cdc_master $(installdir)/bin; cp cdc_master.conf $(installdir)/conf;
-	cd network/cdc_http; cp *.so $(installdir)/bin;
-
-install_cdc_r:
-	rm -rf $(installdir)/*;
-	mkdir $(installdir)/bin -p;
-	mkdir $(installdir)/log -p;
-	mkdir $(installdir)/conf -p;
-	cd network; cp cdc_r $(installdir)/bin; cp cdc_r.conf $(installdir)/conf;
-	cd network/cdc_so; cp *.so $(installdir)/bin;
-
