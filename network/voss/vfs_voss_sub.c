@@ -10,6 +10,7 @@
 
 static int init_cfg_connect(char *sip, vfs_voss_peer *peer)
 {
+	return 0;
 	char s_ip[16] = {0x0};
 	uint32_t ip = get_uint32_ip(sip, s_ip);
 	if (ip == INADDR_NONE)

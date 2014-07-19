@@ -26,7 +26,7 @@ install:
 	mkdir $(installdir)/path/indir -p;
 	mkdir $(installdir)/path/bkdir -p;
 	mkdir $(installdir)/path/delfile -p;
-	cd network; cp vfs_master $(installdir)/bin; cp vfs_master.conf $(installdir)/conf;
+	cd network; cp vfs_master $(installdir)/bin; cp vfs_master $(installdir)/bin/vfs_master_voss; cp vfs_master*.conf $(installdir)/conf;
 	cd network/http; cp *.so $(installdir)/bin
 	cd network/client; cp *.so $(installdir)/bin
 	cd network/voss; cp *.so $(installdir)/bin
