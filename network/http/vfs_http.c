@@ -91,7 +91,10 @@ static int check_request(int fd, char* data, int len)
 			if((q = strstr(data + 5, " HTTP/")) != NULL) {
 				len = q - data - 5;
 				if(len < 1023) {
-					strncpy(peer->fname, data + 5, len);	
+					strncpy(peer->fname, data + 5, len);
+					char *t = strchr(peer->fname, '?');
+					if (t)
+						*t = 0x0;
 					return p - data + 4;
 				}
 			}
@@ -179,7 +182,20 @@ static int get_file_from_src(char *fname, char *data, int len)
 	t_vfs_taskinfo *task = &(task0->task);
 	memset(&(task->base), 0, sizeof(task->base));
 	snprintf(task->base.srcip, sizeof(task->base.srcip), "%s", srcip);
-	strncpy(task->base.data, data, len);
+	char *t = strchr(data, '?');
+	if (t == NULL)
+		strncpy(task->base.data, data, len);
+	else
+	{
+		strncpy(task->base.data, data, t - data);
+		t = strstr(t, "\r\n");
+		t += 2;
+		strcat(task->base.data, "\r\n");
+		char tmp = *(data + len);
+		*(data + len) = 0x0;
+		strcat(task->base.data, t);
+		*(data + len) = tmp;
+	}
 	strcpy(task->base.filename, fname);
 	add_task_to_alltask(task0);
 	vfs_set_task(task0, TASK_WAIT);
