@@ -190,7 +190,7 @@ static int get_file_from_src(char *fname, char *data, int len)
 		strncpy(task->base.data, data, t - data);
 		t = strstr(t, "\r\n");
 		t += 2;
-		strcat(task->base.data, "\r\n");
+		strcat(task->base.data, " HTTP/1.1\r\n");
 		char tmp = *(data + len);
 		*(data + len) = 0x0;
 		strcat(task->base.data, t);
