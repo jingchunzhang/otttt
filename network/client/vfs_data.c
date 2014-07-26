@@ -347,11 +347,10 @@ void svc_finiconn(int fd)
 	if (peer->recvtask)
 	{
 		tasklist = peer->recvtask;
-		LOG(vfs_sig_log, LOG_ERROR, "re execute %s!\n", tasklist->task.base.filename);
-		IncInt(VFS_RE_EXECUTE_INC, 1);
+		LOG(vfs_sig_log, LOG_ERROR, "error %s!\n", tasklist->task.base.filename);
 		real_rm_file(tasklist->task.base.tmpfile);
-		tasklist->task.base.retry++;
-		vfs_set_task(tasklist, TASK_WAIT);
+		tasklist->task.base.overstatus = OVER_PEERERR;
+		vfs_set_task(tasklist, TASK_FIN);
 	}
 	memset(curcon->user, 0, sizeof(vfs_cs_peer));
 	free(curcon->user);
