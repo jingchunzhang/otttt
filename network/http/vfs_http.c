@@ -86,6 +86,7 @@ static int check_request(int fd, char* data, int len)
 	if(!strncmp(data, "GET /", 5)) {
 		char* p;
 		if((p = strstr(data + 5, "\r\n\r\n")) != NULL) {
+			LOG(vfs_http_log, LOG_DEBUG, "fd[%d] data[%s]!\n", fd, data);
 			char* q;
 			int len;
 			if((q = strstr(data + 5, " HTTP/")) != NULL) {
@@ -140,7 +141,7 @@ static int handle_request(int cfd)
 		st.st_size = getsize(filename);
 		if (st.st_size <= 0)
 			fstat(fd, &st);
-		sprintf(httpheader, "HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: %u\r\n\r\n", (unsigned)st.st_size);
+		sprintf(httpheader, "HTTP/1.1 200 OK\r\nContent-Type: video/x-flv\r\nContent-Length: %u\r\n\r\n", (unsigned)st.st_size);
 		
 	}
 	if(fd > 0)

@@ -49,28 +49,15 @@ void get_data_from_task(t_vfs_tasklist *task)
 {
 	char buf[1024] = {0x0};
 	t_task_base *base = &(task->task.base);
-	time_t cur = time(NULL);
-	if (cur - base->stime > g_config.task_timeout)
-		base->overstatus = OVER_TIMEOUT;
 
-	if (task->status == TASK_CLEAN)
-	{
-		size_t n = 0;
-		mybuff_setdata(&databuff, buf, n);
-		LOG(vfs_agent_log, LOG_DEBUG, "get task[%s]\n", buf);
-	}
+	size_t n = snprintf(buf, sizeof(buf), "%s:%s:%ld:%ld:%d\n", base->filename, base->srcip, base->fsize, base->getlen, base->overstatus);
+	mybuff_setdata(&databuff, buf, n);
+	LOG(vfs_agent_log, LOG_DEBUG, "get task[%s]\n", buf);
 
-	if (task->status == TASK_CLEAN || base->overstatus == OVER_TIMEOUT)
-	{
-		list_del_init(&(task->llist));
-		if (task->status != TASK_CLEAN && task->task.user &&(ROLE_CS == self_ipinfo.role || ROLE_TRACKER == self_ipinfo.role))
-		{
-			task->task.user = NULL;
-		}
-		atomic_dec(&(taskcount[task->status]));
-		memset(&(task->task), 0, sizeof(task->task));
-		vfs_set_task(task, TASK_HOME);
-	}
+	list_del_init(&(task->llist));
+	atomic_dec(&(taskcount[task->status]));
+	memset(&(task->task), 0, sizeof(task->task));
+	vfs_set_task(task, TASK_HOME);
 }
 
 static void do_scan(struct conn *curcon, int *outdata, int type)
