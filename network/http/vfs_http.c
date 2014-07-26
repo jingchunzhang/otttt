@@ -155,13 +155,13 @@ static int handle_request(int cfd)
 
 static int get_file_from_src(char *fname, char *data, int len)
 {
-	char *p = strstr(data, "srcip: ");
+	char *p = strstr(data, "Host: ");
 	if (p == NULL)
 	{
 		LOG(vfs_http_log, LOG_ERROR, "fname[%s] no srcip!\n", fname);
 		return -1;
 	}
-	p += 7;
+	p += 6;
 	char *e = strchr(p, '\r');
 	if (e == NULL)
 	{
